@@ -1,0 +1,469 @@
+@import "compass";
+
+@mixin breakpoint($point) {
+  @if $point == ipad {
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) { @content; }
+  }
+  @else if $point == iphone {
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px)  { @content; }
+  }
+  @else if $point == large {
+    @media only screen and (min-width : 1824px)  { @content; }
+  }
+} 
+
+body{
+  &.bigpic1{
+    background: #000 url(../images/bigbg.jpg) center top;
+    background-image: url(../images/bigbg1.jpg);
+    background-color:#000;
+    border-top: 5px solid #9A1935;
+  }
+  &.bigpic2{
+    background: #000 url(../images/bigbg1.jpg) center top;
+    background-image: url(../images/bigbg1.jpg);
+    background-color:#000;
+    border-top: 5px solid #9A1935;
+  }
+  &.bigpic3{
+    background: #000 url(../images/bigbg2.jpg) center top;
+    background-image: url(../images/bigbg2.jpg);
+    background-color:#000;
+    border-top: 5px solid #9A1935;
+  }
+  &.bigpic4{
+    background: #000 url(../images/bigbg3.jpg) center top;
+    background-image: url(../images/bigbg3.jpg);
+    background-color:#000;
+    border-top: 5px solid #9A1935;
+  }
+  &.bigpic5{
+    background: #000 url(../images/bigbg4.jpg) center top;
+    background-image: url(../images/bigbg4.jpg);
+    background-color:#000;
+    border-top: 5px solid #9A1935;
+  }
+  &.bigpic6{
+    background: #000 url(../images/bigbg5.jpg) center top;
+    background-image: url(../images/bigbg5.jpg);
+    background-color:#000;
+    border-top: 5px solid #9A1935;
+  }
+  &.bigpic7{
+    background: #000 url(../images/bigbg6.jpg) center top;
+    background-image: url(../images/bigbg6.jpg);
+    background-color:#000;
+    border-top: 5px solid #9A1935;
+  }
+}
+
+.link_default{
+  ul{
+     @include clearfix; 
+    &.expo{
+      li{
+       width:50%;
+       margin-left:20px;
+       &.date{
+         width:18%;
+       }
+      }
+    }
+     &.artist{
+      li{
+       width:28%;
+       margin-left:20px;
+      }
+    }
+     &.fairs{
+      li{
+       width:16%;
+       margin-left:20px;
+       &.name{
+         width:35%;
+       }
+      }
+    }
+    li{
+      float:left;
+      &.handler{
+        width:2%;
+        height:auto;
+        margin:0 auto;
+        padding:10px 0; 
+        a{
+          position:relative;
+          right:2px;
+          bottom:4px;
+        }
+      }
+      &:last-child{
+        margin-left:20px;
+      }
+    }
+  }
+}
+
+.image-logos{
+  height:55px;
+}
+
+header{
+  &.intro{
+   h2{
+     color:white;
+     line-height:1.3;
+   }
+   h5{
+     color:white;
+     line-height:1.8;
+   }
+  }  
+}
+
+.options{
+  margin-top:30px;
+  h3{
+    color:white;
+    font-size:32px;
+    margin:0;
+  }
+  h5{
+    color:white;
+    line-height: 1.5;
+    min-height: 55px;
+  }
+  div{
+    width:50%;
+    &.login{
+      float:left;
+      border-right:1px solid white;
+      padding-right:30px;
+    }
+    &.register{
+      float:right;
+      padding-left:30px;
+    }
+  }
+}
+
+.underline{
+  text-decoration:underline;
+}
+
+.asterix{
+  color:#BB0C35;
+  margin:0 5px 0 0;
+  font-weight: normal;
+}
+
+.whitetxt{
+  color:#fff;
+}
+
+.bold{
+  font-weight:bold;
+}
+
+.inner-header{
+  background-color:#F9f9f9;
+  border-bottom:1px solid white;
+  padding:20px;
+  h2{
+    margin:3px 0;
+  }
+}
+
+.container{
+  padding:20px;
+}
+
+
+.mini-nav-header{
+  position:relative;
+  top:20px;
+  dl{
+    float:right;
+    dd{
+      h4{
+          line-height:.4;
+          color:#666;
+          font-size:21px;
+        }
+      a{
+        background: white url(../images/handlers.jpg) no-repeat;
+        display: inline-block; 
+        width:33px;
+        height:33px;
+        text-indent:-9000px;
+        display:inline-block;
+        @include border-radius(4px);
+        border-bottom:4px solid #E1E1E1;
+        @include transition-property(border);
+        @include transition-duration(.3s);
+        @include transition-timing-function(ease-in);
+        &.save{
+          background: white url(../images/handlers/guardar.jpg) no-repeat;
+          background-position: 3px 3px;
+          text-indent: 0;
+          width: 80px;
+          color: #666666;
+          padding-left: 25px;
+          line-height:2;
+        }
+        &.prev{
+          background-position:-17px 3px;
+        }
+        &.next{
+          background-position:-39px 3px; 
+        }
+        &:hover{
+          border-bottom:4px solid scale-lightness(#E1E1E1, -10%);
+        }
+      } 
+    }
+  }
+}
+
+.form-data{
+  h5{
+    font-weight: normal;
+    line-height: 1.5;
+    font-size:16px;
+  }
+  .label.secondary{
+    padding:4px 15px;
+    color:#fff;
+    font-size:14px;
+    @include transition-property(background, color);
+    @include transition-duration(.2s);
+    @include transition-timing-function(ease-in);
+    &:hover{
+      color:scale_lightness(#fff, -40%);
+      background:scale_lightness(#ccc, 40%);
+    }
+  }
+  form{
+    input[type="text"]{
+      margin:0 0 10px 0;
+      &.no-margin{
+        margin:0;
+      }
+    }
+  }
+}
+
+label{
+  font-weight:bold;
+  margin:15px 0 8px;
+}
+
+.intitle{
+  padding: 5px 0;
+  ul{
+    li{
+      float:left;
+      list-style-type: none;
+    }
+    &.expos{
+      li{
+        width:20%;
+        &:first-child{
+         margin-left:60px; 
+         width:51%;
+        }
+      }
+    }
+    &.ferias{
+      li{
+        width:18%;
+        &:first-child{
+         margin-left:60px; 
+         width:36%;
+        }
+      }
+    }
+    &.artistas{
+      li{
+        width:29.4%;
+        &:first-child{
+         margin-left:60px; 
+        }
+      }
+    }
+  }
+}
+
+
+.inner-footer{
+  background-color:#eee;
+  strong{
+    line-height:3;
+  }
+  a{
+    margin:0 5px;
+    font-weight:bold;
+  }
+}
+
+.graytxt{
+  color:#4C4C4C;
+}
+
+.advisory{
+  margin-bottom:30px;
+  span{
+    font-size:12px;
+    color:#5b5b5b;
+    display:block;
+    line-height:1.4;
+  }
+  a{
+    color:#000;
+    text-decoration:underline;
+  }
+}
+
+.redtxt{
+  color:#BB0C35;
+}
+
+.nav-bar{
+  li{
+    span{
+      &.spriteArrow{
+        background: url('../images/spriteArrow.jpg');
+        height: 39px;
+        width: image-width('../images/spriteArrow.jpg');
+        display:inline-block;
+        float:left;
+      }
+      &.number-menu{
+        padding:3px 8px;
+      }
+    }
+    &:hover{
+      background:transparent;
+      cursor:pointer;
+      a{
+       color:#fff;
+      }
+      span.number-menu{
+         color:#bbb;
+       }
+    }
+    &.active{
+      background:#BB0C35;
+      &:last-child{
+        float:right;
+      }
+      span{
+        &.spriteArrow{
+          background-position:0 -40px;
+        }
+      }
+      & + li{
+        span{
+           &.spriteArrow{
+            background-position:0 -80px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.doctype-data{
+   width:45%;
+   float:left;
+   height:80px;
+   display:inline-block;
+}
+
+.docnumber-data{
+  width:38%;
+  float:right;
+  height:80px;
+  display:inline-block;
+}
+
+.caption{
+  color:#808080;
+  margin:10px 0;
+  display:block;
+}
+
+.block{
+  display:block;
+  height:80px;
+}
+
+input[type="file"]{
+      margin:15px 0;
+    }
+    
+
+img.selected{ 
+  // border: 1px solid rgba(#BB0C35,.1);
+  // border-right: 1px solid rgba(#85132c,.2);
+  // border-bottom: 1px solid rgba(#85132c,.2);
+  border: 0;
+  @include box-shadow(rgba(#BB0C35,.2) 0 0 10px);
+  @include rotate(-3deg); 
+}
+
+@mixin spritenew($url: '../images/sprite_new.png',$x:0 ,$y:0, $retina: false) {
+  @if $retina == false {
+  background: url($url) $x $y;
+  }else{
+    background: url('../images/sprite_new2x.png') $x $y;
+  }
+  
+  display:inline-block;
+  text-indent:-9999px;
+}
+.artBO{
+  @include spritenew();
+  height:60px;
+  width:115px;
+  margin:20px 10px;
+}
+.ccB{
+  @include spritenew($x:-120px);
+  height:60px;
+  width:180px;
+  margin:20px 10px;
+}
+
+.stand-items img.images{
+  margin-top:10px;
+}
+
+input[type="text"]{
+    &.legal{
+    display: inline-block;
+    width: 300px;
+  }
+    &.doc{
+    display: inline-block;
+    width: 200px;
+  }
+}
+
+.documents{
+  h4{
+    margin-top:0;
+  }
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), 
+only screen and (min-device-pixel-ratio: 2) {
+ .artBO{
+    @include spritenew($retina: true);
+  }
+  .ccB{
+    @include spritenew($retina: true);
+  }
+}
+
