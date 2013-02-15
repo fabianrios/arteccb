@@ -1,0 +1,160 @@
+@import "compass/css3";
+
+select{
+  margin-top:7px;
+}
+
+
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea{
+  margin:0 0 15px 0;
+  border:0;
+  @include border-radius(4px);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0);
+  font-size: 15px;
+  font-family: "Trebuchet MS" "Helvetica" "Arial";
+  &:focus {
+    outline:none;
+    border-bottom:1px solid rgba(50,50,50,.2);
+    @include border-bottom-radius(0);
+    background:none;
+  }
+}
+
+textarea{
+  line-height:25px;
+   &:focus {
+    outline:none;
+    border-bottom:0;
+    background: url(../images/textarea.png) repeat 0 5px;
+    @include border-bottom-radius(0);
+  }
+}
+
+.label{
+  font-weight:bold;
+  margin:5px 0;
+  padding: 2px 4px 2px;
+  &.round{
+    padding: 2px 7px 2px;
+  }
+  &.radius{
+    padding: 1px 4px 1px;
+  }
+}
+
+.button {
+  width: auto;
+  background: #BB0C35;
+  border:0;
+  border-bottom: 4px solid #9D0B2C;
+  padding: 15px 26px 13px;
+  
+  &:hover, &:focus {
+    background-color: #9D0B2C;
+    border-bottom: 4px solid #9D0B2C;
+    outline-color:white;
+  }
+  &.small{
+    padding: 10px 15px 7px;
+    border-bottom: 2px solid #9D0B2C;
+  }
+  &.nulled{
+    padding: 10px 15px 7px;
+    border-bottom: 2px solid #b7b5b5;
+    background-color:#e6e6e6;
+  }
+}
+
+
+.panel{
+  border:0;
+  border-bottom: 5px solid #B4B5B4;
+  background: whitesmoke;
+  margin-bottom: 10px;
+  @include border-bottom-radius(5px);
+  &.nopadding{
+    padding:0;
+  }
+}
+
+p{
+  line-height:1.4;
+}
+
+
+form.custom div.custom.dropdown a.current{
+  border:0;
+  line-height: 31px;
+  min-height: 31px;
+  @include border-radius(4px);
+}
+
+form.custom div.custom.dropdown a.selector{
+  border:0;
+  width: 32px;
+  height: 28px;
+  margin-top: 2px;
+  border-left:1px solid #DDD; 
+}
+
+form.custom div.custom.dropdown.open ul{
+  position: absolute;
+  height: 150px;
+  top: -9px;
+}
+
+
+.error input, input.error, .error textarea, textarea.error, .error input:focus, input.error:focus, .error textarea:focus, textarea.error:focus {
+  background-color: rgba(#E4A4AF, 1);
+}
+
+div.alert-box{
+  a.close{
+    top:6px;
+    color:transparent;
+    background-color:#FFF;
+    @include border-radius(100%);
+    padding: 0px 4px 3px;
+    opacity: .6;
+    line-height: .9;
+    &:hover{
+      opacity:.9;
+    }
+  }
+  margin:0;
+  @include border-radius(0);
+  padding: 9px 20px 9px;
+  &.success{
+    background-color:#55C896;
+  }
+}
+
+.nav-bar{
+  overflow:hidden;
+  margin-bottom:0;
+  li{
+    border: 0;
+    line-height: 40px;
+    &:first-child{
+      font-weight:bold;
+    }
+    &:last-child{
+      border:0;
+      @include box-shadow(0 0 0 0);
+    }
+    a{
+      margin:0 16px;
+      height: 40px;
+    }
+  }
+}
+
+.block-grid.five-up h4{
+  margin:2px 0;
+}
+
+a:focus{
+  outline-color:lightgray; 
+}

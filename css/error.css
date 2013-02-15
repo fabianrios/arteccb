@@ -1,0 +1,33 @@
+/*MM_404*/
+/*Agosto 2010*/
+
+
+/*--------------------------------------------resets and Aux Styles---------------------------------------*/
+
+/* new clearfix */
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0 }
+* html .clearfix { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+#TB_overlay { position: absolute; z-index:150; top: 0px; left: 0px; background-color:#000; filter:alpha(opacity=70); -moz-opacity: 0.7; opacity: 0.7; width:100%; height:100%;  .height:1000px;}
+#window2 { background:#6A6A6A; left:35%; padding:0px; position:absolute; top:100%; min-width:450px; z-index:620; border:1px solid #F47639; padding:5px; }
+html, body, div, img, a, p, h1, h2, h3, h4, * { margin:0px; padding:0px; border:none; }
+.noborder { border: none!important; }
+.t_right { text-align: right; }
+.t_left { text-align: left; }
+.t_center { text-align: center; }
+.f_left { float: left; }
+.f_right { float: right; }
+.m_boton { margin-bottom:10px; }
+.border_bottom { border-bottom:1px #aaa solid; }
+.clear { clear:both; }
+/*--------------------------------------------reset---------------------------------------*/
+html { background:#FFF url(../img/404/404-bg.jpg) top center no-repeat; color:#333; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size:14px;}
+.wrapper { margin:0 auto; padding:50px 0 0 0; width:700px;}
+.wrapper h1 { border-bottom:1px solid #6D6D6D; color:#6D6D6D; font-size:26px; text-transform:uppercase; width:430px;}
+.wrapper p { font-size:14px; line-height:20px; padding:15px 0 0; width:430px;}
+.wrapper h2 { font-size:20px; margin-left:416px; padding:0 0 25px;}
+.wrapper ul { font-size:12px; margin-left:430px;}
+.wrapper ul li { line-height:18px; padding:0 0 5px;}
+.wrapper ul a { color:#09C; text-decoration:underline;}
+.wrapper ul a:hover { color:#936; text-decoration:none;}
+.wrapper ul a:visited { color:#069;}
