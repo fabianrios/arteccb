@@ -10,7 +10,7 @@
 		<!-- columns 2/2 -->
 		<div class="eight columns lateralder ">
 			<div class="perfil-data">
-				<div class="perfil left">
+				<div class="perfil right">
 					<?php 
 					if (isset($user))
 					{

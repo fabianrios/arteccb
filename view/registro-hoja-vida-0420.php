@@ -459,10 +459,10 @@ include_once(SITE_VIEW.'menu.php');
 			<div class="inner-footer">
 				<div class="container">
 					<div class="row">
-						<div class="eight columns">
+						<div class="seven columns">
 							<strong><span class="asterix">*</span>Datos requeridos</strong>
 						</div>
-						<div class="four columns">
+						<div class="five columns">
 							<div class="right">
 								<a title="Registro" href="<?php echo APPLICATION_URL;?>registro-artista-0410.html" class="graytxt">Anterior</a>  
 								<a href="<?php echo APPLICATION_URL;?>registro-proyecto-0430.html" title="Siguiente: Artecámara" class="button radius">Siguiente: Proyecto Artecámara</a>
