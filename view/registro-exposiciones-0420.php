@@ -134,7 +134,7 @@ include_once(SITE_VIEW.'menu.php');
 				<hr />
 				<br />				
                 <h4>Exposiciones individuales</h4>
-				<p><em>Exposiciones individuales desde 2007 a la fecha.</em></p>
+				<p><em>Selección desde 2009 a la fecha</em></p>
 				
 				<!-- formulario -->
 				
@@ -174,12 +174,13 @@ include_once(SITE_VIEW.'menu.php');
                                     <td width="8%">
                                         <label><strong>Año</label>	
                                             <select name="expo_year_<?php echo $i?>">
+                                                <option value="2013" <?php if ($exposition->__get('exposition_year') == 2013) echo 'selected="selected"';?>>2013</option>
                                                 <option value="2012" <?php if ($exposition->__get('exposition_year') == 2012) echo 'selected="selected"';?>>2012</option>
                                                 <option value="2011" <?php if ($exposition->__get('exposition_year') == 2011) echo 'selected="selected"';?>>2011</option>
                                                 <option value="2010" <?php if ($exposition->__get('exposition_year') == 2010) echo 'selected="selected"';?>>2010</option>
                                                 <option value="2009" <?php if ($exposition->__get('exposition_year') == 2009) echo 'selected="selected"';?>>2009</option>
-                                                <option value="2008" <?php if ($exposition->__get('exposition_year') == 2008) echo 'selected="selected"';?>>2008</option>
-                                                <option value="2007" <?php if ($exposition->__get('exposition_year') == 2007) echo 'selected="selected"';?>>2007</option>
+                                                <!-- <option value="2008" <?php if ($exposition->__get('exposition_year') == 2008) echo 'selected="selected"';?>>2008</option>
+                                                <option value="2007" <?php if ($exposition->__get('exposition_year') == 2007) echo 'selected="selected"';?>>2007</option> -->
                                             </select>
                                     </td>
                                   </tr>
@@ -218,12 +219,13 @@ include_once(SITE_VIEW.'menu.php');
                                     <td width="8%">
                                         <label><strong>Año</label>	
                                             <select name="expo_year_1">
+                                                <option value="2013">2013</option>
                                                 <option value="2012">2012</option>
                                                 <option value="2011">2011</option>
                                                 <option value="2010">2010</option>
                                                 <option value="2009">2009</option>
-                                                <option value="2008">2008</option>
-                                                <option value="2007">2007</option>
+                                                <!-- <option value="2008">2008</option>
+                                                <option value="2007">2007</option> -->
                                             </select>
                                     </td>
                                   </tr>
@@ -277,12 +279,13 @@ include_once(SITE_VIEW.'menu.php');
                                     <td width="8%">
                                         <label><strong>Año</label>	
                                             <select name="expo_year_<?php echo $i?>">
+                                                <option value="2013" <?php if ($exposition->__get('exposition_year') == 2013) echo 'selected="selected"';?>>2013</option>
                                                 <option value="2012" <?php if ($exposition->__get('exposition_year') == 2012) echo 'selected="selected"';?>>2012</option>
                                                 <option value="2011" <?php if ($exposition->__get('exposition_year') == 2011) echo 'selected="selected"';?>>2011</option>
                                                 <option value="2010" <?php if ($exposition->__get('exposition_year') == 2010) echo 'selected="selected"';?>>2010</option>
                                                 <option value="2009" <?php if ($exposition->__get('exposition_year') == 2009) echo 'selected="selected"';?>>2009</option>
-                                                <option value="2008" <?php if ($exposition->__get('exposition_year') == 2008) echo 'selected="selected"';?>>2008</option>
-                                                <option value="2007" <?php if ($exposition->__get('exposition_year') == 2007) echo 'selected="selected"';?>>2007</option>
+                                                <!-- <option value="2008" <?php if ($exposition->__get('exposition_year') == 2008) echo 'selected="selected"';?>>2008</option>
+                                                <option value="2007" <?php if ($exposition->__get('exposition_year') == 2007) echo 'selected="selected"';?>>2007</option> -->
                                             </select>
                                     </td>
                                   </tr>
@@ -322,12 +325,13 @@ include_once(SITE_VIEW.'menu.php');
                                     <td width="8%">
                                         <label><strong>Año</label>	
                                             <select name="expo_year_<?php echo $i;?>">
+                                                <option value="2013">2013</option>
                                                 <option value="2012">2012</option>
                                                 <option value="2011">2011</option>
                                                 <option value="2010">2010</option>
                                                 <option value="2009">2009</option>
-                                                <option value="2008">2008</option>
-                                                <option value="2007">2007</option>
+                                                <!-- <option value="2008">2008</option>
+                                                <option value="2007">2007</option> -->
                                             </select>
                                     </td>
                                   </tr>
@@ -376,12 +380,13 @@ include_once(SITE_VIEW.'menu.php');
                                     </td>
                                     <td width="8%">
                                             <select name="prize_year_<?php echo $i?>">
+                                                <option value="2012" <?php if ($prize->__get('prize_year') == 2013) echo 'selected="selected"';?>>2013</option>
                                                 <option value="2012" <?php if ($prize->__get('prize_year') == 2012) echo 'selected="selected"';?>>2012</option>
                                                 <option value="2011" <?php if ($prize->__get('prize_year') == 2011) echo 'selected="selected"';?>>2011</option>
                                                 <option value="2010" <?php if ($prize->__get('prize_year') == 2010) echo 'selected="selected"';?>>2010</option>
                                                 <option value="2009" <?php if ($prize->__get('prize_year') == 2009) echo 'selected="selected"';?>>2009</option>
-                                                <option value="2008" <?php if ($prize->__get('prize_year') == 2008) echo 'selected="selected"';?>>2008</option>
-                                                <option value="2007" <?php if ($prize->__get('prize_year') == 2007) echo 'selected="selected"';?>>2007</option>
+                                                <!-- <option value="2008" <?php if ($prize->__get('prize_year') == 2008) echo 'selected="selected"';?>>2008</option>
+                                                <option value="2007" <?php if ($prize->__get('prize_year') == 2007) echo 'selected="selected"';?>>2007</option> -->
                                             </select>
                                     </td>
                                   </tr>
@@ -415,12 +420,13 @@ include_once(SITE_VIEW.'menu.php');
                                     <td width="8%">
                                         <label><strong>Año</label>	
                                             <select name="prize_year_<?php echo $i?>">
+                                                <option value="2013">2013</option>
                                                 <option value="2012">2012</option>
                                                 <option value="2011">2011</option>
                                                 <option value="2010">2010</option>
                                                 <option value="2009">2009</option>
-                                                <option value="2008">2008</option>
-                                                <option value="2007">2007</option>
+                                                <!-- <option value="2008">2008</option>
+                                                <option value="2007">2007</option> -->
                                             </select>
                                     </td>
                                   </tr>

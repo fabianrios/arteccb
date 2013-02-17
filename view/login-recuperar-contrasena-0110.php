@@ -1,45 +1,41 @@
 
-<?php include_once('header-nologin.php'); ?>
+<?php 
+include_once('header-nologin2.php'); 
+?>
 <!-- content -->
-<div class="container superior">
+<body>
+	
+<div class="container">
 	<div class="row"><!-- Row -->	
 		<div class="six columns centered"><!-- six columns -->
-			<div class="panel"><!-- Panel -->
+			<span class="artBO">Artbo</span><span class="ccB">CCB</span>
+			<?php
+			if (isset($_GET[0]))
+			{
+			?>
+                <div class="alert-box error">
+                    Nuestro sistema no tiene registro del correo electrónico.<a href="" class="close">&times;</a>
+                </div>
+            <?php
+			}
+			?>
+			<form action="<?php echo APPLICATION_URL?>user.controller/recover_password.html" class="nice" method="post" id="validable">
+				<div class="panel"><!-- Panel -->
 			
 				<h3>Restablecer contraseña</h3>
-				<!-- login form -->
-				<form action="<?php echo APPLICATION_URL?>user.controller/recover_password.html" class="nice" method="post" id="validable"> 
-				    	
+				<!-- login form --> 
 						<p>Introduzca el correo electrónico con el que se registró y le enviaremos una nueva contraseña.</p>
-				    	
-				    	<!-- casilla de alerta -->
-                        <?php
-						if (isset($_GET[0]))
-						{
-						?>
-                            <div class="alert-box error">
-                                Nuestro sistema no tiene registro del correo electrónico.<a href="" class="close">&times;</a>
-                            </div>
-                        <?php
-						}
-						?>
-				    	<!-- END  casilla de alerta -->
-				    
 				    	<div class="mid-input-div"><!-- Div Input -->
 				    		<label>Correo electrónico</label>
 				        	<input type="text" class="expand input-text" name="user_email">
 				    	</div>
-				    
-				    	<!--  Input Button & Recuperar Contrase&ntilde;a-->
-				    		<input type="submit" class="button round" value="Restablecer contraseña">
-				    		<a href="<?php echo APPLICATION_URL?>home.html" title="Restablecer contraseña">Cancelar</a>	
-				    	<!--  END Input Button & Recuperar Contrase&ntilde;a-->		
-				</form>
-				<!-- END login form -->
-				    			
 	
 			</div>  <!-- End Panel -->
-								
+			<div class="row">
+				<div class="six columns"><a class="whitetxt bold" href="<?php echo APPLICATION_URL?>home.html" title="Volver al inicio">Volver al inicio</a></div>
+				<div class="six columns"><input type="submit" class="button radius right" value="Restablecer contraseña"></div>
+			</div>
+		</form>
 		</div><!-- six columns -->
 	</div><!-- End Row -->
 </div>	
@@ -47,4 +43,4 @@
 <!-- 3. footer -->			
 <?php include_once('footer.php'); ?>
 <!-- 3. End footer -->
-
+<?php include_once('randomizer.php'); ?>

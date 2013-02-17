@@ -14,15 +14,21 @@
 	<meta charset="utf-8" />
 
 	<!-- Set the viewport width to device width for mobile -->
-	<meta name="viewport" content="width=device-width" />
+	<!-- <meta name="viewport" content="width=device-width" /> -->
 
-	<title>ArtBo</title>
+	<title>ArteCámara</title>
   
 	<!-- Included CSS Files -->
-	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/foundation.css">
 	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/app.css">
+	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/new.css">
+	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/foundation-overrides.css">
 	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/ui-lightness/jquery-ui-1.8.18.custom.css">
+	
+	
+	<script type="text/javascript" src="//use.typekit.net/fzq1qvs.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
+	
 	<!--[if lt IE 9]>
 		<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/ie.css">
 	<![endif]-->

@@ -9,25 +9,26 @@
 <!-- 2. End menu -->
 			
 	<!--3. Row main-->
-	<div class="row">	
+	<div class="row main-row">	
 		<!-- panel -->
-		<div class="panel">
-			<div class="row"><!-- titulo row -->
-				<div class="eight columns">
-					<span class="rojo">Registro</span>
-					<h2><span class="quitarH2">Datos Personales:</span> <?php echo $user->__get('user_name');?></h2>
+		<div class="panel nopadding">
+			<div class="inner-header">
+				<div class="row">
+				<div class="eight columns title">
+					<span class="redtext bold">Hoja de vida</span>
+					<h2><?php echo $user->__get('user_name');?></h2>
 				</div>
-				<!-- button back save forward -->
-				<div class="two columns offset-by-two">
-					<a href="<?php echo APPLICATION_URL?>registro-inicio-0400.html" class="back"></a>
-					<a href="javascript:void(0);" onClick="document.getElementById('validable').submit();" class="save"></a>
-					<a href="<?php echo APPLICATION_URL?>registro-exposiciones-0420.html" class="forward"></a>
+				<div class="four columns mini-nav-header">
+					<dl class="sub-nav">
+						<dd><a class="save" title="Guardar" href="javascript:void(0);" onClick="document.getElementById('validable').submit();" >Guardar</a></dd>
+						<dd><a class="prev" title="Instrucciones" href="<?php echo APPLICATION_URL?>registro-inicio-0400.html">Anterior</a></dd>
+						<dd><h4>1/4</h4></dd>
+						<dd><a class="next" title="Registro espacio" href="<?php echo APPLICATION_URL?>registro-exposiciones-0420.html" >Siguiente</a></dd>
+					</dl>	
 				</div>
-				<!-- END button back save forward -->
 			</div>	<!-- END titulo row -->
-				<hr />
 					<!-- row -->
-					<div class="row">	
+					<div class="row form-data">	
 						<!-- formulario -->
 						<form action="<?php echo APPLICATION_URL?>user.controller/first.html" id="validable" class="" method="post" enctype="multipart/form-data">
 						<!-- formulario izq columns 1/2-->	

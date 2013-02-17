@@ -118,6 +118,9 @@ header{
      color:white;
      line-height:1.8;
    }
+   h6{
+     color:white;
+   }
   }  
 }
 
@@ -431,7 +434,7 @@ img.selected{
 .ccB{
   @include spritenew($x:-120px);
   height:60px;
-  width:180px;
+  width:310px; 
   margin:20px 10px;
 }
 
@@ -456,7 +459,6 @@ input[type="text"]{
   }
 }
 
-
 @media only screen and (-webkit-min-device-pixel-ratio: 2), 
 only screen and (min-device-pixel-ratio: 2) {
  .artBO{
@@ -466,4 +468,4 @@ only screen and (min-device-pixel-ratio: 2) {
     @include spritenew($retina: true);
   }
 }
-
+ 
