@@ -23,9 +23,9 @@ include_once(SITE_VIEW.'menu.php');
 					<div class="four columns mini-nav-header">
 						<dl class="sub-nav">
 							<dd><a class="save" title="Guardar" href="javascript:void(0);" onClick="document.getElementById('validable').submit();" >Guardar</a></dd>
-							<dd><a class="prev" title="Instrucciones" href="<?php echo APPLICATION_URL;?>registro-artista-0410.html">Anterior</a></dd>
-							<dd><h4>1/4</h4></dd>
-							<dd><a class="next" title="Registro espacio" href="<?php echo APPLICATION_URL;?>registro-proyecto-0430.html" >Siguiente</a></dd>
+							<dd><a class="prev" title="Registro" href="<?php echo APPLICATION_URL;?>registro-artista-0410.html">Anterior</a></dd>
+							<dd><h4>2/5</h4></dd>
+							<dd><a class="next" title="Proyecto Artecámara" href="<?php echo APPLICATION_URL;?>registro-proyecto-0430.html" >Siguiente</a></dd>
 						</dl>	
 					</div>
 				</div><!--/row inner-header-->
@@ -142,7 +142,7 @@ include_once(SITE_VIEW.'menu.php');
 					<hr />
 					<br />				
 					<h4>Exposiciones individuales</h4>
-					<p><em>Selección desde 2009 a la fecha</em></p>
+					<p><em>Selección desde 2009 a la fecha.</em></p>
 					
 					<!-- formulario -->
 					
@@ -249,7 +249,7 @@ include_once(SITE_VIEW.'menu.php');
 					<hr />
 					<br />
 					<h4>Exposiciones colectivas</h4>
-					<p><em>Exposiciones colectivas desde 2007 a la fecha.</em></p>
+					<p><em>Selección desde 2009 a la fecha.</em></p>
 					<div class="row">
 						<ul class="link_list-1 ui-sortable">
 							<!-- expo -->
@@ -355,7 +355,7 @@ include_once(SITE_VIEW.'menu.php');
 					<hr />
 					<br />
 					<h4>Becas y premios</h4>
-					<p><em>Selección de becas y premios desde 2007 a la fecha</em></p>
+					<p><em>Selección desde 2009 a la fecha.</em></p>
 					
 					<!-- formulario -->
 					
@@ -464,8 +464,8 @@ include_once(SITE_VIEW.'menu.php');
 						</div>
 						<div class="four columns">
 							<div class="right">
-								<a title="Anterior" href="<?php echo APPLICATION_URL;?>registro-artista-0410.html" class="graytxt">Anterior</a>  
-								<a href="<?php echo APPLICATION_URL;?>registro-proyecto-0430.html" title="Siguiente: Hoja de vida" class="button radius">Siguiente: Proyecto Artecámara</a>
+								<a title="Registro" href="<?php echo APPLICATION_URL;?>registro-artista-0410.html" class="graytxt">Anterior</a>  
+								<a href="<?php echo APPLICATION_URL;?>registro-proyecto-0430.html" title="Siguiente: Artecámara" class="button radius">Siguiente: Proyecto Artecámara</a>
 							</div>
 						</div>
 					</div>

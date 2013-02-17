@@ -22,27 +22,27 @@
 <div class="row"><!-- Row -->	
 	<ul class="nav-bar">
 		<li id="0">
-			<a href="<?php echo APPLICATION_URL?>registro-inicio-0400.html" class="main" title="Inicio">INSTRUCCIONES</a>
+			<a href="<?php echo APPLICATION_URL?>registro-inicio-0400.html" class="main" title="Instrucciones">INSTRUCCIONES</a>
 		</li>
 		<li id="1" >
 			<span class="spriteArrow"></span>
-			<a href="<?php echo APPLICATION_URL?>registro-artista-0410.html" class="main" title="Artista"><span class="number-menu">1</span>Registro</a>
+			<a href="<?php echo APPLICATION_URL?>registro-artista-0410.html" class="main" title="Registro"><span class="number-menu">1</span>Registro</a>
 	    </li>
 	    <li id="2">
 	    	<span class="spriteArrow"></span>
-			<a href="<?php echo APPLICATION_URL?>registro-exposiciones-0420.html" class="main" title="Exposiciones"><span class="number-menu">2</span>Hoja de Vida</a>
+			<a href="<?php echo APPLICATION_URL?>registro-exposiciones-0420.html" class="main" title="Hoja de vida"><span class="number-menu">2</span>Hoja de Vida</a>
 	    </li>
 	    <li id="3">
 	    	<span class="spriteArrow"></span>
-			<a href="<?php echo APPLICATION_URL?>registro-proyecto-0430.html" class="main" title="Proyecto"><span class="number-menu">3</span>Proyecto Artecámara</a>
+			<a href="<?php echo APPLICATION_URL?>registro-proyecto-0430.html" class="main" title="Proyecto Artecamara"><span class="number-menu">3</span>Proyecto Artecámara</a>
 	    </li>
 	    <li id="4">
 	    	<span class="spriteArrow"></span>
-			<a href="<?php echo APPLICATION_URL?>registro-portafolio.html" class="main" title="Documentos"><span class="number-menu">4</span>Portafolio</a>
+			<a href="<?php echo APPLICATION_URL?>registro-portafolio-0440.html" class="main" title="Portafolio"><span class="number-menu">4</span>Portafolio</a>
 	    </li>
 	    <li id="5">
 	    	<span class="spriteArrow"></span>
-			<a href="<?php echo APPLICATION_URL?>registro-documentos-0440.html" class="main" title="Documentos"><span class="number-menu">5</span>Documentos</a>
+			<a href="<?php echo APPLICATION_URL?>registro-documentos-0450.html" class="main" title="Documentos"><span class="number-menu">5</span>Documentos</a>
 	    </li>
 	</ul>
 </div><!-- End Row -->

@@ -19,9 +19,9 @@ include_once(SITE_VIEW.'menu.php'); ?>
 					<div class="four columns mini-nav-header">
 						<dl class="sub-nav">
 							<dd><a class="save" title="Guardar" href="javascript:void(0);" onClick="document.getElementById('validable').submit();" >Guardar</a></dd>
-							<dd><a class="prev" title="Instrucciones" href="?php echo APPLICATION_URL?>registro-exposiciones-0420.html">Anterior</a></dd>
-							<dd><h4>1/4</h4></dd>
-							<dd><a class="next" title="Registro espacio" href="<?php echo APPLICATION_URL?>registro-documentos-0440.html" >Siguiente</a></dd>
+							<dd><a class="prev" title="Hoja de vida" href="?php echo APPLICATION_URL?>registro-hoja-vida-0420.html">Anterior</a></dd>
+							<dd><h4>5/5</h4></dd>
+							<dd><a class="next" title="Portafolio" href="<?php echo APPLICATION_URL?>registro-portafolio-0440.html" >Siguiente</a></dd>
 						</dl>	
 					</div>
 				</div><!--/row inner-header-->
@@ -36,8 +36,8 @@ include_once(SITE_VIEW.'menu.php'); ?>
 							
 							<div class="row">
 								<h2>Proyecto</h2>
-								<strong>Descripción del proyecto*</strong>
-								<label>Descripción del proyecto a presentar en el Pabellón Artecámara – Artistas Emergentes de Artbo 2012 (Máx. 500 caracteres).</label>
+								<strong>Descripción del proyecto* (Max. 250 palabras)</strong>
+		
 								<textarea class="expand" name="user_proyect_description" rows="10"><?php echo $user->__get('user_proyect_description');?></textarea>
 								<div>
 									<table width="100%">
@@ -73,7 +73,7 @@ include_once(SITE_VIEW.'menu.php'); ?>
 										<tr>
 									  		<td colspan="3">
 									  			<label><strong>Url de la obra</strong></label>
-									  			<input class="expand input-text" type="text"  name="user_proyect_url" placeholder="http://www.miobra.com.co" value="<?php echo $user->__get('user_proyect_url');?>" />
+									  			<input class="expand input-text" type="text"  name="user_proyect_url"  value="<?php echo $user->__get('user_proyect_url');?>" />
 									  		</td>
 									    </tr>
 									    
@@ -150,7 +150,7 @@ include_once(SITE_VIEW.'menu.php'); ?>
 					                      	<td></td>
 					                      	<td colspan="3">
 					                            <label><strong>Url de la obra</strong></label>
-					                            <input name="obra_url_<?php echo $i;?>" placeholder="http://www.miobra.com.co" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
+					                            <input name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
 					                        </td>
 					                       </tr>
 					                       <tr>
@@ -207,7 +207,7 @@ include_once(SITE_VIEW.'menu.php'); ?>
 					                      	<td></td>
 					                      	<td colspan="3">
 					                            <label><strong>Url de la obra</strong></label>
-					                            <input name="obra_url_<?php echo $i;?>" placeholder="http://www.miobra.com.co" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
+					                            <input name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
 					                        </td>
 					                       </tr>
 					                       <tr>
@@ -242,8 +242,8 @@ include_once(SITE_VIEW.'menu.php'); ?>
 						</div>
 						<div class="four columns">
 							<div class="right">
-								<a title="Anterior" href="<?php echo APPLICATION_URL?>registro-exposiciones-0420.html" class="graytxt">Anterior</a>  
-								<a href="<?php echo APPLICATION_URL?>registro-documentos-0440.html" title="Siguiente: Hoja de vida" class="button radius">Siguiente: Portafolio</a>
+								<a title="Hoja de vida" href="<?php echo APPLICATION_URL?>registro-hoja-vida-0420.html" class="graytxt">Anterior</a>  
+								<a href="<?php echo APPLICATION_URL?>registro-documentos-0440.html" title="Portafolio" class="button radius">Siguiente: Portafolio</a>
 							</div>
 						</div>
 					</div>
@@ -262,7 +262,7 @@ $(document).ready(function() {
 						   
 		var counterObras 	= <?php echo (count($obras) > 0) ? count($obras)+1 : 2; ?>;				   
 		$("#add-obra").click(function(){
-		$(".link_list").hide().append('<li class="link_default"><table width="100%"><tr><td width="5%"><img src="<?php echo APPLICATION_URL?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr"></td><td width="35%"><label><strong>Nombre de la obra</strong></label><input name="obra_name_'+counterObras+'" class="expand input-text" type="text" /></td><td width="30%"><label><strong>Dimensiones</strong> (mts)</label><input name="obra_dimensions_'+counterObras+'" class="expand input-text" type="text" /></td><td width="20%"><label><strong>Formato o técnica</strong></label><input name="obra_format_'+counterObras+'"  class="expand input-text" type="text" /></td><td width="8%"><label><strong>Año</label>	<select name="obra_year_'+counterObras+'"><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option></select></td></tr><tr><td></td><td colspan="3"><label><strong>Url de la obra</strong></label><input name="obra_url_'+counterObras+'" placeholder="http://www.miobra.com.co" class="expand input-text" type="text" /></td></tr><tr><td></td><td colspan="2"><label><strong>Imagen de la obra</strong></label><label>Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</label><input name="obra_image_'+counterObras+'" type="file"></td></tr></table></li>').fadeIn(1000);
+		$(".link_list").hide().append('<li class="link_default"><table width="100%"><tr><td width="5%"><img src="<?php echo APPLICATION_URL?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr"></td><td width="35%"><label><strong>Nombre de la obra</strong></label><input name="obra_name_'+counterObras+'" class="expand input-text" type="text" /></td><td width="30%"><label><strong>Dimensiones</strong> (mts)</label><input name="obra_dimensions_'+counterObras+'" class="expand input-text" type="text" /></td><td width="20%"><label><strong>Formato o técnica</strong></label><input name="obra_format_'+counterObras+'"  class="expand input-text" type="text" /></td><td width="8%"><label><strong>Año</label>	<select name="obra_year_'+counterObras+'"><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option></select></td></tr><tr><td></td><td colspan="3"><label><strong>Url de la obra</strong></label><input name="obra_url_'+counterObras+'"  class="expand input-text" type="text" /></td></tr><tr><td></td><td colspan="2"><label><strong>Imagen de la obra</strong></label><label>Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</label><input name="obra_image_'+counterObras+'" type="file"></td></tr></table></li>').fadeIn(1000);
 		counterObras = counterObras + 1;
 		});// end nueva obra
 							});

@@ -27,8 +27,8 @@ if (isset($_GET[0]))
 					<div class="four columns mini-nav-header">
 						<dl class="sub-nav">
 							<dd><a class="save" title="Guardar" href="javascript:void(0);" onClick="document.getElementById('validable').submit();" >Guardar</a></dd>
-							<dd><a class="prev" title="Instrucciones" href="<?php echo APPLICATION_URL?>registro-proyecto-0430.html">Anterior</a></dd>
-							<dd><h4>1/4</h4></dd>
+							<dd><a class="prev" title="Portafolio" href="<?php echo APPLICATION_URL?>registro-portafolio-0450.html">Anterior</a></dd>
+							<dd><h4>5/5</h4></dd>
 						</dl>	
 					</div>
 				</div><!--/row inner-header-->
@@ -66,7 +66,7 @@ if (isset($_GET[0]))
 							declaro conocer y aceptar <a href="#">las condiciones y el reglamento de participación</a> en el Pabellón Artecámara – Artistas Emergentes de Artbo 
 							</p>
 							
-							<input type="checkbox" name="user_accept" value="1" <?php if($user->__get('user_accept') == 1) { echo 'checked="checked"'; }?> /><span> Acepto</span>
+							<input type="checkbox" name="user_accept" value="1" <?php if($user->__get('user_accept') == 1) { echo 'checked="checked"'; }?> /><span> Acepto las condiciones y el reglamento de participación</span>
 							</div>
 							<!-- aceptación de terminos -->
 					
@@ -86,8 +86,8 @@ if (isset($_GET[0]))
 						</div>
 						<div class="four columns">
 							<div class="right">
-								<a title="Anterior" href="<?php echo APPLICATION_URL?>registro-proyecto-0430.html" class="graytxt">Anterior</a>
-								<a href="javascript:void(0);" onClick="document.getElementById('validable').submit();" class="button radius guardar">Terminar</a>  
+								<a title="Portafolio" href="<?php echo APPLICATION_URL?>registro-portafolio-0450.html" class="graytxt">Anterior</a>
+								<a href="javascript:void(0);" onClick="document.getElementById('validable').submit();" title="Declaro conocer y aceptar las condiciones y el reglamento de participación" class="button radius guardar">Finalizar</a>  
 							</div>
 						</div>
 					</div>

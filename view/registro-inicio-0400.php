@@ -32,7 +32,7 @@
 				<div class="row">
 					<div class="twelve columns">
 						<div class="right">
-							<a title="Siguiente: Galeria" href="<?php echo APPLICATION_URL?>registro-artista-0410.html" class="button radius">Siguiente: Hoja de Vida</a>
+							<a title="Registro" href="<?php echo APPLICATION_URL?>registro-artista-0410.html" class="button radius">Siguiente: Registro</a>
 						</div>
 					</div>
 				</div>

@@ -12,16 +12,16 @@ include_once('menu.php'); ?>
 			<div class="inner-header">
 				<div class="row">
 					<div class="eight columns title">
-						<strong class="redtext bold">Registro</strong>
+						<strong class="redtext bold">Portafolio</strong>
 						<h2><?php echo $user->__get('user_name');?></h2>
 					</div><!--/title-->
 					
 					<div class="four columns mini-nav-header">
 						<dl class="sub-nav">
 							<dd><a class="save" title="Guardar" href="javascript:void(0);" onClick="document.getElementById('validable').submit();" >Guardar</a></dd>
-							<dd><a class="prev" title="Instrucciones" href="<?php echo APPLICATION_URL?>registro-inicio-0400.html">Anterior</a></dd>
-							<dd><h4>1/5</h4></dd>
-							<dd><a class="next" title="Hoja de vida" href="<?php echo APPLICATION_URL?>registro-hoja-vida-0420.html" >Siguiente</a></dd>
+							<dd><a class="prev" title="Proyecto Artecámara" href="?php echo APPLICATION_URL?>registro-proyecto-0430.html">Anterior</a></dd>
+							<dd><h4>4/5</h4></dd>
+							<dd><a class="next" title="Documentos" href="<?php echo APPLICATION_URL?>registro-documentos-0450.html" >Siguiente</a></dd>
 						</dl>	
 					</div>
 				</div><!--/row inner-header-->
@@ -31,11 +31,7 @@ include_once('menu.php'); ?>
 			<div class="row form-data">	
 				<div class="twelve columns">
 					
-					<form action="<?php echo APPLICATION_URL?>user.controller/first.html" id="validable" class="" method="post" enctype="multipart/form-data">
-					<!-- formulario izq columns 1/2-->	
-					<?php include_once(SITE_VIEW.'registro-panel.php'); ?>
-					<!-- END formulario izq  columns 1/2-->		
-					</form>
+					
 					
 					
 				</div><!--/twelve columns-->
@@ -50,8 +46,8 @@ include_once('menu.php'); ?>
 						</div>
 						<div class="four columns">
 							<div class="right">
-								<a title="Instrucciones" href="<?php echo APPLICATION_URL?>registro-inicio-0400.html" class="graytxt">Anterior</a>  
-								<a href="<?php echo APPLICATION_URL?>registro-hoja-vida-0420.html" title="Hoja de vida" class="button radius">Siguiente: Hoja de vida</a>
+								<a title="Proyecto Artecámara" href="<?php echo APPLICATION_URL?>registro-proyecto-0430.html" class="graytxt">Anterior</a>  
+								<a href="<?php echo APPLICATION_URL?>registro-documentos-0450.html" title="Documentos" class="button radius">Siguiente: Portafolio</a>
 							</div>
 						</div>
 					</div>
@@ -63,5 +59,7 @@ include_once('menu.php'); ?>
 			<span><a href="#">Términos y Condiciones</a> del Sitio</span>
 		</div>
 	</div><!--/row main-row-->
+	
+
 	
 <?php include_once('footer.php'); ?>
