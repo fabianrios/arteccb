@@ -12,7 +12,7 @@
 <div class="row">
 	<div class="twelve columns ">
 		<div class="right">
-			el registro de <strong>Pabellón Artecámara </strong> vence en <span class="red label radius"><?php echo $days;?></span> <strong>días</strong>
+			El registro de <span class="redtxt">Pabellón Artecámara</span> vence en <span class="red label radius"><?php echo $days;?></span> <strong>días</strong>
 		</div>
 	</div>
 </div>
