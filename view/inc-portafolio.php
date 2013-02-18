@@ -1,7 +1,7 @@
 			  
 					
-					<h2>Portafolio</h2>
-					<p><em>Incluya hasta cinco obras realizadas desde 2007 a la fecha.</em></p>
+					<h4>Portafolio</h4>
+					<p><em>Incluya cinco obras realizadas desde 2009 a la fecha.</em></p>
 					
 					<ul class="link_list ui-sortable">
 					        	<?php
@@ -12,7 +12,7 @@
 									{
 								?>  
 					                <li class="link_default">
-					                    <ul class="no-bullet resume-more">
+					                    <ul class="no-bullet portfolio">
 					                      <li class="handler">
 					                        <img src="<?php echo APPLICATION_URL?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
 					                       </li>
@@ -41,18 +41,18 @@
 					                                    <option value="2007" <?php if ($obra->__get('obra_year') == 2007) echo 'selected="selected"';?>>2007</option> -->
 					                                </select>
 					                        </li>
-					                      	<li>
+					                      	<li class="url">
 					                            <span class="asterix">*</span><strong>Url de la obra</strong>
 					                            <input name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
 					                        </li>
-					                        <li class="handler">
-			                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
-			                               	</li>
 					                      	<li class="obra">
 					                        	<span class="asterix">*</span><strong>Imagen de la obra</strong>
 					                        	<label>Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</label>
 					                       	    <input name="obra_image_<?php echo $i;?>" type="file"><?php if($obra->__get('obra_image') != '') { ?><img width="50" height="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/obras/<?php echo $obra->__get('obra_image')?>"><?php }?>
 					                      	</li>
+					                        <li class="handler">
+			                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+			                               	</li>
 					                    </ul>
 					                </li>                        
 					            <?php
@@ -64,7 +64,7 @@
 									$obra	= new Obra();
 								?>
 					            <li class="link_default">
-					                    <ul class="no-bullet resume-more">
+					                    <ul class="no-bullet portfolio">
 					                      <li class="handler">
 					                        <img src="<?php echo APPLICATION_URL?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
 					                       </li>
@@ -78,8 +78,6 @@
 					                        <input name="obra_dimensions_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_dimensions');?>"/>
 					                        
 					                        </li>
-					
-					
 					                        <li class="format">
 					                            <span class="asterix">*</span><strong>Formato o técnica</strong>
 					                            <input name="obra_format_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_format');?>" />
@@ -95,18 +93,18 @@
 					                                    <option value="2007" <?php if ($obra->__get('obra_year') == 2007) echo 'selected="selected"';?>>2007</option>
 					                                </select>
 					                        </li>
-					                      	<li>
+					                      	<li class="url">
 					                            <span class="asterix">*</span><strong>Url de la obra</strong>
 					                            <input name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
 					                        </li>
-					                        <li class="handler">
-			                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
-			                               	</li>
 					                      	<li class="obra">
 					                        	<span class="asterix">*</span><strong>Imagen de la obra</strong>
 					                        	<span class="caption">Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</span>
 					                       	    <input name="obra_image_<?php echo $i;?>" type="file"><?php if($obra->__get('obra_image') != '') { ?><img width="50" height="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/obras/<?php echo $obra->__get('obra_image')?>"><?php }?>
 					                      	</li>
+					                        <li class="handler">
+			                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+			                               	</li>
 					                    </ul>
 					                </li>
 					                 <?php

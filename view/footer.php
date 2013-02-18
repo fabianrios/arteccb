@@ -154,7 +154,9 @@
 			break;
 			case 'registro-hoja-vida-0420':$('#2').addClass('active');
 			break;
-			case 'registro-documentos-0440':$('#4').addClass('active');
+			case 'registro-portafolio-0440':$('#4').addClass('active');
+			break;
+			case 'registro-documentos-0450':$('#5').addClass('active');
 			break;
 			case 'registro-artista-0410':$('#1').addClass('active');
 			break;			

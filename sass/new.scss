@@ -96,6 +96,32 @@ body{
        }
       }
     }
+    &.portfolio{
+      li{
+       width:30%;
+       margin-left:20px;
+       &.date{
+         width:8%;
+       }
+       &.format{
+         width:15%;
+       }
+       &.obra{
+         width:58%;
+       }
+       &.url{
+         margin-left:38px;
+       }
+       &.handler{
+         a{
+           left: 4px;
+         top: 70px;
+         right:0;
+         bottom:0;
+         }
+       }
+      }
+    }
      &.artist{
       li{
        width:28%;
@@ -437,6 +463,9 @@ label{
       background:#BB0C35;
       &:last-child{
         float:right;
+        a{
+          margin:0 35px;
+        }
       }
       span{
         &.spriteArrow{
