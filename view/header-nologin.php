@@ -21,6 +21,7 @@
 	<!-- Included CSS Files -->
 	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/app.css">
 	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/new.css">
+	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/style.css">
 	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/foundation-overrides.css">
 	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/ui-lightness/jquery-ui-1.8.18.custom.css">
 	
