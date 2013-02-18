@@ -1,4 +1,4 @@
-			<h4>Estudios Realizados*</h4>
+<h4>Estudios Realizados*</h4>
 				<p><em>Ordenar en orden cronológico del más recién al más antiguo.</em></p>
 				
 				<div class="intitle">
@@ -35,15 +35,15 @@
 	                                	<img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
 	                            	</li>
                                     <li>
-                                        <input name="expo_type_<?php echo $i?>" type="hidden" value="3" />
-                                        <input name="expo_nombre_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_name');?>"  />
+                                        <input  name="expo_type_<?php echo $i?>" type="hidden" value="3" />
+                                        <input title="Digite nombre de la exposición" name="expo_nombre_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_name');?>"  />
                                     </li>
                                     
                                     <li>
-                                    <input name="expo_institucion_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_institution');?>" />
+                                    <input title="Digite institución" name="expo_institucion_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_institution');?>" />
                                     </li>
                                     <li>
-                                        <input name="expo_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_city');?>" />
+                                        <input title="Digite ciudad de la exposición" name="expo_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_city');?>" />
                                         <input name="expo_format_<?php echo $i?>" class="expand input-text" type="hidden" value="<?php echo $exposition->__get('exposition_format');?>" />
                                     </li>
                                         
@@ -153,19 +153,19 @@
                                     </li>
                                     <li>
                                         <input name="expo_type_<?php echo $i?>" type="hidden" value="1" />
-                                        <input name="expo_nombre_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_name');?>"  />
+                                        <input title="Digite nombre de la exposición" name="expo_nombre_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_name');?>"  />
                                     </li>
                                     <li>
-                                    	<input name="expo_institucion_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_institution');?>" />
+                                    	<input title="Digite institución" name="expo_institucion_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_institution');?>" />
                                     </li>
                                     <li>
-                                        <input name="expo_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_city');?>" />
+                                        <input title="Digite ciudad de la exposición" name="expo_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_city');?>" />
                                     </li>
                                     <li class="format">
-                                        <input name="expo_format_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_format');?>" />
+                                        <input title="Digite formato de la exposión" name="expo_format_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_format');?>" />
                                     </li>
                                     <li class="date">
-                                            <select name="expo_year_<?php echo $i?>">
+                                            <select  title="digite fecha de la exposición" name="expo_year_<?php echo $i?>">
                                                 <option value="2013" <?php if ($exposition->__get('exposition_year') == 2013) echo 'selected="selected"';?>>2013</option>
                                                 <option value="2012" <?php if ($exposition->__get('exposition_year') == 2012) echo 'selected="selected"';?>>2012</option>
                                                 <option value="2011" <?php if ($exposition->__get('exposition_year') == 2011) echo 'selected="selected"';?>>2011</option>
@@ -229,7 +229,7 @@
 				<hr />
 				<br />
 				<h4>Exposiciones colectivas</h4>
-				<p><em>Exposiciones colectivas desde 2007 a la fecha.</em></p>
+				<p><em>Exposiciones colectivas desde 2009 a la fecha.</em></p>
 				<div class="intitle">
 					<ul class="resume-more">
 						<li>
@@ -266,19 +266,19 @@
                                     </li>
                                     <li>
                                         <input name="expo_type_<?php echo $i?>" type="hidden" value="2" />
-                                        <input name="expo_nombre_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_name');?>"  />
+                                        <input title="Digite nombre de la exposición" name="expo_nombre_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_name');?>"  />
                                     </li>
                                     <li>
-                                    <input name="expo_institucion_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_institution');?>" />
+                                    <input title="Digite institución" name="expo_institucion_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_institution');?>" />
                                     </li>
                                     <li>
-                                        <input name="expo_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_city');?>" />
+                                        <input title="Digite ciudad de la exposición" name="expo_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_city');?>" />
                                     </li>
                                     <li class="format">
-                                        <input name="expo_format_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_format');?>" />
+                                        <input title="Digite formato de la exposión" name="expo_format_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_format');?>" />
                                     </li>
                                     <li class="date">
-                                        <select name="expo_year_<?php echo $i?>">
+                                        <select title="Digite fecha de la exposición" name="expo_year_<?php echo $i?>">
                                             <option value="2013" <?php if ($exposition->__get('exposition_year') == 2013) echo 'selected="selected"';?>>2013</option>
                                             <option value="2012" <?php if ($exposition->__get('exposition_year') == 2012) echo 'selected="selected"';?>>2012</option>
                                             <option value="2011" <?php if ($exposition->__get('exposition_year') == 2011) echo 'selected="selected"';?>>2011</option>
@@ -344,7 +344,7 @@
 				<hr />
 				<br />
 				<h4>Becas y premios</h4>
-				<p><em>Selección de becas y premios desde 2007 a la fecha</em></p>
+				<p><em>Selección de becas y premios desde 2009 a la fecha</em></p>
 				
 				<div class="intitle">
 					<ul class="no-bullet resume">
@@ -378,16 +378,16 @@
                                     	<img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
                                     </li>
                                     <li>
-                                        <input name="prize_name_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $prize->__get('prize_name')?>" />
+                                        <input title="Digite nombre del premio" name="prize_name_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $prize->__get('prize_name')?>" />
                                     </li>
                                     <li>
-                                    	<input name="prize_institution_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $prize->__get('prize_institution')?>" />
+                                    	<input title="Digite institución del premio" name="prize_institution_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $prize->__get('prize_institution')?>" />
                                     </li>
                                     <li>
-                                        <input name="prize_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $prize->__get('prize_city')?>" />
+                                        <input title="Digite ciudad del premio" name="prize_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $prize->__get('prize_city')?>" />
                                     </li>
                                     <li class="date">
-                                        <select name="prize_year_<?php echo $i?>">
+                                        <select title="Digite año del premio" name="prize_year_<?php echo $i?>">
                                             <option value="2012" <?php if ($prize->__get('prize_year') == 2013) echo 'selected="selected"';?>>2013</option>
                                             <option value="2012" <?php if ($prize->__get('prize_year') == 2012) echo 'selected="selected"';?>>2012</option>
                                             <option value="2011" <?php if ($prize->__get('prize_year') == 2011) echo 'selected="selected"';?>>2011</option>

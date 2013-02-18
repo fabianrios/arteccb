@@ -47,13 +47,28 @@ if (isset($_GET[0]))
 								<!-- Col 1/4-->				
 					
 													
-								<div class="three columns">
-										
-									<h4>Documento de identidad</h4>
-									<input type="file" name="user_document">
-					                <p>Suba el documento de identidad del artista participante (cédula de ciudadanía o de extranjería)</p>
-					                <?php if ($user->__get('user_document') != '') { ?><p><a target="_blank" href="resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/<?php echo $user->__get('user_document');?>">Documento Cargado en el sistema</a></p><?php } ?>
-								</div>
+								<div class="twelve columns">
+								
+								
+								<ul class="documents no-bullet">	
+									<li>
+										<div class="row">
+											<div class="seven columns">		
+												<h4><span class="asterix">*</span>Documento de identidad</h4>
+												<p>Suba el documento de identidad del artista participante (cédula de ciudadanía o de extranjería)</p>
+								        	</div>
+								        	<div class="five columns">
+								        		<img src="http://cambelt.co/icon/camera/235x150?color=b71632,fefefe" class="images right" title="Imagen del director">
+								        		<input type="file" name="user_certificate" class="right">
+								        		 
+								        		 <?php if ($user->__get('user_document') != '') { ?><p><a target="_blank" href="resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/<?php echo $user->__get('user_document');?>">Documento Cargado en el sistema</a></p><?php } ?>
+								        		 
+								        	</div>
+										</div>
+								    </li>
+								   </ul>
+
+					             </div>
 								<!-- End Col 3/4 -->
 								<!-- Col 4/4-->				
 							
