@@ -1,6 +1,6 @@
-			  
-					
-					<h4>Portafolio</h4>
+
+		
+		<h4>Portafolio</h4>
 					<p><em>Incluya cinco obras realizadas desde 2009 a la fecha.</em></p>
 					
 					<ul class="link_list ui-sortable">
@@ -18,21 +18,21 @@
 					                       </li>
 					                        <li>
 					                            <span class="asterix">*</span><strong>Nombre de la obra</strong>
-					                            <input name="obra_name_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_name');?>"/>
+					                            <input title="Digite nombre de la obra" name="obra_name_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_name');?>"/>
 					                            <input name="obra_id_<?php echo $i;?>" class="expand input-text" type="hidden" value="<?php echo $obra->__get('obra_id');?>"/>
 					                        </li>
 					                        <li>
 					                            <span class="asterix">*</span><strong>Dimensiones</strong> (mts)
-					                        <input name="obra_dimensions_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_dimensions');?>"/>
+					                        <input title="Digite dimensión de la obra" name="obra_dimensions_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_dimensions');?>"/>
 					                        
 					                        </li>
 					                        <li>
 					                            <span class="asterix">*</span><strong>Formato o técnica</strong>
-					                            <input name="obra_format_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_format');?>" />
+					                            <input title="Digite formato o técnica de la obra" name="obra_format_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_format');?>" />
 					                        </li>
 					                        <li class="date">
 					                            <span class="asterix">*</span><strong>Año</strong>	
-					                                <select name="obra_year_<?php echo $i;?>">
+					                                <select title="Digite año de la obra" name="obra_year_<?php echo $i;?>">
 					                                    <option value="2012" <?php if ($obra->__get('obra_year') == 2012) echo 'selected="selected"';?>>2012</option>
 					                                    <option value="2011" <?php if ($obra->__get('obra_year') == 2011) echo 'selected="selected"';?>>2011</option>
 					                                    <option value="2010" <?php if ($obra->__get('obra_year') == 2010) echo 'selected="selected"';?>>2010</option>
@@ -43,12 +43,12 @@
 					                        </li>
 					                      	<li class="url">
 					                            <span class="asterix">*</span><strong>Url de la obra</strong>
-					                            <input name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
+					                            <input title="Digite url de la obra" name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
 					                        </li>
 					                      	<li class="obra">
 					                        	<span class="asterix">*</span><strong>Imagen de la obra</strong>
 					                        	<label>Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</label>
-					                       	    <input name="obra_image_<?php echo $i;?>" type="file"><?php if($obra->__get('obra_image') != '') { ?><img width="50" height="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/obras/<?php echo $obra->__get('obra_image')?>"><?php }?>
+					                       	    <input title="Imagen de la obra" name="obra_image_<?php echo $i;?>" type="file"><?php if($obra->__get('obra_image') != '') { ?><img width="50" height="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/obras/<?php echo $obra->__get('obra_image')?>"><?php }?>
 					                      	</li>
 					                        <li class="handler">
 			                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
@@ -70,21 +70,21 @@
 					                       </li>
 					                        <li>
 					                            <span class="asterix">*</span><strong>Nombre de la obra</strong>
-					                            <input name="obra_name_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_name');?>"/>
+					                            <input title="Digite nombre de la obra" name="obra_name_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_name');?>"/>
 					                        </li>
 					                        
 					                        <li>
 					                            <span class="asterix">*</span><strong>Dimensiones</strong> (mts)
-					                        <input name="obra_dimensions_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_dimensions');?>"/>
+					                        <input title="Digite dimensión de la obra" name="obra_dimensions_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_dimensions');?>"/>
 					                        
 					                        </li>
 					                        <li class="format">
 					                            <span class="asterix">*</span><strong>Formato o técnica</strong>
-					                            <input name="obra_format_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_format');?>" />
+					                            <input title="Digite formato o técnica de la obra" name="obra_format_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_format');?>" />
 					                        </li>
 					                        <li class="date">
 					                            <span class="asterix">*</span><strong>Año</strong>	
-					                                <select name="obra_year_<?php echo $i;?>">
+					                                <select title="Digite año de la obra" name="obra_year_<?php echo $i;?>">
 					                                    <option value="2012" <?php if ($obra->__get('obra_year') == 2012) echo 'selected="selected"';?>>2012</option>
 					                                    <option value="2011" <?php if ($obra->__get('obra_year') == 2011) echo 'selected="selected"';?>>2011</option>
 					                                    <option value="2010" <?php if ($obra->__get('obra_year') == 2010) echo 'selected="selected"';?>>2010</option>
@@ -95,12 +95,12 @@
 					                        </li>
 					                      	<li class="url">
 					                            <span class="asterix">*</span><strong>Url de la obra</strong>
-					                            <input name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
+					                            <input title="Digite url de la obra" name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
 					                        </li>
 					                      	<li class="obra">
 					                        	<span class="asterix">*</span><strong>Imagen de la obra</strong>
 					                        	<span class="caption">Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</span>
-					                       	    <input name="obra_image_<?php echo $i;?>" type="file"><?php if($obra->__get('obra_image') != '') { ?><img width="50" height="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/obras/<?php echo $obra->__get('obra_image')?>"><?php }?>
+					                       	    <input  title="Imagen de la obra" name="obra_image_<?php echo $i;?>" type="file"><?php if($obra->__get('obra_image') != '') { ?><img width="50" height="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/obras/<?php echo $obra->__get('obra_image')?>"><?php }?>
 					                      	</li>
 					                        <li class="handler">
 			                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
