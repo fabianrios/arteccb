@@ -117,7 +117,7 @@
 				<p><em>Selección desde 2009 a la fecha</em></p>
 				
 				<div class="intitle">
-					<ul class="resume">
+					<ul class="resume-more">
 						<li>
 							<span class="asterix">*</span><strong>Nombre de la exposición</strong>
 						</li>
@@ -147,7 +147,7 @@
 							{
 						?>  
                             <li class="link_default">
-                                  <ul class="no-bullet resume">
+                                  <ul class="no-bullet resume-more">
                                     <li class="handler">
                                     	<img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
                                     </li>
@@ -161,7 +161,7 @@
                                     <li>
                                         <input name="expo_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_city');?>" />
                                     </li>
-                                    <li class="formato">
+                                    <li class="format">
                                         <input name="expo_format_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_format');?>" />
                                     </li>
                                     <li class="date">
@@ -188,7 +188,7 @@
 						{
 						?>                          
                             <li class="link_default">
-                                  <ul>
+                                  <ul class="no-bullet resume-more">
                                     <li class="handler">
                                     	<img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
                                     </li>
@@ -202,10 +202,10 @@
                                     <li>
                                         <input name="expo_city_1" class="expand input-text" type="text" />
                                     </li>
-                                    <li>
+                                    <li class="format">
                                         <input name="expo_format_1" class="expand input-text" type="text" />
                                     </li>
-                                    <li>
+                                    <li class="date">
 	                                    <select name="expo_year_1">
 	                                        <option value="2013">2013</option>
 	                                        <option value="2012">2012</option>
@@ -231,7 +231,7 @@
 				<h4>Exposiciones colectivas</h4>
 				<p><em>Exposiciones colectivas desde 2007 a la fecha.</em></p>
 				<div class="intitle">
-					<ul class="resume">
+					<ul class="resume-more">
 						<li>
 							<span class="asterix">*</span><strong>Nombre de la exposición</strong>
 						</li>
@@ -254,13 +254,13 @@
 						<?php
 						if (count($expositions2) > 0)
 						{
-							echo count($expositions);
+							//echo count($expositions);
 							$i = (count($expositions) > 0) ? count($expositions)+1 : 2;
 							foreach ($expositions2 as $exposition)
 							{
 						?>  
                             <li class="link_default">
-                                  <ul>
+                                  <ul class="no-bullet resume-more">
                                     <li class="handler">
                                     	<img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
                                     </li>
@@ -275,10 +275,9 @@
                                         <input name="expo_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_city');?>" />
                                     </li>
                                     <li class="format">
-                                        <label><strong>Formato</strong></label>
                                         <input name="expo_format_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_format');?>" />
                                     </li>
-                                    <li>
+                                    <li class="date">
                                         <select name="expo_year_<?php echo $i?>">
                                             <option value="2013" <?php if ($exposition->__get('exposition_year') == 2013) echo 'selected="selected"';?>>2013</option>
                                             <option value="2012" <?php if ($exposition->__get('exposition_year') == 2012) echo 'selected="selected"';?>>2012</option>
@@ -303,7 +302,7 @@
 							$i	= (count($expositions) > 0) ? count($expositions)+1 : 2;
 						?>                          
                             <li class="link_default">
-                                  <ul>
+                                  <ul class="no-bullet resume-more">
                                     <li class="handler">
                                     	<img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
                                     </li>
@@ -320,7 +319,7 @@
                                     <li class="format">
                                         <input name="expo_format_<?php echo $i;?>" class="expand input-text" type="text" />
                                     </li>
-                                    <li>
+                                    <li class="date">
 	                                    <select name="expo_year_<?php echo $i;?>">
 	                                        <option value="2013">2013</option>
 	                                        <option value="2012">2012</option>
@@ -348,7 +347,7 @@
 				<p><em>Selección de becas y premios desde 2007 a la fecha</em></p>
 				
 				<div class="intitle">
-					<ul class="resume">
+					<ul class="no-bullet resume">
 						<li>
 							<span class="asterix">*</span><strong>Nombre del premio</strong>
 						</li>
@@ -374,7 +373,7 @@
 							{
 						?>                          
                             <li class="link_default">
-                                  <ul>
+                                  <ul class="no-bullet resume">
                                     <li class="handler">
                                     	<img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
                                     </li>
@@ -411,7 +410,7 @@
 						 	$i	= (count($prizes) > 0) ? count($prizes)+100 : 200;
 						 	?>
                             <li class="link_default">
-                                  <ul>
+                                  <ul class="resume no-bullet">
                                     <li class="handler">
                                     	<img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
                                     </li>

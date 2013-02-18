@@ -3,7 +3,7 @@
 <h5>Descripción del proyecto* (Max. 250 palabras)</h5>
 <textarea class="expand" name="user_proyect_description" rows="10"><?php echo $user->__get('user_proyect_description');?></textarea>
 
-	<div class="intitle">
+	<!-- <div class="intitle">
 		<ul class="resume">
 			<li>
 				<span class="asterix">*</span><strong>Nombre de la obra</strong>
@@ -21,19 +21,23 @@
 				<span class="asterix">*</span><strong>Url de la obra</strong>
 			</li>
 		</ul>
-	</div>
+	</div> -->
 
 	<ul class="no-bullet project">
-		<li class="handler">
+		<li>
+			<span class="asterix">*</span><strong>Nombre de la obra</strong>
   			<input class="expand input-text" type="text" name="user_proyect_name" value="<?php echo $user->__get('user_proyect_name');?>"  />
   		</li>
 		<li>
+			<span class="asterix">*</span><strong>Dimensiones (mts)</strong>
   			<input class="expand input-text" name="user_proyect_dimensions" value="<?php echo $user->__get('user_proyect_dimensions');?>" type="text" />
   		</li>
 	  	<li>
+	  		<span class="asterix">*</span><strong>Formato o técnica</strong>
   			<input class="expand input-text" type="text" name="user_proyect_format" value="<?php echo $user->__get('user_proyect_format');?>" />
   		</li>
 	  	<li>
+	  		<span class="asterix">*</span><strong>Año</strong>
     		<select name="user_proyect_year">
     			<option <?php if ($user->__get('user_proyect_year') == 2012) echo 'selected="selected"';?>>2012</option>
     			<option <?php if ($user->__get('user_proyect_year') == 2011) echo 'selected="selected"';?>>2011</option>
@@ -43,8 +47,8 @@
     			<option <?php if ($user->__get('user_proyect_year') == 2007) echo 'selected="selected"';?>>2007</option>
     		</select>
   		</li>
-	
 		<li>
+			<span class="asterix">*</span><strong>Url de la obra</strong>
   			<input class="expand input-text" type="text"  name="user_proyect_url"  value="<?php echo $user->__get('user_proyect_url');?>" />
 	    </li>
 	</ul>
@@ -65,7 +69,7 @@
 		    </li>
 	  	</ul>
 	  
-	<label>Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</label>
+	<span class="caption">Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</span>
 <hr/>
 
 

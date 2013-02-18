@@ -74,10 +74,25 @@ body{
        width:23%;
        margin-left:20px;
        &.date{
-         width:8%;
+         width:14%;
        }
        &.format{
          width:10%;
+       }
+      }
+    }
+    &.resume-more{
+      li{
+       width:19%;
+       margin-left:20px;
+       &.date{
+         width:8%;
+       }
+       &.format{
+         width:15%;
+       }
+       &.obra{
+         width:70%;
        }
       }
     }
@@ -113,6 +128,34 @@ body{
         margin-left:20px;
       }
     }
+  }
+}
+
+ul.project{
+   @include clearfix;
+  li{
+    float:left;
+    width:19%;
+    margin-left:1%;
+  }
+}
+
+ul.uploadimages{
+   @include clearfix;
+  li{
+    float:left;
+    width:28%;
+    margin-left:10px;
+    img{
+      border: 1px solid #eeeeee;
+      border-right: 1px solid #cccccc;
+      border-bottom: 1px solid #cccccc;
+      padding: 5px;
+      background: #f7f7f7;
+      margin-right: 5px;
+      width: 98%;
+      height: 225px;
+     }
   }
 }
 
@@ -291,9 +334,24 @@ label{
     }
     &.resume{
       li{
-        width:29.4%;
+        width:24.4%;
         &:first-child{
          margin-left:60px; 
+        }
+        &:last-child{
+         width:10%; 
+        }
+      }
+    }
+    &.resume-more{
+      li{
+        width:18.4%;
+        &:first-child{
+         margin-left:60px; 
+         width:24%;
+        }
+        &:last-child{
+         width:10%; 
         }
       }
     }

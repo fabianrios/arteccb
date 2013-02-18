@@ -52,7 +52,7 @@ if (isset($_GET[0]))
 									<h4>Documento de identidad</h4>
 									<input type="file" name="user_document">
 					                <p>Suba el documento de identidad del artista participante (cédula de ciudadanía o de extranjería)</p>
-					                <?php if ($user->__get('user_document') != '') { ?><p><a href="resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/<?php echo $user->__get('user_document');?>">Documento Cargado en el sistema</a></p><?php } ?>
+					                <?php if ($user->__get('user_document') != '') { ?><p><a target="_blank" href="resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/<?php echo $user->__get('user_document');?>">Documento Cargado en el sistema</a></p><?php } ?>
 								</div>
 								<!-- End Col 3/4 -->
 								<!-- Col 4/4-->				
@@ -60,9 +60,9 @@ if (isset($_GET[0]))
 							</div>
 							<br />
 							<!-- aceptación de terminos -->
-							<div class="panel-2">
-							<p> Yo <input type="text" class="medium" placeholder="Nombre del Artista"  name="user_name_accept" value="<?php echo $user->__get('user_name_accept');?>" /> Identificado con
-								<input type="text" class="small" placeholder="Número de Cédula" name="user_document_accept" value="<?php echo $user->__get('user_document_accept');?>"  /> 
+							<div>
+							<p> Yo <input type="text" class="legal" placeholder="Nombre del Artista"  name="user_name_accept" value="<?php echo $user->__get('user_name_accept');?>" /> Identificado con
+								<input type="text" class="doc" placeholder="Número de Cédula" name="user_document_accept" value="<?php echo $user->__get('user_document_accept');?>"  /> 
 							declaro conocer y aceptar <a href="#">las condiciones y el reglamento de participación</a> en el Pabellón Artecámara – Artistas Emergentes de Artbo 
 							</p>
 							

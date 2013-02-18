@@ -152,7 +152,7 @@
 			break;	
 			case 'registro-proyecto-0430':$('#3').addClass('active');
 			break;
-			case 'registro-exposiciones-0420':$('#2').addClass('active');
+			case 'registro-hoja-vida-0420':$('#2').addClass('active');
 			break;
 			case 'registro-documentos-0440':$('#4').addClass('active');
 			break;
