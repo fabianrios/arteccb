@@ -10,14 +10,13 @@
 		<!-- columns 2/2 -->
 		<div class="eight columns lateralder ">
 			<div class="perfil-data">
-				<div class="perfil left">
+				<div class="perfil right">
 					<?php 
 					if (isset($user))
 					{
 					?>
-                    <img src="<?php echo APPLICATION_URL?>resources/images/26x26/<?php echo $user->__get('user_image')?>" class="left"  height="26" width="26" alt="profle"/>
+                    <img src="<?php echo APPLICATION_URL?>resources/images/26x26/<?php echo $user->__get('user_image')?>" class="left"  height="26" width="26" alt="Perfil"/>
 					<p class="left"><strong><?php echo $user->__get('user_name');?></strong><br />
-											<?php echo $user->__get('user_director_name');?><br />
 					<a href="<?php echo APPLICATION_URL?>exit.html" title="Salir"><strong>Salir</strong></a></p>
 					<?php
 					}
