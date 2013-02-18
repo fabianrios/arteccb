@@ -30,84 +30,9 @@ include_once(SITE_VIEW.'menu.php'); ?>
 		<div class="container">
 			<div class="row form-data">	
 				<div class="twelve columns">
-					
 					<form action="<?php echo APPLICATION_URL?>user.controller/createProyects.html" id="validable" class="" method="post" enctype="multipart/form-data">
-							<!-- panel 2 -->
-							
-							<div class="row">
-								<h2>Proyecto</h2>
-								<strong>Descripción del proyecto* (Max. 250 palabras)</strong>
-		
-								<textarea class="expand" name="user_proyect_description" rows="10"><?php echo $user->__get('user_proyect_description');?></textarea>
-								<div>
-									<table width="100%">
-										<tr>
-									  		<td width="39%">
-									  			<label><strong>Nombre de la obra</strong></label>
-									  			<input class="expand input-text" type="text" name="user_proyect_name" value="<?php echo $user->__get('user_proyect_name');?>"  />
-									  		</td>
-									  	
-									  		<td width="23%">
-									  			<label><strong>Dimensiones</strong> (mts)</label>
-									  			<input class="expand input-text" name="user_proyect_dimensions" value="<?php echo $user->__get('user_proyect_dimensions');?>" type="text" />
-									  		</td>
-					
-									  		<td width="30%">
-									  			<label><strong>Formato o técnica</strong></label>
-									  			<input class="expand input-text" type="text" name="user_proyect_format" value="<?php echo $user->__get('user_proyect_format');?>" />
-									  		</td>
-									  	
-									  		<td width="8%">
-									  			<label><strong>Año</strong></label>	
-									    		<select name="user_proyect_year">
-									    			<option <?php if ($user->__get('user_proyect_year') == 2012) echo 'selected="selected"';?>>2012</option>
-									    			<option <?php if ($user->__get('user_proyect_year') == 2011) echo 'selected="selected"';?>>2011</option>
-									    			<option <?php if ($user->__get('user_proyect_year') == 2010) echo 'selected="selected"';?>>2010</option>
-									    			<option <?php if ($user->__get('user_proyect_year') == 2009) echo 'selected="selected"';?>>2009</option>
-									    			<option <?php if ($user->__get('user_proyect_year') == 2008) echo 'selected="selected"';?>>2008</option>
-									    			<option <?php if ($user->__get('user_proyect_year') == 2007) echo 'selected="selected"';?>>2007</option>
-									    		</select>
-									  		</td>
-										</tr>
-									  
-										<tr>
-									  		<td colspan="3">
-									  			<label><strong>Url de la obra</strong></label>
-									  			<input class="expand input-text" type="text"  name="user_proyect_url"  value="<?php echo $user->__get('user_proyect_url');?>" />
-									  		</td>
-									    </tr>
-									    
-									    <tr>
-									  	     <td colspan="3">
-									  			<strong>Imágenes</strong>
-												<label>Incluya tres imágenes del proyecto a presentar en Artecámara</label>
-											</td>
-									    </tr>
-					
-									    <tr>
-									  	<td width="33">
-									  		<input type="file"  name="user_proyect_image_1"><?php if($user->__get('user_proyect_image_1') != '') { ?><img height="50" width="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/proyecto/<?php echo $user->__get('user_proyect_image_1')?>"><?php }?>
-									  	</td>
-									  	<td width="33">
-									  	    <input type="file"  name="user_proyect_image_2"><?php if($user->__get('user_proyect_image_2') != '') { ?><img height="50" width="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/proyecto/<?php echo $user->__get('user_proyect_image_2')?>"><?php }?>
-									  	</td>
-									  	<td width="33">
-									  	    <input type="file"  name="user_proyect_image_3"><?php if($user->__get('user_proyect_image_3') != '') { ?><img height="50" width="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/proyecto/<?php echo $user->__get('user_proyect_image_3')?>"><?php }?>
-									    </td>
-									  </tr>
-									  
-									</table>
-									<label>Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</label>
-								</div>
-							</div>
-							<hr/>
-					
-							
-						<!-- END formulario -->
-						
+						<?php include_once 'inc-proyecto.php'; ?>
 					</form>
-					
-					
 				</div><!--/twelve columns-->
 			</div><!--/form-data-->
 		</div>

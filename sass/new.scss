@@ -57,7 +57,7 @@ body{
   }
 }
 
-.link_default{
+.link_default{ 
   ul{
      @include clearfix; 
     &.expo{
@@ -66,6 +66,18 @@ body{
        margin-left:20px;
        &.date{
          width:18%;
+       }
+      }
+    }
+    &.resume{
+      li{
+       width:23%;
+       margin-left:20px;
+       &.date{
+         width:8%;
+       }
+       &.format{
+         width:10%;
        }
       }
     }
@@ -274,6 +286,14 @@ label{
         &:first-child{
          margin-left:60px; 
          width:51%;
+        }
+      }
+    }
+    &.resume{
+      li{
+        width:29.4%;
+        &:first-child{
+         margin-left:60px; 
         }
       }
     }
