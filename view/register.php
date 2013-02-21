@@ -23,11 +23,11 @@ if ((isset($_GET[0])) && ($_GET[1] == 0))
 					
 					<span class="caption"><strong>*Nota:</strong> Tenga en cuenta que con este mismo número de identificación deberás registrar el ingreso de tus obras, equipos y otros a Corferias y, podrás también participar en futuras convocatorias de Artecámara de la Cámara de Comercio de Bogotá, actualizando tus datos e imágenes.</span>
 				
-					<label for="name"><span class="asterix">*</span>Nombre y Apellidos</label>
+					<label for="name"><span class="asterix">*</span>Nombre</label>
 					<input type="text" name="user_name" title="Digite su(s) nombre(s) y Apellidos"/>
 					<label for="name"><span class="asterix">*</span>Apellido</label>
 					<input type="text" name="userlast_name" title="Digite su(s) apellido(s)"/>
-					<label for="name"><span class="asterix">*</span>Nombre del Colectivo</label>
+					<label for="name">Nombre del Colectivo</label>
 					<input type="text" name="collective_name" title="Digite el nombre del colectivo"/>
 					<div class="row">
 						<div class="six columns">

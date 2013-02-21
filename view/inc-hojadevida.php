@@ -110,7 +110,7 @@
 						?>                      
 					<!-- end Expo --> 
 					</ul>	
-					<a href="#" id="add-expo-2"><strong>+</strong> Agregar una nueva carrera</a>
+					<a href="#" class="label secondary round" id="add-expo-2"><strong>+</strong> Agregar una nueva carrera</a>
 				<hr />
 				<br />				
                 <h4>Exposiciones individuales</h4>
@@ -225,7 +225,7 @@
 						}
 						?>
 					</ul>	
-					<a href="#" id="add-expo"><strong>+</strong> Agregar una nueva exposición</a>
+					<a href="#" class="label secondary round" id="add-expo"><strong>+</strong> Agregar una nueva exposición</a>
 				<hr />
 				<br />
 				<h4>Exposiciones colectivas</h4>
@@ -340,7 +340,7 @@
 						?> 						
 					<!-- end Expo --> 
 					</ul>	
-					<a href="#" id="add-expo-1"><strong>+</strong> Agregar una nueva exposición</a>
+					<a href="#" class="label secondary round" id="add-expo-1"><strong>+</strong> Agregar una nueva exposición</a>
 				<hr />
 				<br />
 				<h4>Becas y premios</h4>
@@ -445,6 +445,6 @@
                      
 					<!-- end Expo --> 
 					</ul>	
-					<a href="#" id="add-expo-3"><strong>+</strong> Agregar un nuevo premio</a>
+					<a href="#" id="add-expo-3" class="label secondary round"><strong>+</strong> Agregar un nuevo premio</a>
 				<hr />
 				

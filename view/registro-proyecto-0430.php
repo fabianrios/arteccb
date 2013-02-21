@@ -20,7 +20,7 @@ include_once(SITE_VIEW.'menu.php'); ?>
 						<dl class="sub-nav">
 							<dd><a class="save" title="Guardar" href="javascript:void(0);" onClick="document.getElementById('validable').submit();" >Guardar</a></dd>
 							<dd><a class="prev" title="Hoja de vida" href="?php echo APPLICATION_URL?>registro-hoja-vida-0420.html">Anterior</a></dd>
-							<dd><h4>5/5</h4></dd>
+							<dd><h4>3/5</h4></dd>
 							<dd><a class="next" title="Portafolio" href="<?php echo APPLICATION_URL?>registro-portafolio-0440.html" >Siguiente</a></dd>
 						</dl>	
 					</div>

@@ -2,12 +2,12 @@
 		<!-- header artbo logo -->
 	<div class="row superior-2">	
 		<!-- columns 1/2 -->
-		<div class="four columns">
-				<img src="<?php echo APPLICATION_URL?>images/resources/logo.png" height="76" width="278" alt="logo" />
+		<div class="four columns"> 
+				<img class="logo" src="<?php echo APPLICATION_URL?>images/sprite_new.png" height="76" width="436" alt="logo" />
 		</div>
 		<!-- END columns 1/2 -->
 		
-		<!-- columns 2/2 -->
+		<!-- columns 2/2 --><em></em>
 		<div class="eight columns lateralder ">
 			<div class="perfil-data">
 				<div class="perfil right">

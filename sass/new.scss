@@ -170,7 +170,7 @@ ul.uploadimages{
    @include clearfix;
   li{
     float:left;
-    width:28%;
+    width:32%;
     margin-left:10px;
     img{
       border: 1px solid #eeeeee;
@@ -563,6 +563,13 @@ input[type="text"]{
 .documents{
   h4{
     margin-top:0;
+  }
+}
+
+img{
+  &.logo{
+    position:relative;
+    top:5px;
   }
 }
 
