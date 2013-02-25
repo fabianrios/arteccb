@@ -60,6 +60,12 @@ if (isset($_GET[0]))
 								        	<div class="five columns">
 								        		<img src="http://cambelt.co/icon/camera/235x150?color=b71632,fefefe" class="images right" title="Imagen del director">
 								        		<input type="file" title="Carge documento de identidad" name="user_certificate" class="right">
+<<<<<<< HEAD
+=======
+								        		 
+								        		 <?php if ($user->__get('user_document') != '') { ?><p><a target="_blank" href="resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/<?php echo $user->__get('user_document');?>">Documento Cargado en el sistema</a></p><?php } ?>
+								        		 
+>>>>>>> 43bf65e840130d6ae0be58d6cb859563f21d21dd
 								        	</div>
 										</div>
 								    </li>

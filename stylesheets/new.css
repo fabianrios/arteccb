@@ -641,7 +641,11 @@ img.logo {
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+<<<<<<< HEAD
   /* line 578, ../sass/new.scss */
+=======
+  /* line 571, ../sass/new.scss */
+>>>>>>> 43bf65e840130d6ae0be58d6cb859563f21d21dd
   .artBO {
     display: inline-block;
     text-indent: -9999px;
@@ -651,7 +655,11 @@ img.logo {
     background: url("../images/sprite_new2x.png") 0 0;
   }
 
+<<<<<<< HEAD
   /* line 581, ../sass/new.scss */
+=======
+  /* line 574, ../sass/new.scss */
+>>>>>>> 43bf65e840130d6ae0be58d6cb859563f21d21dd
   .ccB {
     display: inline-block;
     text-indent: -9999px;

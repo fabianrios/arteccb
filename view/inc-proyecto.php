@@ -1,5 +1,5 @@
-	<!-- panel 2 -->
-<h2>Proyecto</h2>
+<!-- panel 2 -->
+<h4>Proyecto</h4>
 <h5>Descripción del proyecto* (Max. 250 palabras)</h5>
 <textarea class="expand" name="user_proyect_description" rows="10"><?php echo $user->__get('user_proyect_description');?></textarea>
 
@@ -26,19 +26,19 @@
 	<ul class="no-bullet project">
 		<li>
 			<span class="asterix">*</span><strong>Nombre de la obra</strong>
-  			<input class="expand input-text" type="text" name="user_proyect_name" value="<?php echo $user->__get('user_proyect_name');?>"  />
+  			<input title="Digite nombre de la obra" class="expand input-text" type="text" name="user_proyect_name" value="<?php echo $user->__get('user_proyect_name');?>"  />
   		</li>
 		<li>
 			<span class="asterix">*</span><strong>Dimensiones (mts)</strong>
-  			<input class="expand input-text" name="user_proyect_dimensions" value="<?php echo $user->__get('user_proyect_dimensions');?>" type="text" />
+  			<input title="Digite dimensiones de la obra" class="expand input-text" name="user_proyect_dimensions" value="<?php echo $user->__get('user_proyect_dimensions');?>" type="text" />
   		</li>
 	  	<li>
 	  		<span class="asterix">*</span><strong>Formato o técnica</strong>
-  			<input class="expand input-text" type="text" name="user_proyect_format" value="<?php echo $user->__get('user_proyect_format');?>" />
+  			<input title="Digite formato o técnica de la obra" class="expand input-text" type="text" name="user_proyect_format" value="<?php echo $user->__get('user_proyect_format');?>" />
   		</li>
 	  	<li>
 	  		<span class="asterix">*</span><strong>Año</strong>
-    		<select name="user_proyect_year">
+    		<select title="Digite año de la obra" name="user_proyect_year">
     			<option <?php if ($user->__get('user_proyect_year') == 2012) echo 'selected="selected"';?>>2012</option>
     			<option <?php if ($user->__get('user_proyect_year') == 2011) echo 'selected="selected"';?>>2011</option>
     			<option <?php if ($user->__get('user_proyect_year') == 2010) echo 'selected="selected"';?>>2010</option>
@@ -49,7 +49,7 @@
   		</li>
 		<li>
 			<span class="asterix">*</span><strong>Url de la obra</strong>
-  			<input class="expand input-text" type="text"  name="user_proyect_url"  value="<?php echo $user->__get('user_proyect_url');?>" />
+  			<input title="Digite Url de la obra" class="expand input-text" type="text"  name="user_proyect_url"  value="<?php echo $user->__get('user_proyect_url');?>" />
 	    </li>
 	</ul>
   	    
@@ -59,13 +59,13 @@
 
 	    <ul class="no-bullet uploadimages">
 		  	<li>
-		  		<input type="file"  name="user_proyect_image_1"><?php if($user->__get('user_proyect_image_1') != '') { ?><img height="50" width="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/proyecto/<?php echo $user->__get('user_proyect_image_1')?>"><?php }?>
+		  		<input type="file" title="Imagen de la obra"  name="user_proyect_image_1"><?php if($user->__get('user_proyect_image_1') != '') { ?><img height="50" width="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/proyecto/<?php echo $user->__get('user_proyect_image_1')?>"><?php }?>
 		  	</li>
 		  	<li>
-		  	    <input type="file"  name="user_proyect_image_2"><?php if($user->__get('user_proyect_image_2') != '') { ?><img height="50" width="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/proyecto/<?php echo $user->__get('user_proyect_image_2')?>"><?php }?>
+		  	    <input type="file" title="Imagen de la obra"  name="user_proyect_image_2"><?php if($user->__get('user_proyect_image_2') != '') { ?><img height="50" width="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/proyecto/<?php echo $user->__get('user_proyect_image_2')?>"><?php }?>
 		  	</li>
 		  	<li>
-		  	    <input type="file"  name="user_proyect_image_3"><?php if($user->__get('user_proyect_image_3') != '') { ?><img height="50" width="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/proyecto/<?php echo $user->__get('user_proyect_image_3')?>"><?php }?>
+		  	    <input type="file" title="Imagen de la obra"  name="user_proyect_image_3"><?php if($user->__get('user_proyect_image_3') != '') { ?><img height="50" width="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/proyecto/<?php echo $user->__get('user_proyect_image_3')?>"><?php }?>
 		    </li>
 	  	</ul>
 	  
