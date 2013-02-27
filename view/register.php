@@ -21,7 +21,7 @@ if ((isset($_GET[0])) && ($_GET[1] == 0))
 					<p>Si nunca te haz registrado en artBO, incluida la última versión.<br />
 					Ya te registráste en artBO, haz clic <a class="underline" href="login.html">aquí.</a></p>
 					
-					<span class="caption"><strong>*Nota:</strong> Tenga en cuenta que con este mismo número de identificación deberás registrar el ingreso de tus obras, equipos y otros a Corferias y, podrás también participar en futuras convocatorias de Artecámara de la Cámara de Comercio de Bogotá, actualizando tus datos e imágenes.</span>
+					<span class="caption"><strong>*Nota:</strong>Tenga en cuenta que con este mismo número de identificación deberá registrar el ingreso de sus obras, equipos y otros a Corferias y también podrá participar en futuras convocatorias de Artecámara de la Cámara de Comercio de Bogotá, actualizando sus datos e imágenes </span>
 				
 					<label for="name"><span class="asterix">*</span>Nombre</label>
 					<input type="text" name="user_name" title="Digite su(s) nombre(s) y Apellidos"/>
@@ -33,8 +33,8 @@ if ((isset($_GET[0])) && ($_GET[1] == 0))
 						<div class="six columns">
 							<label for="name"><span class="asterix">*</span>Tipo de documento</label>
 							<select name="tipo de documento">
-								<option value="cc">Cedula de Ciudadania</option>
-								<option value="cc">Numero de identificación valido</option>
+								<option value="cc">Cédula de ciudadanía</option>
+								<option value="cc">Número de identificación válido</option>
 							</select>
 						</div>
 						<div class="six columns">

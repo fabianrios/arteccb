@@ -15,9 +15,11 @@ if ((isset($_GET[0])) && ($_GET[1] == 0))
 		<div class="eight columns centered"><!-- six columns -->
 			<span class="artBO">Artbo</span><span class="ccB">CCB</span>
 			<header class="intro">
-				<h2>Bienvenido al proceso de aplicación del Pabellón Artecámara en artBO 2013.</h2>
-				<h5>El cual estará abierto hasta el 15 de abril de 2013 hasta las 00:00 a.m. (hora colombiana)</h5>
-				<h6>Este espacio es para artistas plásticos (y/o colectivos de artistas) colombianos (y/o artistas extranjeros residentes en Colombia desde hace 3 años), menores de 40 años a la fecha de inscripción y que no están representados por ninguna galería comercial nacional o internacional. </h6>
+				<h2>Bienvenido al Proceso de aplicación al Pabellón Artecámara artBO 2013</h2>
+				<h5>Abierto hasta el 15 de abril, a las 00:00 horas (hora Colombia GMT -5)</h5>
+				<h6>Este espacio es para artistas plásticos (y/o colectivos de artistas) colombianos (y/o artistas
+				extranjeros residentes en Colombia desde hace tres años), menores de 40 años a la fecha de
+				inscripción y que no están representados por ninguna galería comercial nacional o internacional.</h6>
 				<h5>Por favor inicie su sesión o regístrese.</h5>
 			</header>
 			<div class="options">
