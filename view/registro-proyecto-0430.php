@@ -59,7 +59,6 @@ include_once(SITE_VIEW.'menu.php'); ?>
 		</div>
 	</div><!--/row main-row-->
 	
-	
 <script language="javascript">
 $(document).ready(function() {
 						   

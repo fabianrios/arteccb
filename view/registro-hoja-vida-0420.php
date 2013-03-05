@@ -65,5 +65,59 @@ include_once(SITE_VIEW.'menu.php');
 			<span><a href="#">Términos y Condiciones</a> del Sitio</span>
 		</div>
 	</div><!--/row main-row-->
-	
+<script language="javascript">
+$(document).ready(function() {
+		var counterExpo = <?php echo ((count($expositions2) + count($expositions) + count($expositions3)) > 0) ? (count($expositions2) + count($expositions) + count($expositions3))+1000 : 1000  ?>;
+		var counterPrize = <?php echo (count($prizes) + 1)?>;
+		$("#add-expo").click(function(evt){
+			evt.preventDefault();
+		$(".link_list").hide().append('<li class="link_default"><ul class="no-bullet resume"><li class="handler"><img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr"></li><li><input name="expo_type_'+counterExpo+'" type="hidden" value="3" /><input name="expo_nombre_'+counterExpo+'" class="expand input-text" type="text" /></li><li><input name="expo_institucion_'+counterExpo+'" class="expand input-text" type="text" /></li><li><input name="expo_city_'+counterExpo+'" class="expand input-text" type="text" /><input name="expo_format_'+counterExpo+'" class="expand input-text" type="hidden" /></li><li class="date"><select name="expo_year_'+counterExpo+'"><?php for ($j = 2013; $j > 1989; $j--){?><option value="<?php echo $j;?>"><?php echo $j;?></option><?php }?></select></li><li class="handler"><a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a></li></ul></li>').fadeIn(1000);
+		counterExpo = counterExpo+1;
+		$('.delete-expo').unbind('click');
+		$('.delete-expo').click(function(evt) {
+			evt.preventDefault();
+			$(this).parent().parent().parent().remove();
+		});		
+		});
+		// end nueva expo
+		// nueva expo
+		$("#add-expo-1").click(function(evt){
+			evt.preventDefault();
+		$(".link_list-1").hide().append('<li class="link_default"><ul class="no-bullet resume-more"><li class="handler"><img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr"></li><li><input name="expo_type_'+counterExpo+'" type="hidden" value="1" /><input name="expo_nombre_'+counterExpo+'" class="expand input-text" type="text" /></li><li><input name="expo_institucion_'+counterExpo+'" class="expand input-text" type="text" /></li><li><input name="expo_city_'+counterExpo+'" class="expand input-text" type="text" /></li><li class="format"><input name="expo_format_'+counterExpo+'" class="expand input-text" type="text" /></li><li class="date"><select name="expo_year_'+counterExpo+'"><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option></select></li><li class="handler"><a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a></li></ul></li>').fadeIn(1000);
+		counterExpo = counterExpo+1;
+		$('.delete-expo').unbind('click');
+		$('.delete-expo').click(function(evt) {
+			evt.preventDefault();
+			$(this).parent().parent().parent().remove();
+		});		
+		}); 
+
+		$("#add-expo-2").click(function(evt){
+			evt.preventDefault();
+		$(".link_list-2").hide().append('<li class="link_default"><ul class="no-bullet resume-more"><li class="handler"><img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr"></li><li><input name="expo_type_'+counterExpo+'" type="hidden" value="2" /><input name="expo_nombre_'+counterExpo+'" class="expand input-text" type="text" /></li><li><input name="expo_institucion_'+counterExpo+'" class="expand input-text" type="text" /></li><li><input name="expo_city_'+counterExpo+'" class="expand input-text" type="text" /></li><li class="format"><input name="expo_format_'+counterExpo+'" class="expand input-text" type="text" /></li><li class="date"><select name="expo_year_'+counterExpo+'"><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option></select></li><li class="handler"><a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a></li></ul></li>').fadeIn(1000);
+		counterExpo = counterExpo+1;
+		$('.delete-expo').unbind('click');
+		$('.delete-expo').click(function(evt) {
+			evt.preventDefault();
+			$(this).parent().parent().parent().remove();
+		});		
+		}); 
+
+		$("#add-expo-3").click(function(evt){
+			evt.preventDefault();
+		$(".link_list-3").hide().append('<li class="link_default"><ul class="resume no-bullet"><li class="handler"><img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr"></li><li><input name="prize_name_'+counterExpo+'" class="expand input-text" type="text" /></li><li><input name="prize_institution_'+counterExpo+'" class="expand input-text" type="text" /></li><li><input name="prize_city_'+counterExpo+'" class="expand input-text" type="text" /></li><li class="date"><select name="prize_year_'+counterExpo+'"><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option></select></li><li class="handler"><a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a></li></ul></li>').fadeIn(1000);
+		counterPrize = counterPrize+1;
+		$('.delete-expo').unbind('click');
+		$('.delete-expo').click(function(evt) {
+			evt.preventDefault();
+			$(this).parent().parent().parent().remove();
+		});		
+		}); 
+		$('.delete-expo').click(function(evt) {
+			evt.preventDefault();
+			$(this).parent().parent().parent().remove();
+		});
+		});
+
+</script>	
 <?php include_once('footer.php'); ?>

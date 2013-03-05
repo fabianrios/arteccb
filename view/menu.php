@@ -4,7 +4,7 @@
   $year  = 2013;   // Year of the countdown
   $hour  = 23;     // Hour of the day (east coast time)
 
-  $calculation = ((mktime ($hour,0,0,$month,$day,$year) - time(void))/3600);
+  $calculation = ((mktime ($hour,0,0,$month,$day,$year) - time())/3600);
   $hours = (int)$calculation;
   $days  = (int)($hours/24);
 ?>

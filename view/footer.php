@@ -4,7 +4,19 @@
 	<script src="<?php echo APPLICATION_URL?>javascripts/app.js"></script>
 	<script src="<?php echo APPLICATION_URL?>javascripts/jquery-ui-1.8.18.custom.min.js"></script>
 	<script src="<?php echo APPLICATION_URL?>javascripts/validator.js"></script>
-
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader.js"></script>
+	<script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/util.js"></script>
+	<script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/button.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/ajax.requester.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/deletefile.ajax.requester.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/handler.base.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/window.receive.message.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/handler.form.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/handler.xhr.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/uploader.basic.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/dnd.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/uploader.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/jquery-plugin.js"></script>
 	<?php $name = explode("/", $path); ?>
 
 	<!-- Included JS Files -->

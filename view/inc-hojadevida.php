@@ -19,7 +19,7 @@
 				</div>
 				<!-- formulario -->
 				
-					<ul class="link_list-2 ui-sortable">
+					<ul class="link_list ui-sortable">
 						<!-- expo -->
                     	<?php
 						if (count($expositions3) > 0)
@@ -50,7 +50,7 @@
                                     <li class="date">
                                             <select name="expo_year_<?php echo $i?>">
                                             	<?php 
-												for ($j = 2012; $j > 1989; $j--)
+												for ($j = 2013; $j > 1989; $j--)
 												{
 													$selected = ($exposition->__get('exposition_year') == $j) ? 'selected="selected"' : '';
 												?>
@@ -61,7 +61,7 @@
                                             </select>
                                     </li>
                                      <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                   </ul>
                             </li>
@@ -74,7 +74,7 @@
 						?>                          
                             <li class="link_default">
                                   <ul class="no-bullet resume">
-                                    <li>
+                                    <li class="handler">
                                     	<img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
                                     </li>
                                     <li>
@@ -91,7 +91,7 @@
                                     <li class="date">
                                             <select name="expo_year_1">
                                             	<?php 
-												for ($j = 2012; $j > 1989; $j--)
+												for ($j = 2013; $j > 1989; $j--)
 												{
 												?>
                                                 <option value="<?php echo $j;?>"><?php echo $j;?></option>
@@ -101,7 +101,7 @@
                                             </select>
                                     </li>
                                      <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                   </ul>
                             </li>
@@ -110,7 +110,7 @@
 						?>                      
 					<!-- end Expo --> 
 					</ul>	
-					<a href="#" class="label secondary round" id="add-expo-2"><strong>+</strong> Agregar una nueva carrera</a>
+					<a href="#" class="label secondary round" id="add-expo"><strong>+</strong> Agregar una nueva carrera</a>
 				<hr />
 				<br />				
                 <h4>Exposiciones individuales</h4>
@@ -137,7 +137,7 @@
 				</div>
 				<!-- formulario -->
 				
-					<ul class="link_list ui-sortable">
+					<ul class="link_list-1 ui-sortable">
 						<!-- expo -->
                     	<?php
 						if (count($expositions) > 0)
@@ -176,7 +176,7 @@
                                             </select>
                                     </li>
                                     <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                   </ul>
                             </li>                        
@@ -217,7 +217,7 @@
 	                                    </select>
                                     </li>
                                   <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                  </ul>
                             </li>
@@ -225,7 +225,7 @@
 						}
 						?>
 					</ul>	
-					<a href="#" class="label secondary round" id="add-expo"><strong>+</strong> Agregar una nueva exposición</a>
+					<a href="#" class="label secondary round" id="add-expo-1"><strong>+</strong> Agregar una nueva exposición</a>
 				<hr />
 				<br />
 				<h4>Exposiciones colectivas</h4>
@@ -249,7 +249,7 @@
 						</li>
 					</ul>
 				</div>
-					<ul class="link_list-1 ui-sortable">
+					<ul class="link_list-2 ui-sortable">
 						<!-- expo -->
 						<?php
 						if (count($expositions2) > 0)
@@ -289,7 +289,7 @@
                                         </select>
                                     </li>
                                      <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                   </ul>
                             </li>
@@ -331,7 +331,7 @@
 	                                    </select>
                                     </li>
                                      <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                 </ul>
                             </li>
@@ -340,7 +340,7 @@
 						?> 						
 					<!-- end Expo --> 
 					</ul>	
-					<a href="#" class="label secondary round" id="add-expo-1"><strong>+</strong> Agregar una nueva exposición</a>
+					<a href="#" class="label secondary round" id="add-expo-2"><strong>+</strong> Agregar una nueva exposición</a>
 				<hr />
 				<br />
 				<h4>Becas y premios</h4>
@@ -398,7 +398,7 @@
                                         </select>
                                     </li>
                                     <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                   </ul>
                             </li>
@@ -435,7 +435,7 @@
 	                                    </select>
                                     </li>
                                     <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                   </ul>
                             </li>
