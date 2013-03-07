@@ -195,6 +195,12 @@ switch ($action):
 
 				$string	= str_replace('obra_name_', '', $key);
 				$obra	= (isset($_POST['obra_id_'.$string])) ? new Obra($_POST['obra_id_'.$string]) : new Obra();
+				if($obra->__get('obra_id') == '')
+				{
+					$obraArray = ObraHelper::retrieveObras("AND obra_key = '" . $_POST['obra_key_'.$string] . "'");
+					if(count($obraArray) > 0)
+						$obra = $obraArray[0];
+				}
 				$obra->__set('obra_name', $value);
 				$obra->__set('obra_dimensions', $_POST['obra_dimensions_'.$string]);
 				$obra->__set('obra_materials', $_POST['obra_materials_'.$string]);
@@ -225,13 +231,17 @@ switch ($action):
 						$obra->__set('obra_image', $name);						
 					}				
 				}
-				if (isset($_POST['obra_id_'.$string]))  
+				if ($obra->__get('obra_id') != '')  
 					$obra->update();				
 				else
 					$obra->save();
+
 			}
 		}
-		redirectUrl(APPLICATION_URL.'registro-proyecto-0430/saved.html');
+		if(isset($obra))
+			redirectUrl(APPLICATION_URL.'registro-portafolio-0440/saved.html');
+		else
+			redirectUrl(APPLICATION_URL.'registro-proyecto-0430/saved.html');
 	break;	
 	case 'createArtist':
 		$connection  = Connection::getInstance();

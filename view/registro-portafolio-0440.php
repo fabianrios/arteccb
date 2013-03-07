@@ -30,7 +30,7 @@ include_once('menu.php'); ?>
 		<div class="container">
 			<div class="row form-data">	
 				<div class="twelve columns">
-					<form action="registro-portafolio-0440_submit" method="post" accept-charset="utf-8">
+					<form action="<?php echo APPLICATION_URL?>user.controller/createProyects.html" method="post" id="validable" accept-charset="utf-8">
 						<?php include_once 'inc-portafolio.php'; ?>
 					</form>
 				</div><!--/twelve columns-->

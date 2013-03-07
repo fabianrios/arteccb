@@ -58,15 +58,18 @@ if (isset($_GET[0]))
 												<p>Suba el documento de identidad del artista participante (cédula de ciudadanía o de extranjería)</p>
 								        	</div>
 								        	<div class="five columns">
+							        		
 								        		<img src="http://cambelt.co/icon/camera/235x150?color=b71632,fefefe" class="images right" title="Imagen del director">
-								        		<input type="file" title="Carge documento de identidad" name="user_certificate" class="right">
-<<<<<<< HEAD
-=======
-								        		 
-								        		 <?php if ($user->__get('user_document') != '') { ?><p><a target="_blank" href="resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/<?php echo $user->__get('user_document');?>">Documento Cargado en el sistema</a></p><?php } ?>
-								        		 
->>>>>>> 43bf65e840130d6ae0be58d6cb859563f21d21dd
-								        	</div>
+		</div>			<div class="five columns">			        		 
+<?php
+							                    $image	= ($user->__get('user_certificate') != '') ? APPLICATION_URL.$dir.$user->__get('user_certificate') : $default;
+							                        
+							                    ?>      
+							                    <?php if($user->__get('user_certificate') != '') { ?><img class="images right" src="<?php echo $image?>"><?php }?>     
+							                    <div id="user_certificate"></div>     
+								        		 </div>
+								        		 <?php if ($user->__get('user_document') != '') { ?><p><a target="_blank" href="resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/<?php echo $user->__get('user_document');?>">Documento Cargado en el sistema</a></p><?php } ?>								        	
+								   
 										</div>
 								    </li>
 								   </ul>
@@ -117,7 +120,21 @@ if (isset($_GET[0]))
 			<span><a href="#">Términos y Condiciones</a> del Sitio</span>
 		</div>
 	</div><!--/row main-row-->
-	
+	<script>
+      $(document).ready(function() {
+        var manualuploader = new qq.FineUploader({
+		  debug: true, 												 
+          element: $('#user_certificate')[0],
+          request: {
+            endpoint: '<?php echo APPLICATION_URL;?>upload.controller/<?php echo $_SESSION['user_id'];?>/user_certificate.html'
+          },
+          autoUpload: true,
+          text: {
+            uploadButton: '<i class="icon-plus icon-white"></i> Seleccione archivo'
+          }
+        });
+      });
+    </script>	
 
 	
 <?php include_once('footer.php'); ?>
