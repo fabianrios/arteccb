@@ -1,6 +1,29 @@
 <?php
 $action = isset($_POST['action']) ? $_POST['action'] : $_GET[0];
 switch ($action):
+	//USUARIO NO REGISTRADO
+	case 'login':
+		$user 	= UserHelper::retrieveUsers("AND user_email = '".escape($_POST['user_email']). "' AND user_password = '" .md5($_POST['user_password']) . "'");
+		if(count($user) > 0)
+		{
+			if ($user[0]->__get('user_id') != '')	//user_users user
+			{
+				$_SESSION['user_id']	= $user[0]->__get('user_id');
+				redirectUrl(APPLICATION_URL.'registro-inicio-0400.html');
+			}
+		}
+		else
+		{
+			$user 	= UserHelper::retrieveUsers("AND user_email = '".escape($_POST['user_email'])."'");
+			if(count($user) > 0)
+			{			
+				redirectUrl(APPLICATION_URL."login/error.html");
+			}
+			else
+				redirectUrl(APPLICATION_URL."register/norecord.html");
+		}
+	break
+	//REGISTRO
 	case 'create':
 		$users	= UserHelper::retrieveUsers(" AND user_email = '" . escape($_POST['user_email']) . "'");
 		if (count($users) == 0)
@@ -13,27 +36,39 @@ switch ($action):
 			$user->__set('user_state', 'A');
 			$insert	= $user->save();
 			$_SESSION['user_id']	= $insert['insert_id'];
-			redirectUrl(APPLICATION_URL.'datos-artista-0300.html');
+			redirectUrl(APPLICATION_URL.'registro-inicio-0400.html');
+			$html 		= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Le damos la Bienvenida al proceso de aplicación de artBO 2013</h1><p style="margin-bottom:30px;">A partir de ahora, usted podr&aacute; adelantar su proceso de registro e inscripci&oacute;n en el pabell&oacute;n de su inter&eacute;s</p><p>Gracias,</p>artBO</div></div>'; 
+			$subject	= utf8_decode('Registro exitoso');
+			$from		= 'info@artbo.co';
+			$to			= $user->__get('user_email');
+			$fromName	= 'CCB artBO';
+			$replyTo	= 'info@artbo.co';
+			$args 		= array('html'		=> $html,
+								'from'		=> $from,
+								'to'		=> $to,
+								'subject'	=> $subject,
+								'fromName'	=> $fromName,
+								'replyTo'	=> $replyTo);	
+
+			EmailHelper::sendMail($args);			
 		}
 		else
 		{
-			redirectUrl(APPLICATION_URL.'home/error/0.html');
+			redirectUrl(APPLICATION_URL.'register/error/0.html');
 		}
 	break;
+	//OLVIDO CONTRASEÑA
 	case 'recover_password':
 		$users	= UserHelper::retrieveUsers(" AND user_email = '" . escape($_POST['user_email']) . "'");
-		if (count($users) == 1)
-		{
-			
-			$password 	= substr(md5(date('YmdHis')), 0, 8);
+		$password 	= substr(md5(date('YmdHis')), 0, 8);
 			$user 		=& $users[0];
 			$user->__set('user_verification', md5($password));
 			$user->update();
-			$html  	   .= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Restablecer Clave</h1><p style="margin-bottom:30px;">Hemos recibido una petici&oacute;n para restablecer su clave. Para completar el proceso de restablecer su clave visite la siguiente url:</p><a style="text-decoration: none; color: #3a6cdd;" href="http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html">http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html</a><br /><p>Si usted no ha solicitado este cambio por favor ignore este correo.</p><p>Gracias,</p><span>Soporte </span>artBO</div></div>'; 
-			$subject	= utf8_decode('Restablecer clave');
+			$html  	   .= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Restablecer Clave</h1><p style="margin-bottom:30px;">Hemos recibido una petici&oacute;n para restablecer su clave. Para completar el proceso de restablecer su clave visite la siguiente url:</p><a style="text-decoration: none; color: #3a6cdd;" href="http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html">http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html</a><br /><p>Si usted no ha solicitado este cambio por favor ignore este correo.</p><p>Gracias,</p><span></span>artBO</div></div>'; 
+			$subject	= utf8_decode('Recuperar clave');
 			$from		= 'info@artbo.co';
 			$to			= $user->__get('user_email');
-			$fromName	= 'CCB Artbo';
+			$fromName	= 'CCB artBO';
 			$replyTo	= 'info@artbo.co';
 			$args 		= array('html'		=> $html,
 								'from'		=> $from,
@@ -51,6 +86,14 @@ switch ($action):
 			redirectUrl(APPLICATION_URL.'login-recuperar-contrasena-0110/error.html');
 		}
 	break;
+	case 'changePasswordOC':
+		$user 	=  new User($_SESSION['user_id']);	
+		$user->__set('user_verification', '');
+		$user->__set('user_password', md5($_POST['contrasena']));
+		$user->update();
+		redirectUrl(APPLICATION_URL."login-recuperar-contrasena-0140/exito.html");
+	break;
+	//INFO BASICA
 	case 'basic':
 		$user 		= new User($_SESSION['user_id']);
 		foreach ($_POST as $key => $value)
@@ -70,25 +113,7 @@ switch ($action):
 		$user->update();
 		redirectUrl(APPLICATION_URL.'registro-inicio-0400.html');
 	break;
-	case 'basic':
-		$user 		= new User($_SESSION['user_id']);
-		foreach ($_POST as $key => $value)
-			$user->__set($key, $value);	
-		if($_FILES["user_image"]["name"] != "")
-		{
-			$ext	= getFileExtension($_FILES["user_image"]['name']);
-			$name 	= md5(date("YmdHis")) . $ext;
-		
-			if(uploadFile('resources/images/', $_FILES["user_image"]['tmp_name'], $name))
-			{
-				$accept = array('jpg', 'gif', 'png', 'jpeg');
-				$medio 	= new Medio($name , $accept, 'resources/images/');  
-				$user->__set('user_image', $name);						
-			}				
-		}	
-		$user->update();
-		redirectUrl(APPLICATION_URL.'registro-inicio-0400.html');
-	break;
+	//	
 	case 'gallerySelect':
 		$user 		= new User($_SESSION['user_id']);
 		$user->__set('user_gallery_type', $_GET[1]);
@@ -113,8 +138,29 @@ switch ($action):
 				$user->__set('user_director_image', $name);						
 			}				
 		}	
+		$userForms	= UserFormHelper::selectUserForms(" AND user_id = ".escape($_SESSION['user_id'])." AND form_number = 1");
+		if ($userForms['num_rows'] == 0)
+		{
+			$accept		= true;
+			$fields		= UserFieldHelper::retrieveUserFields();
+			foreach ($fields as $field)
+			{
+				if (($user->__get($field) == '') || ($user->__get($field) == 0) || ($user->__get($field) == 'NULL'))
+				$accept	= false;
+			}
+			if ($accept)
+			{
+				$form	= new UserForm();
+				$form->__set('user_id', $_SESSION['user_id']);
+				$form->__set('form_number', 1);
+				$form->save();
+			}
+		}		
 		$user->update();
-		redirectUrl(APPLICATION_URL.'registro-artista-0410/saved.html');
+		if (!isset($_GET[1]))
+			redirectUrl(APPLICATION_URL.'registro-hoja-vida-0420/saved.html');
+		else
+			redirectUrl(APPLICATION_URL.'registro-artista-0410/saved.html');
 	break;
 	case 'createExpo':
 		$connection  = Connection::getInstance();
@@ -153,7 +199,18 @@ switch ($action):
 				$expo->save();
 			}
 		}
-		redirectUrl(APPLICATION_URL.'registro-hoja-vida-0420/saved.html');
+		$userForms	= UserFormHelper::selectUserForms(" AND user_id = ".escape($_SESSION['user_id'])." AND form_number = 2");
+		if ($userForms['num_rows'] == 0)
+		{
+			$form	= new UserForm();
+			$form->__set('user_id', $_SESSION['user_id']);
+			$form->__set('form_number', 2);
+			$form->save();
+		}		
+		if (!isset($_GET[1]))
+			redirectUrl(APPLICATION_URL.'registro-proyecto-0430/saved.html');
+		else		
+			redirectUrl(APPLICATION_URL.'registro-hoja-vida-0420/saved.html');
 	break;
 	case 'createProyects':
 		//$connection  = Connection::getInstance();
@@ -238,9 +295,17 @@ switch ($action):
 
 			}
 		}
-		if(isset($obra))
+		$userForms	= UserFormHelper::selectUserForms(" AND user_id = ".escape($_SESSION['user_id'])." AND form_number = 3");
+		if ($userForms['num_rows'] == 0)
+		{
+			$form	= new UserForm();
+			$form->__set('user_id', $_SESSION['user_id']);
+			$form->__set('form_number', 2);
+			$form->save();
+		}		
+		if (!isset($_GET[1]))
 			redirectUrl(APPLICATION_URL.'registro-portafolio-0440/saved.html');
-		else
+		else		
 			redirectUrl(APPLICATION_URL.'registro-proyecto-0430/saved.html');
 	break;	
 	case 'createArtist':
@@ -262,355 +327,63 @@ switch ($action):
 				$artist->save();
 			}
 		}
-		redirectUrl(APPLICATION_URL.'registro-artistas-0440/saved.html');
-	break;
-	case 'selectStand':
-		$user 		= new User($_SESSION['user_id']);
-		foreach ($_POST as $key => $value)
-			$user->__set($key, $value);	
-		$user->update();
-		redirectUrl(APPLICATION_URL.'registro-espacio-0450/saved.html');
+		$userForms	= UserFormHelper::selectUserForms(" AND user_id = ".escape($_SESSION['user_id'])." AND form_number = 4");
+		if ($userForms['num_rows'] == 0)
+		{
+			$form	= new UserForm();
+			$form->__set('user_id', $_SESSION['user_id']);
+			$form->__set('form_number', 2);
+			$form->save();
+		}		
+		if (!isset($_GET[1]))
+			redirectUrl(APPLICATION_URL.'registro-portafolio-0440/saved.html');
+		else		
+			redirectUrl(APPLICATION_URL.'registro-artistas-0440/saved.html');	
+		
 	break;
 	case 'uploadDocuments':
 		$user 		= new User($_SESSION['user_id']);
-		foreach ($_POST as $key => $value)
-			$user->__set($key, $value);				
-		if($_FILES["user_document"]["name"] != "")
+		if ($user->__get('user_document') == '')
+			$finish	= false;
+		if ($finish)
 		{
-
-			if(!file_exists('resources/images/' . makeUrlClear(utf8_decode($user->__get('user_name')))))
-			{
-				mkdir('resources/images/' . makeUrlClear(utf8_decode($user->__get('user_name'))), 0755);
-			}
-
-			$ext	= getFileExtension($_FILES["user_document"]['name']);
-			$name 	= md5(date("YmdHis")) . $ext;
-		
-			if(uploadFile('resources/images/' . makeUrlClear(utf8_decode($user->__get('user_name'))) . '/', $_FILES["user_document"]['tmp_name'], $name))
-			{
-				$user->__set('user_document', $name);						
-			}				
-		}	
-		$user->update();
-		redirectUrl(APPLICATION_URL.'registro-documentos-0440/saved.html');
-	break;
-	case 'update':
-		$user 	=  new User($_POST['user_id']);
-		foreach ($_POST as $key => $value)
-			$user->__set($key, $value);
-		$user->__set('user_password', md5($_POST['user_password']));
-		$user->__set('user_datetime_update', formatDate());
-		$user->__set('user_validation', '');
-		//Logo
-		if( (isset($_FILES["user_avatar"]["name"])) && ($_FILES["user_avatar"]["name"] != ""))
-		{
-			$ext = getFileExtension($_FILES["user_avatar"]['name']);
-			$name = md5(date("YmdHis")) . $ext;
-		
-			if(uploadFile('resources/images/', $_FILES["user_avatar"]['tmp_name'], $name))
-			{
-				$accept = array('jpg', 'gif', 'png', 'jpeg');
-				$medio = new Medio($name , $accept, 'resources/images/');  
-				$user->__set('user_image', $name);						
-			}				
-		}	
-		if ($_POST['user_id'] == $_SESSION['user_id'])
+			foreach ($_POST as $key => $value)
+				$user->__set($key, $value);				
 			$user->update();
+			$html		= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Ha finalizado su registro</h1><p  style="margin-bottom:30px;">Usted ha completado el proceso de registro de artBO 2013. <br />Agradecemos su participaci&oacute;n en la convocatoria.</p><br /><p>Gracias,</p>artBO</div></div>';
+			$subject	= utf8_decode('Finalizado registro');
+			$from		= 'info@artbo.co';
+			$to			= $user->__get('user_email');
+			$fromName	= 'CCB artBO';
+			$replyTo	= 'info@artbo.co';
+			$args 		= array('html'		=> $html,
+								'from'		=> $from,
+								'to'		=> $to,
+								'subject'	=> $subject,
+								'fromName'	=> $fromName,
+								'replyTo'	=> $replyTo);	
+	
+			EmailHelper::sendMail($args);				
+			redirectUrl(APPLICATION_URL.'registro-documentos-0440/saved.html');
 			
-		//Genero el log de creacion de universidad
-		$nameUsers	= $user->__get('user_names').' '.$user->__get('user_surnames');
-		$controlUser = new ControlUser($_SESSION['control_user_id']);
-		$msgLog		= '['.date("d/m/Y H:i:s").']: '.$controlUser->__get('user_full_name').'<br />Se actualizo el usuario: '.$nameUsers;
-		$newLog		= new CoreLog();
-		$newLog->__set('object_id',$_POST['user_id']);
-		$newLog->__set('log_action_name',$nameUsers);
-		$newLog->__set('log_content',$msgLog);
-		$newLog->__set('log_date',date('Y-m-d H:i:s'));
-		$newLog->save();
-		
-		redirectUrl(APPLICATION_URL.'user_thanks.html');
+		}
+		{
+		?>
+			<script language="javascript">
+                alert ('Debe subir el documento solicitado en la anterior página.');
+                window.location.href="<?php echo APPLICATION_URL;?>registro-documentos-0450.html";
+            </script>
+        <?php
+		}
 	break;
-	case 'add':
-		$user 			= (isset($_POST['user_id'])) ? new User($_POST['user_id']) : new User();
-		foreach ($_POST as $key => $value)
-			$user->__set($key, $value);
-		$user->__set('user_creation_datetime', formatDate());			
-		$user->__set('user_datetime_update', formatDate());
-		$user->__set('user_state', 'A');
-		//Logo
-		if($_FILES["user_avatar"]["name"] != "")
-		{
-			$ext = getFileExtension($_FILES["user_avatar"]['name']);
-			$name = md5(date("YmdHis")) . $ext;
-		
-			if(uploadFile('resources/images/', $_FILES["user_avatar"]['tmp_name'], $name))
-			{
-				$accept = array('jpg', 'gif', 'png', 'jpeg');
-				$medio = new Medio($name , $accept, 'resources/images/');  
-				$user->__set('user_image', $name);						
-			}				
-		}	
-		if (!isset($_POST['user_id']))
-		{
-			$validate	=	md5(date("YmdHis"));
-			$user->__set('user_validation', $validate); 
-			$user2		= new User($_SESSION['user_id']);	//SESSION USER
-			$type		= ($user->__get('company_id') != 0) ? 'C' : 'G';
-			$html		= MailHelper::invitationMail($type, $user->__get('user_names'), APPLICATION_FULL_URL.'user_invite/'.$validate.'.html', $user2->__get('user_names'));
-			$args = array('to'	=> $user->__get('user_email'),
-						'from'    	=> 'contactenos@creatic.org.co',
-						'html'     	=> $html,
-						'subject'  	=> 'Bienvenido a CreaTiC',
-						'fromName' 	=> 'CreaTiC',
-						'replyTo'  	=> 'contactenos@creatic.org.co');	
-			EmailHelper::sendMail($args);
-		}
-		$action	= 'creado';
-		$controlUser = new ControlUser($_SESSION['control_user_id']);
-		if (isset($_POST['user_id']))
-		{
-			$user->update();
-			$nameUsers	= $user->__get('user_names').' '.$user->__get('user_surnames');
-			$msgLog		= '['.date("d/m/Y H:i:s").']: '.$controlUser->__get('user_full_name').'<br />Usuario modificado: '.$nameUsers;
-			$action	= 'modificado';
-		}
-		else 
-		{
-			$save = $user->save();		
-			$nameUsers	=  $_POST['user_names'].' '.$_POST['user_surnames'];
-			$msgLog		= '['.date("d/m/Y H:i:s").']: '.$controlUser->__get('user_full_name').'<br />Usuario Creado: '.$nameUsers;
-		}
-		$_POST['user_id'] = isset($_POST['user_id']) ? $_POST['user_id'] : $save['insert_id'];
-		//Genero el log de creacion de universidad
-		$newLog		= new CoreLog();
-		$newLog->__set('object_id',$_POST['user_id']);
-		$newLog->__set('log_action_name',$nameUsers);
-		$newLog->__set('log_content',$msgLog);
-		$newLog->__set('log_date',date('Y-m-d H:i:s'));
-		$newLog->save();
-		
-		if (isset($_POST['company_id'])) 
-			redirectUrl(APPLICATION_URL.'user_list_b2/'.$action.'.html');
-		else
-			redirectUrl(APPLICATION_URL.'user_list_c2/'.$action.'.html');
-	break;
-	case 'deactivate':
-		$deactivate		= true;
-		$userPrimary 	= new User($_SESSION['user_id']);
-		if ($userPrimary->__get('user_primary') == 0)
-			$deactivate	= false;
-		$user 	= new User($_GET[1]);
-		if ($userPrimary->__get('group_id') != $user->__get('group_id'))
-			$deactivate	= false;
-		if ($userPrimary->__get('company_id') != $user->__get('company_id'))
-			$deactivate	= false;
-		$user->__set('user_state', 'D');
-		$user->__set('user_datetime_update', formatDate());
-		if ($deactivate)
-			$save = $user->update();
-		$action		= 'eliminado';
-		
-		//Genero el log de creacion de universidad
-		$nameUsers	= $userPrimary->__get('user_names').' '.$userPrimary->__get('user_surnames');
-		$controlUser = new ControlUser($_SESSION['control_user_id']);
-		$msgLog		= '['.date("d/m/Y H:i:s").']: '.$controlUser->__get('user_full_name').'<br />Usuario eliminado : '.$nameUsers;
-		$newLog		= new CoreLog();
-		$newLog->__set('object_id',escape($_GET[0]));
-		$newLog->__set('log_action_name',$userPrimary->__get('user_id'));
-		$newLog->__set('log_content',$msgLog);
-		$newLog->__set('log_date',date('Y-m-d H:i:s'));
-		$newLog->save();
-		
-		if ($userPrimary->__get('company_id') != 0) 
-			redirectUrl(APPLICATION_URL.'user_list_b2/'.$action.'.html');
-		else
-			redirectUrl(APPLICATION_URL.'user_list_c2/'.$action.'.html');	
-	break;	
-	case 'updateProfile':
-		$user 	=  new User($_POST['user_id']);
-		foreach ($_POST as $key => $value)
-			$user->__set($key, $value);
-		$user->__set('user_datetime_update', formatDate());
-		//Logo
-		if( (isset($_FILES["user_avatar"]["name"])) && ($_FILES["user_avatar"]["name"] != ""))
-		{
-			$ext = getFileExtension($_FILES["user_avatar"]['name']);
-			$name = md5(date("YmdHis")) . $ext;
-		
-			if(uploadFile('resources/images/', $_FILES["user_avatar"]['tmp_name'], $name))
-			{
-				$accept = array('jpg', 'gif', 'png', 'jpeg');
-				$medio = new Medio($name , $accept, 'resources/images/');  
-				$user->__set('user_image', $name);						
-			}				
-		}	
-		if ($_POST['user_id'] == $_SESSION['user_id'])
-			$user->update();
-		//Genero el log
-		$nameUsers	= $user->__get('user_names').' '.$user->__get('user_surnames');
-		$controlUser = new ControlUser($_SESSION['control_user_id']);
-		$msgLog		= '['.date("d/m/Y H:i:s").']: '.$controlUser->__get('user_full_name').'<br />Usuario actualizo su perfil : '.$nameUsers;
-		$newLog		= new CoreLog();
-		$newLog->__set('object_id',escape($_GET[0]));
-		$newLog->__set('log_action_name',$user->__get('user_id'));
-		$newLog->__set('log_content',$msgLog);
-		$newLog->__set('log_date',date('Y-m-d H:i:s'));
-		$newLog->save();
-		redirectUrl(APPLICATION_URL.'user_profile_update/modificado.html');
-	break;	
-	case 'updatePassword':
-		$user 	=  new User($_POST['user_id']);
-		$change	= ($user->__get('user_password') == md5($_POST['old_password'])) ? true : false;
-		if ($change)
-		{
+			
 
-			$user->__set('user_password', md5($_POST['user_password']));	
-			$user->__set('user_datetime_update', formatDate());
-			if ($_POST['user_id'] == $_SESSION['user_id'])
-				$user->update();
-			//Genero el log
-			$nameUsers	= $user->__get('user_names').' '.$user->__get('user_surnames');
-			$controlUser = new ControlUser($_SESSION['control_user_id']);
-			$msgLog		= '['.date("d/m/Y H:i:s").']: '.$controlUser->__get('user_full_name').'<br />Usuario cambio contraseña : '.$nameUsers;
-			$newLog		= new CoreLog();
-			$newLog->__set('object_id',escape($_GET[0]));
-			$newLog->__set('log_action_name',$user->__get('user_id'));
-			$newLog->__set('log_content',$msgLog);
-			$newLog->__set('log_date',date('Y-m-d H:i:s'));
-			$newLog->save();
-		}
-		redirectUrl(APPLICATION_URL.'user_profile_update/modificado.html');
-	break;		
-	case 'login':
-		$user 	= UserHelper::retrieveUsers("AND user_email = '".escape($_POST['user_email']). "' AND user_password = '" .md5($_POST['user_password']) . "'");
-		if(count($user) > 0)
-		{
-			if ($user[0]->__get('user_id') != '')	//user_users user
-			{
-				$_SESSION['user_id']	= $user[0]->__get('user_id');
-				redirectUrl(APPLICATION_URL.'registro-inicio-0400.html');
-			}
-		}
-		else
-			redirectUrl(APPLICATION_URL."home/error/1.html");
-		
-	break;	
-	
-	case 'RememberPassword':
-		$userExist	= UserHelper::retrieveUsers(' AND user_email = "'.trim($_POST['user_email']).'"');
-		if(count($userExist)>0)
-		{
-			$newPassword = base64_encode(strftime('%d%H%S'));
-			$changeUser = new user($userExist[0]->__get('user_id'));
-			$changeUser->__set('user_password',md5($newPassword));
-			$changeUser->update();
-			//Envio notificacion al usuario
-			$name 			= $changeUser->__get('user_names').' '.$changeUser->__get('user_surnames');
-			$email 			= $changeUser->__get('user_email');
-			/* DESTINATARIO */
-			$asunto 	= 'Recuperar clave CreaTiC';
-			$mensaje 	= "Coordial saludo: $name <br />Su nueva clave es: ".$newPassword . "<br>Equipo CreaTiC";
-			$headers 	=  "Content-Type: text/html; charset=ISO-8859-1\r\n";
-			mail($email, $asunto, $mensaje, $headers);
-			
-			//Genero el log
-			$nameUsers	= $changeUser->__get('user_names').' '.$changeUser->__get('user_surnames');
-			$controlUser = new ControlUser($_SESSION['control_user_id']);
-			$msgLog		= '['.date("d/m/Y H:i:s").']: '.$controlUser->__get('user_full_name').'<br />Recuperar contraseña : '.$nameUsers;
-			$newLog		= new CoreLog();
-			$newLog->__set('object_id',escape($_GET[0]));
-			$newLog->__set('log_action_name',$changeUser->__get('user_id'));
-			$newLog->__set('log_content',$msgLog);
-			$newLog->__set('log_date',date('Y-m-d H:i:s'));
-			$newLog->save();
-			
-			redirectUrl(APPLICATION_URL.'user_remember/Send/'.urlencode($email).'.html');
-		}
-		else
-		{
-			redirectUrl(APPLICATION_URL.'user_remember/Error.html');
-		}
-	break;
-	
-	case 'RegisterUser':
-		//verifico la existencia de un usuario facebook
-		if(strlen(trim($_POST['facebook_id'])) > 1)
-			$exisUser	= UserHelper::retrieveUsers(' AND facebook_id = "'.trim($_POST['facebook_id']).'"');
-		else	
-			$exisUser	= UserHelper::retrieveUsers(' AND user_names LIKE "%'.trim($_POST['user_names']).'%" AND user_surnames LIKE "%'.trim($_POST['user_surnames']).'%"');
-		
-		//verifico si guardo o actualizo
-		$validSave	= (count($exisUser)>0) ? true : false; 
-		$newUser	= (count($exisUser)>0) ? $exisUser[0] : new User();	
-		
-		//Guardo la información
-		foreach($_POST as $key => $value)
-			$newUser->__set($key,$value);
-		
-		if(count($exisUser)>0)	//Actualiza
-		{
-			$newUser->__set('user_datetime_update',date('Y-m-d H:i:s'));
-			$newUser->update();
-			redirectUrl(APPLICATION_URL.'registro_finalizado.html');
-		}
-		else //Guarda
-		{
-			$validateCode	= md5(date('Y-m-d H:i:s'));
-			$newUser->__set('user_date_creation',date('Y-m-d H:i:s'));
-			$newUser->__set('user_verification_code',$validateCode);	
-			$newUser->__set('user_state','I');	
-			$newUser->save();
-			$html = 'Para confirmar su registro en GZGG haz clic <a href="'.APPLICATION_FULL_URL.'validacion_registro/'.urlencode($validateCode).'.html">aqu&iacute;</a>';
-			$headers = "MIME-Version: 1.0\r\n"; 
-			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";				
-			$headers .= "From: GZGG <GZGG@GZGG.com>\r\n";
-			mail($_POST['user_email'],'Activar cuenta GZGG',$html,$headers);
-			redirectUrl(APPLICATION_URL.'finalizando_registro.html');
-		}
-	break;
-	
-	case 'updateUser':
-		$updateUser = new User($_POST['user_id']);
-		$redirect = true;
-		foreach($_POST as $key => $value)
-			$updateUser->__set($key,$value);
-		$updateUser->__set('user_datetime_update',date('Y-m-d H:i:s'));	
-		//verifico si solicito cambio de contraseña
-		$updateUser->update();
-		if(isset($_POST['user_password1']) && $_POST['user_password1'] != '')
-		{
-			if(isset($_POST['user_password1']) && $_POST['user_password1'] != '')
-			{
-				if($updateUser->__get('user_password') == "")
-				{
-					if($_POST['user_passwordNew'] != $_POST['user_passwordRetype'])
-					{
-						redirectUrl(APPLICATION_URL.'actualizar/Error.html');
-						$redirect = false;
-					}
-					else
-					{
-						$updateUser->__set('user_password',md5($_POST['user_passwordNew']));
-						$updateUser->update();
-					}
-				}
-			}
-		}
-		if($redirect)
-			redirectUrl(APPLICATION_URL.'actualizar/Update.html');
-	break;
-	case 'deleteA':
-		$user 		= new User($_GET[1]);
-		$user->__set('user_state', 'D');	
-		$user->update();
-		redirectUrl(APPLICATION_URL.'index.php?home.control');
-	break;	
-	case 'changePasswordOC':
+	case 'changePassword':
 		$user 	=  new User($_SESSION['user_id']);	
-		$user->__set('user_verification', '');
 		$user->__set('user_password', md5($_POST['contrasena']));
 		$user->update();
-		redirectUrl(APPLICATION_URL."login-recuperar-contrasena-0140/exito.html");
-	break;		
+		redirectUrl(APPLICATION_URL."datos-galeria-0300/exito.html");
+	break;	
+		
 endswitch;
 ?>

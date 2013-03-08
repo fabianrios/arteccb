@@ -422,77 +422,81 @@ label {
 }
 /* line 373, ../sass/new.scss */
 .intitle ul.resume-more li {
-  width: 18.4%;
+  width: 20.4%;
 }
 /* line 375, ../sass/new.scss */
 .intitle ul.resume-more li:first-child {
   margin-left: 60px;
-  width: 24%;
+  width: 21%;
 }
 /* line 379, ../sass/new.scss */
 .intitle ul.resume-more li:last-child {
   width: 10%;
 }
-/* line 385, ../sass/new.scss */
+/* line 382, ../sass/new.scss */
+.intitle ul.resume-more li:nth-last-child(2) {
+  width: 18%;
+}
+/* line 388, ../sass/new.scss */
 .intitle ul.ferias li {
   width: 18%;
 }
-/* line 387, ../sass/new.scss */
+/* line 390, ../sass/new.scss */
 .intitle ul.ferias li:first-child {
   margin-left: 60px;
   width: 36%;
 }
-/* line 394, ../sass/new.scss */
+/* line 397, ../sass/new.scss */
 .intitle ul.artistas li {
   width: 29.4%;
 }
-/* line 396, ../sass/new.scss */
+/* line 399, ../sass/new.scss */
 .intitle ul.artistas li:first-child {
   margin-left: 60px;
 }
 
-/* line 405, ../sass/new.scss */
+/* line 408, ../sass/new.scss */
 .inner-footer {
   background-color: #eee;
 }
-/* line 407, ../sass/new.scss */
+/* line 410, ../sass/new.scss */
 .inner-footer strong {
   line-height: 3;
 }
-/* line 410, ../sass/new.scss */
+/* line 413, ../sass/new.scss */
 .inner-footer a {
   margin: 0 5px;
   font-weight: bold;
 }
 
-/* line 416, ../sass/new.scss */
+/* line 419, ../sass/new.scss */
 .graytxt {
   color: #4C4C4C;
 }
 
-/* line 420, ../sass/new.scss */
+/* line 423, ../sass/new.scss */
 .advisory {
   margin-bottom: 30px;
 }
-/* line 422, ../sass/new.scss */
+/* line 425, ../sass/new.scss */
 .advisory span {
   font-size: 12px;
   color: #5b5b5b;
   display: block;
   line-height: 1.4;
 }
-/* line 428, ../sass/new.scss */
+/* line 431, ../sass/new.scss */
 .advisory a {
   color: #000;
   text-decoration: underline;
 }
 
-/* line 434, ../sass/new.scss */
+/* line 437, ../sass/new.scss */
 .redtxt {
   color: #BB0C35;
 }
 
-/* line 441, ../sass/new.scss */
+/* line 444, ../sass/new.scss */
 .nav-bar li span.spriteArrow {
   background: url("../images/spriteArrow.jpg");
   height: 39px;
@@ -500,45 +504,45 @@ label {
   display: inline-block;
   float: left;
 }
-/* line 448, ../sass/new.scss */
+/* line 451, ../sass/new.scss */
 .nav-bar li span.number-menu {
   padding: 3px 8px;
 }
-/* line 452, ../sass/new.scss */
+/* line 455, ../sass/new.scss */
 .nav-bar li:hover {
   background: transparent;
   cursor: pointer;
 }
-/* line 455, ../sass/new.scss */
+/* line 458, ../sass/new.scss */
 .nav-bar li:hover a {
   color: #fff;
 }
-/* line 458, ../sass/new.scss */
+/* line 461, ../sass/new.scss */
 .nav-bar li:hover span.number-menu {
   color: #bbb;
 }
-/* line 462, ../sass/new.scss */
+/* line 465, ../sass/new.scss */
 .nav-bar li.active {
   background: #BB0C35;
 }
-/* line 464, ../sass/new.scss */
+/* line 467, ../sass/new.scss */
 .nav-bar li.active:last-child {
   float: right;
 }
-/* line 466, ../sass/new.scss */
+/* line 469, ../sass/new.scss */
 .nav-bar li.active:last-child a {
   margin: 0 35px;
 }
-/* line 471, ../sass/new.scss */
+/* line 474, ../sass/new.scss */
 .nav-bar li.active span.spriteArrow {
   background-position: 0 -40px;
 }
-/* line 477, ../sass/new.scss */
+/* line 480, ../sass/new.scss */
 .nav-bar li.active + li span.spriteArrow {
   background-position: 0 -80px;
 }
 
-/* line 486, ../sass/new.scss */
+/* line 489, ../sass/new.scss */
 .doctype-data {
   width: 45%;
   float: left;
@@ -546,7 +550,7 @@ label {
   display: inline-block;
 }
 
-/* line 493, ../sass/new.scss */
+/* line 496, ../sass/new.scss */
 .docnumber-data {
   width: 38%;
   float: right;
@@ -554,25 +558,25 @@ label {
   display: inline-block;
 }
 
-/* line 500, ../sass/new.scss */
+/* line 503, ../sass/new.scss */
 .caption {
   color: #808080;
   margin: 10px 0;
   display: block;
 }
 
-/* line 506, ../sass/new.scss */
+/* line 509, ../sass/new.scss */
 .block {
   display: block;
   height: 80px;
 }
 
-/* line 511, ../sass/new.scss */
+/* line 514, ../sass/new.scss */
 input[type="file"] {
   margin: 15px 0;
 }
 
-/* line 516, ../sass/new.scss */
+/* line 519, ../sass/new.scss */
 img.selected {
   border: 0;
   -webkit-box-shadow: rgba(187, 12, 53, 0.2) 0 0 10px;
@@ -585,7 +589,7 @@ img.selected {
   transform: rotate(-3deg);
 }
 
-/* line 535, ../sass/new.scss */
+/* line 538, ../sass/new.scss */
 .artBO {
   background: url("../images/sprite_new.png") 0 0;
   display: inline-block;
@@ -594,12 +598,12 @@ img.selected {
   width: 115px;
   margin: 20px 10px;
 }
-/* line 528, ../sass/new.scss */
+/* line 531, ../sass/new.scss */
 .artBO else {
   background: url("../images/sprite_new2x.png") 0 0;
 }
 
-/* line 541, ../sass/new.scss */
+/* line 544, ../sass/new.scss */
 .ccB {
   background: url("../images/sprite_new.png") -120px 0;
   display: inline-block;
@@ -608,44 +612,44 @@ img.selected {
   width: 310px;
   margin: 20px 10px;
 }
-/* line 528, ../sass/new.scss */
+/* line 531, ../sass/new.scss */
 .ccB else {
   background: url("../images/sprite_new2x.png") -120px 0;
 }
 
-/* line 548, ../sass/new.scss */
+/* line 551, ../sass/new.scss */
 .stand-items img.images {
   margin-top: 10px;
 }
 
-/* line 553, ../sass/new.scss */
+/* line 556, ../sass/new.scss */
 input[type="text"].legal {
   display: inline-block;
   width: 300px;
 }
-/* line 557, ../sass/new.scss */
+/* line 560, ../sass/new.scss */
 input[type="text"].doc {
   display: inline-block;
   width: 200px;
 }
 
-/* line 564, ../sass/new.scss */
+/* line 567, ../sass/new.scss */
 .documents h4 {
   margin-top: 0;
 }
 
-/* line 570, ../sass/new.scss */
+/* line 573, ../sass/new.scss */
 img.logo {
   position: relative;
   top: 5px;
 }
 
-/* line 576, ../sass/new.scss */
+/* line 579, ../sass/new.scss */
 .small.datepicker {
   width: 90%;
 }
 
-/* line 580, ../sass/new.scss */
+/* line 583, ../sass/new.scss */
 img.ui-datepicker-trigger {
   display: inline-block;
   position: relative;
@@ -654,22 +658,22 @@ img.ui-datepicker-trigger {
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
-  /* line 589, ../sass/new.scss */
+  /* line 592, ../sass/new.scss */
   .artBO {
     display: inline-block;
     text-indent: -9999px;
   }
-  /* line 528, ../sass/new.scss */
+  /* line 531, ../sass/new.scss */
   .artBO else {
     background: url("../images/sprite_new2x.png") 0 0;
   }
 
-  /* line 592, ../sass/new.scss */
+  /* line 595, ../sass/new.scss */
   .ccB {
     display: inline-block;
     text-indent: -9999px;
   }
-  /* line 528, ../sass/new.scss */
+  /* line 531, ../sass/new.scss */
   .ccB else {
     background: url("../images/sprite_new2x.png") 0 0;
   }
