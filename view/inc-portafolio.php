@@ -48,7 +48,7 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 				                    		        <input title="Digite formato o técnica de la obra" name="obra_format_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_format');?>" />
 				                    		    </li>
 				                    		  	<li class="url">
-				                    		        <span class="asterix">*</span><strong>Url de la obra</strong>
+				                    		        <strong>Url de la obra</strong>
 				                    		        <input title="Digite url de la obra" name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
 				                    		    </li>
 				                    		    <li class="date">
@@ -96,9 +96,6 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 										?>
 										<li class="link_default">
 												<ul class="no-bullet portfolio">
-												  <li class="handler">
-													<img src="<?php echo APPLICATION_URL?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
-												   </li>
 													<li>
 														<span class="asterix">*</span><strong>Nombre de la obra</strong>
 														<input title="Digite nombre de la obra" name="obra_name_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_name');?>"/>
@@ -126,7 +123,7 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 															</select>
 													</li>
 													<li class="url">
-														<span class="asterix">*</span><strong>Url de la obra</strong>
+														<strong>Url de la obra</strong>
 														<input title="Digite url de la obra" name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
 													</li>
 													<li class="obra">
@@ -199,7 +196,7 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 														</select>
 												</li>
 												<li class="url">
-													<span class="asterix">*</span><strong>Url de la obra</strong>
+													<strong>Url de la obra</strong>
 													<input title="Digite url de la obra" name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
 												</li>
 												<li class="obra">

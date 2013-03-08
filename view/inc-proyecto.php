@@ -52,7 +52,7 @@ $default	= 'http://cambelt.co/icon/document/230x170?color=b71632,fefefe';
     		</select>
   		</li>
 		<li>
-			<span class="asterix">*</span><strong>Url de la obra</strong>
+			<strong>Url de la obra</strong>
   			<input title="Digite Url de la obra" class="expand input-text" type="text"  name="user_proyect_url"  value="<?php echo $user->__get('user_proyect_url');?>" />
 	    </li>
 	</ul>

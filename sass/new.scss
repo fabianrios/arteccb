@@ -109,9 +109,11 @@ body{
           padding: 5px;
           background: #F7F7F7;
           margin: 0 auto;
-          width: 90%;
+          width: 85%;
           text-align: center; 
-          display:block;
+        }
+        &:last-child{
+          
         }
       }
     }
@@ -124,6 +126,7 @@ body{
        }
        &.date{
          width: 12%;
+         margin-bottom: 10px;
        }
        &.format{
          
@@ -645,4 +648,3 @@ only screen and (min-device-pixel-ratio: 2) {
     @include spritenew($retina: true);
   }
 }
- 
