@@ -1,6 +1,6 @@
 <?php
   $day   = 30;     // Day of the countdown
-  $month = 06;      // Month of the countdown
+  $month = 04;      // Month of the countdown
   $year  = 2013;   // Year of the countdown
   $hour  = 23;     // Hour of the day (east coast time)
 
