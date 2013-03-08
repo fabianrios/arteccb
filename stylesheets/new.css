@@ -640,8 +640,21 @@ img.logo {
   top: 5px;
 }
 
+/* line 576, ../sass/new.scss */
+.small.datepicker {
+  width: 90%;
+}
+
+/* line 580, ../sass/new.scss */
+img.ui-datepicker-trigger {
+  display: inline-block;
+  position: relative;
+  left: 15px;
+  top: 9px;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
-  /* line 578, ../sass/new.scss */
+  /* line 589, ../sass/new.scss */
   .artBO {
     display: inline-block;
     text-indent: -9999px;
@@ -651,7 +664,7 @@ img.logo {
     background: url("../images/sprite_new2x.png") 0 0;
   }
 
-  /* line 581, ../sass/new.scss */
+  /* line 592, ../sass/new.scss */
   .ccB {
     display: inline-block;
     text-indent: -9999px;
