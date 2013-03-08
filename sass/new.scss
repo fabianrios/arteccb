@@ -99,29 +99,39 @@ body{
       }
       }
     }
+    &.portfolio-last{
+      li{
+        width:80%;
+         &.handler{
+           width:4%;
+         }
+      }
+    }
     &.portfolio{
       li{
-       width:30%;
+       width:44%;
        margin-left:20px;
+       &.handler{
+         width:4%;
+       }
        &.date{
-         width:8%;
+         width: 12%;
        }
        &.format{
-         width:15%;
+         
        }
        &.obra{
          width:58%;
        }
        &.url{
-         margin-left:38px;
        }
        &.handler{
          a{
            left: 4px;
-         top: 70px;
-         right:0;
-         bottom:0;
-         }
+           top: 70px;
+           right:0;
+           bottom:0;
+           }
        }
       }
     }
@@ -581,6 +591,7 @@ img{
 
 .small.datepicker{
   width:90%;
+  display: inline-block;
 }
 
 img.ui-datepicker-trigger{
@@ -589,6 +600,32 @@ img.ui-datepicker-trigger{
   left: 15px;
   top: 9px;
 }
+
+.qq-upload-button {
+  width: 150px;
+  background: white;
+  border: 0;
+  border-bottom: 4px solid #E1E1E1;
+  padding: 7px 10px 6px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  margin: 10px 5px;
+  font-weight: bold;
+  @include transition-property(border);
+  @include transition-duration(.3s);
+  @include transition-timing-function(ease-in);
+  &:hover{
+      border-bottom: 4px solid gray;
+  }
+}
+
+.qq-drop-processing{
+  display:none;
+}
+
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), 
 only screen and (min-device-pixel-ratio: 2) {
