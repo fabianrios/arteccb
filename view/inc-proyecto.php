@@ -4,7 +4,7 @@ $default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
 ?>
 <!-- panel 2 -->
 <h4>Proyecto</h4>
-<h5>Descripción del proyecto a presentar* (Max. 250 palabras)</h5>
+<p><em>Descripción del proyecto a presentar* (Max. 250 palabras)</em></p>
 <textarea class="expand" name="user_proyect_description" rows="10"><?php echo $user->__get('user_proyect_description');?></textarea>
 
 	<!-- <div class="intitle">
@@ -93,7 +93,7 @@ $default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
 		    </li>
 	  	</ul>
 	  
-	<span class="caption">Puede cargar imágenes en .JPG o .PNG. El archivo no debe superar los 1000 KB.</span>
+	<caption class="caption">Puede cargar imágenes en .JPG o .PNG. El archivo no debe superar los 1000 KB.</caption>
 
 	<script>
       $(document).ready(function() {
