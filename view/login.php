@@ -1,9 +1,7 @@
 <?php 
 include_once('header-nologin2.php'); 
 $error = '';
-if ((isset($_GET[0])) && ($_GET[1] == 0))
-	$error	= '<div class="alert-box error" id="alert">Un usuario ya ha sido registrado con estos datos.<a href="javascript:void(0);" onClick="document.getElementById(\'alert\').style.display=\'none\';" class="close">&times;</a></div>';
-if ((isset($_GET[0])) && ($_GET[1] == 0))
+if (isset($_GET[0]))
 	$error	= '<div class="alert-box error" id="alert">Hay un error en los datos suministrados.<a href="javascript:void(0);" onClick="document.getElementById(\'alert\').style.display=\'none\';" class="close">&times;</a></div>';
 
 ?>

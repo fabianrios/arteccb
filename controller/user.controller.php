@@ -1,6 +1,29 @@
 <?php
 $action = isset($_POST['action']) ? $_POST['action'] : $_GET[0];
 switch ($action):
+	//USUARIO NO REGISTRADO
+	case 'login':
+		$user 	= UserHelper::retrieveUsers("AND user_email = '".escape($_POST['user_email']). "' AND user_password = '" .md5($_POST['user_password']) . "'");
+		if(count($user) > 0)
+		{
+			if ($user[0]->__get('user_id') != '')	//user_users user
+			{
+				$_SESSION['user_id']	= $user[0]->__get('user_id');
+				redirectUrl(APPLICATION_URL.'registro-inicio-0400.html');
+			}
+		}
+		else
+		{
+			$user 	= UserHelper::retrieveUsers("AND user_email = '".escape($_POST['user_email'])."'");
+			if(count($user) > 0)
+			{			
+				redirectUrl(APPLICATION_URL."login/error.html");
+			}
+			else
+				redirectUrl(APPLICATION_URL."register/norecord.html");
+		}
+	break
+	//REGISTRO
 	case 'create':
 		$users	= UserHelper::retrieveUsers(" AND user_email = '" . escape($_POST['user_email']) . "'");
 		if (count($users) == 0)
@@ -34,6 +57,7 @@ switch ($action):
 			redirectUrl(APPLICATION_URL.'register/error/0.html');
 		}
 	break;
+	//OLVIDO CONTRASEÑA
 	case 'recover_password':
 		$users	= UserHelper::retrieveUsers(" AND user_email = '" . escape($_POST['user_email']) . "'");
 		$password 	= substr(md5(date('YmdHis')), 0, 8);
@@ -62,6 +86,14 @@ switch ($action):
 			redirectUrl(APPLICATION_URL.'login-recuperar-contrasena-0110/error.html');
 		}
 	break;
+	case 'changePasswordOC':
+		$user 	=  new User($_SESSION['user_id']);	
+		$user->__set('user_verification', '');
+		$user->__set('user_password', md5($_POST['contrasena']));
+		$user->update();
+		redirectUrl(APPLICATION_URL."login-recuperar-contrasena-0140/exito.html");
+	break;
+	//INFO BASICA
 	case 'basic':
 		$user 		= new User($_SESSION['user_id']);
 		foreach ($_POST as $key => $value)
@@ -81,25 +113,7 @@ switch ($action):
 		$user->update();
 		redirectUrl(APPLICATION_URL.'registro-inicio-0400.html');
 	break;
-	case 'basic':
-		$user 		= new User($_SESSION['user_id']);
-		foreach ($_POST as $key => $value)
-			$user->__set($key, $value);	
-		if($_FILES["user_image"]["name"] != "")
-		{
-			$ext	= getFileExtension($_FILES["user_image"]['name']);
-			$name 	= md5(date("YmdHis")) . $ext;
-		
-			if(uploadFile('resources/images/', $_FILES["user_image"]['tmp_name'], $name))
-			{
-				$accept = array('jpg', 'gif', 'png', 'jpeg');
-				$medio 	= new Medio($name , $accept, 'resources/images/');  
-				$user->__set('user_image', $name);						
-			}				
-		}	
-		$user->update();
-		redirectUrl(APPLICATION_URL.'registro-inicio-0400.html');
-	break;
+	//	
 	case 'gallerySelect':
 		$user 		= new User($_SESSION['user_id']);
 		$user->__set('user_gallery_type', $_GET[1]);
@@ -363,39 +377,13 @@ switch ($action):
 		}
 	break;
 			
-	case 'login':
-		$user 	= UserHelper::retrieveUsers("AND user_email = '".escape($_POST['user_email']). "' AND user_password = '" .md5($_POST['user_password']) . "'");
-		if(count($user) > 0)
-		{
-			if ($user[0]->__get('user_id') != '')	//user_users user
-			{
-				$_SESSION['user_id']	= $user[0]->__get('user_id');
-				redirectUrl(APPLICATION_URL.'registro-inicio-0400.html');
-			}
-		}
-		else
-		{
-			$user 	= UserHelper::retrieveUsers("AND user_email = '".escape($_POST['user_email'])."'");
-			if(count($user) > 0)
-			{			
-				redirectUrl(APPLICATION_URL."login/error.html");
-			}
-			else
-				redirectUrl(APPLICATION_URL."register/norecord.html");
-		}
-	break
+
 	case 'changePassword':
 		$user 	=  new User($_SESSION['user_id']);	
 		$user->__set('user_password', md5($_POST['contrasena']));
 		$user->update();
 		redirectUrl(APPLICATION_URL."datos-galeria-0300/exito.html");
 	break;	
-	case 'changePasswordOC':
-		$user 	=  new User($_SESSION['user_id']);	
-		$user->__set('user_verification', '');
-		$user->__set('user_password', md5($_POST['contrasena']));
-		$user->update();
-		redirectUrl(APPLICATION_URL."login-recuperar-contrasena-0140/exito.html");
-	break;		
+		
 endswitch;
 ?>
