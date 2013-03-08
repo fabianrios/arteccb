@@ -32,13 +32,13 @@ function decide($field, $required, $user)
 			
 
 		<div class="mid-input">
-			<label><strong> Lugar de nacimiento *</strong></label>	
+			<label><span class="asterix">*</span> Lugar de nacimiento</label>	
 			<input type="text" title="Digite lugar de nacimiento" class="expand input-text <?php echo decide("user_born_city", $required, $user);?>"  name="user_born_city" value="<?php echo $user->__get('user_born_city');?>"/>
 		</div>
         
 		<div class="mid-input">
 	
-		<label><strong>Fecha de nacimiento (MM/DD/AAAA)</strong></label>
+		<label><span class="asterix">*</span> Fecha de nacimiento (MM/DD/AAAA)</label>
 		<input type="text" title="Digite fecha de nacimiento" id="datepicker" name="user_birthday" value="<?php echo $user->__get('user_birthday');?>" class="small datepicker"/><br/>
 		
 
@@ -46,13 +46,13 @@ function decide($field, $required, $user)
         		
 		<!-- Ciudad -->
 		<div class="mid-input">
-			<label><strong> Ciudad de residencia*</strong></label>	
+			<label><span class="asterix">*</span> Ciudad de residencia</label>	
 			<input type="text" title="Digite ciudad de residencia" name="user_city" class="expand input-text <?php echo decide("user_city", $required, $user);?>" value="<?php echo $user->__get('user_city');?>"/>
 		</div>
 		<!-- End Ciudad -->
 		
 		<div class="mid-input">
-			<label><strong>País de residencia*</strong></label>	
+			<label><span class="asterix">*</span>País de residencia*</label>	
 				<select name="country_id" title="Digite país de residencia" class="<?php echo decide("country_id", $required, $user);?>">
 					<option>Seleccione</option>
 					<?php
@@ -72,7 +72,7 @@ function decide($field, $required, $user)
 			
 		<!-- Dirección -->
 		<div class="mid-input">
-			<label><strong> Direcci&oacute;n de residencia*</strong></label>	
+			<label><span class="asterix">*</span> Direcci&oacute;n de residencia</label>	
 			<input type="text" title="Digite dirección de residencia"  name="user_address"  class="expand input-text <?php echo decide("user_address", $required, $user);?>" value="<?php echo $user->__get('user_address');?>"/>
 		</div>
 		<!-- End Dirección -->
@@ -82,7 +82,7 @@ function decide($field, $required, $user)
 		
 			<!-- Teléfono -->
 		<div class="mid-input">
-		<strong>Teléfono*</strong>
+		<label><span class="asterix">*</span>Teléfono</label>
 			<div class="row">
 				<!-- columns 1/3 codigo pais -->
 				<div class="four columns">
