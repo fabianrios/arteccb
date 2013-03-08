@@ -94,6 +94,9 @@ body{
        &.obra{
          width:70%;
        }
+       &.country{
+        width:17%;
+      }
       }
     }
     &.portfolio{
@@ -379,8 +382,8 @@ label{
         &:last-child{
          width:10%; 
         }
-        &:nth-last-child(2){
-         width:18%; 
+        &.country{
+          width:17%;
         }
       }
     }
