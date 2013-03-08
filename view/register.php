@@ -1,13 +1,15 @@
 <?php 
 include_once('header-nologin2.php'); 
 $error = '';
-if ((isset($_GET[0])) && ($_GET[1] == 0))
-	$error	= '<div class="alert-box error" id="alert">Un usuario ya ha sido registrado con estos datos.<a href="javascript:void(0);" onClick="document.getElementById(\'alert\').style.display=\'none\';" class="close">&times;</a></div>';
-if ((isset($_GET[0])) && ($_GET[1] == 1))
-	$error	= '<div class="alert-box error" id="alert">Hay un error en los datos suministrados.<a href="javascript:void(0);" onClick="document.getElementById(\'alert\').style.display=\'none\';" class="close">&times;</a></div>';
-if ((isset($_GET[0])) && ($_GET[1] == 'norecord'))
-	$error	= '<div class="alert-box error" id="alert">El correo suministrado no existe en nuestra base de datos. Por favor, inicie su registro.<a href="javascript:void(0);" onClick="document.getElementById(\'alert\').style.display=\'none\';" class="close">&times;</a></div>';
-
+if ((isset($_GET[0])) && ($_GET[0] == 'norecord'))
+	$error	= '<div class="alert-box error" id="alert">Estimado usuario lo invitamos a que lleve a cabo su registro.<a href="javascript:void(0);" onClick="document.getElementById(\'alert\').style.display=\'none\';" class="close">&times;</a></div>';
+else
+{
+	if ((isset($_GET[0])) && ($_GET[1] == 0))
+		$error	= '<div class="alert-box error" id="alert">Un usuario ya ha sido registrado con estos datos.<a href="javascript:void(0);" onClick="document.getElementById(\'alert\').style.display=\'none\';" class="close">&times;</a></div>';
+	if ((isset($_GET[0])) && ($_GET[1] == 1))
+		$error	= '<div class="alert-box error" id="alert">Hay un error en los datos suministrados.<a href="javascript:void(0);" onClick="document.getElementById(\'alert\').style.display=\'none\';" class="close">&times;</a></div>';
+}
 ?>
 
 <body>
@@ -35,8 +37,8 @@ if ((isset($_GET[0])) && ($_GET[1] == 'norecord'))
 							<label for="name"><span class="asterix">*</span>Tipo de documento</label>
 							<select name="tipo de documento">
 								<option value="cc">Cédula de ciudadanía</option>
-								<option value="cc">Cédula de extranjería</option>
-								<option value="cc">Número de identificación válido</option>
+								<option value="ce">Cédula de extranjería</option>
+								<option value="ni">Número de identificación válido</option>
 							</select>
 						</div>
 						<div class="six columns">
