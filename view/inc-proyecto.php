@@ -90,7 +90,7 @@ $default	= 'http://cambelt.co/icon/document/230x170?color=b71632,fefefe';
                     ?>              
 		  	<img src="<?php echo $image;?>" class="images right" title="Imagen de la obra">
          
-                    <div id="user_proyect_image_3"></div>     <?php if($user->__get('user_proyect_image_3') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
+                    <div id="user_proyect_image_3"></div>     
 		    </li>
 	  	</ul>
 	  
