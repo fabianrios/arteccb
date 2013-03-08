@@ -17,9 +17,9 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 								?>  
 					                <li class="link_default">
 					                    <ul class="no-bullet portfolio">
-					                      <li class="handler">
+					                      <!--<li class="handler">
 					                        <img src="<?php echo APPLICATION_URL?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
-					                       </li>
+					                       </li>-->
 					                        <li>
 					                            <span class="asterix">*</span><strong>Nombre de la obra</strong>
 					                            <input title="Digite nombre de la obra" name="obra_name_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_name');?>"/>
@@ -51,7 +51,9 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 					                        </li>
 					                      	<li class="obra">
 					                        	<span class="asterix">*</span><strong>Imagen de la obra</strong>
-					                        	<label>Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</label>
+					                        	<span class="caption">Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</span>
+					                       	   
+					                       	    
 					                       	    <?php
 							                    $image	= ($obra->__get('obra_image') != '') ? APPLICATION_URL.$dir.'portafolio/'.$obra->__get('obra_image') : $default;
 							                        
@@ -93,9 +95,9 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 								?>
 					            <li class="link_default">
 					                    <ul class="no-bullet portfolio">
-					                      <li class="handler">
+					                      <!--<li class="handler">
 					                        <img src="<?php echo APPLICATION_URL?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
-					                       </li>
+					                       </li>-->
 					                        <li>
 					                            <span class="asterix">*</span><strong>Nombre de la obra</strong>
 					                            <input title="Digite nombre de la obra" name="obra_name_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_name');?>"/>
@@ -129,6 +131,7 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 					                        	<span class="asterix">*</span><strong>Imagen de la obra</strong>
 					                        	<span class="caption">Puede cargar imágenes en .JPG o .PNG. El archivo no debe superar los 1000 KB. </span>
 					                       	    <div id="obra_image_<?php echo $key?>"></div>     
+							                    
 							                    <?php if($obra->__get('obra_image') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
 							                    <input type="hidden" name="obra_key_<?php echo $i;?>" value="<?php echo $key?>" />
 					                      	</li>
