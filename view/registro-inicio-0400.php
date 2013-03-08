@@ -12,8 +12,8 @@
 		<div class="inner-header">
 			<div class="row">
 				<div class="twelve columns">
-					<h2>Bienvenido a la convocatoria en línea del Pabellón Artecámara en artBO 2013.</h2>
-					<p>El plazo vence el 30 de abril de 2013.</p>
+					<h3>Bienvenido a la convocatoria en línea del Pabellón Artecámara en artBO 2013.</h3>
+					<p><strong>El plazo vence el 30 de abril de 2013.</strong></p>
 					<p>Consulte el Reglamento de Participación de artBO aquí.</p>
 					
 					<p>Usted puede ir completando la información solicitada paso a paso o puede empezar por cualquiera de las secciones. Recuerde siempre guardar los cambios realizados. Si usted aplicó en el Pabellón Artecámara de artBO 2012, la información que usted registró bajo su perfil ha sido guardada.</p>
