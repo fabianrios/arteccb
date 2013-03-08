@@ -4,7 +4,7 @@ $default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
 ?>
 <!-- panel 2 -->
 <h4>Proyecto</h4>
-<h5>Descripción del proyecto a presentar* (Max. 250 palabras)</h5>
+<p><em>Descripción del proyecto a presentar* (Max. 250 palabras)</em></p>
 <textarea class="expand" name="user_proyect_description" rows="10"><?php echo $user->__get('user_proyect_description');?></textarea>
 
 	<!-- <div class="intitle">
@@ -62,14 +62,21 @@ $default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
 		
 
 	    <ul class="no-bullet uploadimages">
+		  	
+		  			  	
+		  	
+		  	
 		  	<li>
+		  	<img src="http://cambelt.co/icon/document/230x170?color=b71632,fefefe" class="images right" title="Imagen de la obra">
 		  		<?php
                     $image	= ($user->__get('user_proyect_image_1') != '') ? APPLICATION_URL.$dir.$user->__get('user_proyect_image_1') : $default;
                         
                     ?>           
                     <div id="user_proyect_image_1"></div>     <?php if($user->__get('user_proyect_image_1') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
+                    
 		  	</li>
 		  	<li>
+		  	<img src="http://cambelt.co/icon/document/230x170?color=b71632,fefefe" class="images right" title="Imagen de la obra">
 		  	    		  		<?php
                     $image	= ($user->__get('user_proyect_image_2') != '') ? APPLICATION_URL.$dir.$user->__get('user_proyect_image_2') : $default;
                         
@@ -77,6 +84,7 @@ $default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
                     <div id="user_proyect_image_2"></div>     <?php if($user->__get('user_proyect_image_2') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
 		  	</li>
 		  	<li>
+		  	<img src="http://cambelt.co/icon/document/230x170?color=b71632,fefefe" class="images right" title="Imagen de la obra">
 		  	   		  		<?php
                     $image	= ($user->__get('user_proyect_image_3') != '') ? APPLICATION_URL.$dir.$user->__get('user_proyect_image_3') : $default;
                         
@@ -85,8 +93,8 @@ $default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
 		    </li>
 	  	</ul>
 	  
-	<span class="caption">Puede cargar imágenes en .JPG o .PNG. El archivo no debe superar los 1000 KB.</span>
-<hr/>
+	<caption class="caption">Puede cargar imágenes en .JPG o .PNG. El archivo no debe superar los 1000 KB.</caption>
+
 	<script>
       $(document).ready(function() {
         var manualuploader = new qq.FineUploader({
