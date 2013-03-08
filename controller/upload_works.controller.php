@@ -24,6 +24,7 @@
 //
 
 // Include the uploader class
+
 require_once('model/qqFileUploader.model.php');
 $user				= new User($_GET[0]);
 $key				= isset($_GET[2]) ? $_GET[2] : 'null';

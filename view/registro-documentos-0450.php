@@ -18,6 +18,8 @@ if (count($userForms) == 4)
 }
 else
 	$action		= "alertNotYet()";
+$default	= 'http://cambelt.co/icon/document/230x170?color=b71632,fefefe';
+$dir		= 'resources/images/'. $user->__get('user_id'). '-' .  makeUrlClear(utf8_decode($user->__get('user_name'))).'/';
 ?>
 <script language="javascript">
 function alertNotYet()
@@ -73,11 +75,11 @@ function alertNotYet()
 								        	</div>
 								        	<div class="five columns">
 							        		
-								        		<img src="http://cambelt.co/icon/camera/235x150?color=b71632,fefefe" class="images right" title="Imagen del director">
+								        		
 		</div>			<div class="five columns">			        		 
 												<?php
-							                    $image	= ($user->__get('user_document') != '') ? APPLICATION_URL.$dir.$user->__get('user_certificate') : $default;
-							                        
+							                    $image	= ($user->__get('user_document') != '') ? APPLICATION_URL.$dir.$user->__get('user_document') : $default;
+							                    if (strpos($image, '.pdf')  !== false) $image	= 'http://cambelt.co/icon/document/230x170?color=3fc46b,fefefe';    
 							                    ?>      
 							                    <?php if($user->__get('user_document') != '') { ?><img class="images right" src="<?php echo $image?>"><?php }?>     
 							                    <div id="user_document"></div>     

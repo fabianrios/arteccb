@@ -309,10 +309,7 @@ switch ($action):
 				//$deleteSQL   = "DELETE FROM user_obras WHERE user_id = " . $_SESSION['user_id'];
 
 				$string	= str_replace('obra_name_', '', $key);
-				$obra	= (isset($_POST['obra_id_'.$string])) ? new Obra($_POST['obra_id_'.$string]) : new Obra();
-				echo '<pre>';
-				print_r($obra);
-				echo '</pre>';				
+				$obra	= (isset($_POST['obra_id_'.$string])) ? new Obra($_POST['obra_id_'.$string]) : new Obra();			
 				if($obra->__get('obra_id') == '')
 				{
 					$obraArray = ObraHelper::retrieveObras("AND obra_key = '" . $_POST['obra_key_'.$string] . "'");
@@ -326,6 +323,7 @@ switch ($action):
 				$obra->__set('obra_year', $_POST['obra_year_'.$string]);
 				$obra->__set('obra_url', $_POST['obra_url_'.$string]);
 				$obra->__set('user_id', $_SESSION['user_id']);
+				$obra->__set('obra_key', $_POST['obra_key_'.$string]);
 				
 				if ($obra->__get('obra_id') != '')  
 					$obra->update();				
@@ -342,12 +340,10 @@ switch ($action):
 			$form->__set('form_number', 4);
 			$form->save();
 		}
-		/*
 		if (!isset($_GET[1]))
 			redirectUrl(APPLICATION_URL.'registro-documentos-0450.html');
 		else		
 			redirectUrl(APPLICATION_URL.'registro-portafolio-0440/saved.html');		
-		*/
 	break;
 	case 'createArtist':
 		$connection  = Connection::getInstance();
