@@ -108,22 +108,22 @@ body.bigpic7 {
   padding: 5px;
   background: #F7F7F7;
   margin: 0 auto;
-  width: 90%;
+  width: 85%;
   text-align: center;
-  display: block;
 }
-/* line 119, ../sass/new.scss */
+/* line 118, ../sass/new.scss */
 .link_default ul.portfolio li {
   width: 44%;
   margin-left: 20px;
 }
-/* line 122, ../sass/new.scss */
+/* line 121, ../sass/new.scss */
 .link_default ul.portfolio li.handler {
   width: 4%;
 }
-/* line 125, ../sass/new.scss */
+/* line 124, ../sass/new.scss */
 .link_default ul.portfolio li.date {
   width: 12%;
+  margin-bottom: 10px;
 }
 /* line 131, ../sass/new.scss */
 .link_default ul.portfolio li.obra {

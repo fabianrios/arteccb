@@ -109,9 +109,8 @@ body{
           padding: 5px;
           background: #F7F7F7;
           margin: 0 auto;
-          width: 90%;
+          width: 85%;
           text-align: center; 
-          display:block;
         }
       }
     }
@@ -124,6 +123,7 @@ body{
        }
        &.date{
          width: 12%;
+         margin-bottom: 10px;
        }
        &.format{
          

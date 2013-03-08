@@ -90,7 +90,7 @@ $countries	= CountryHelper::retrieveCountries(" AND country_activated = 1 ORDER 
 						{
 						?>                          
                             <li class="link_default">
-                                  <ul class="no-bullet resume">
+                                  <ul class="no-bullet resume-more">
                                     <li class="handler">
                                     	<img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
                                     </li>
@@ -498,7 +498,7 @@ $countries	= CountryHelper::retrieveCountries(" AND country_activated = 1 ORDER 
 						 	$i	= (count($prizes) > 0) ? count($prizes)+100 : 200;
 						 	?>
                             <li class="link_default">
-                                  <ul class="resume no-bullet">
+                                  <ul class="resume-more no-bullet">
                                     <li class="handler">
                                     	<img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
                                     </li>
