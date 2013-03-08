@@ -37,8 +37,8 @@ else
 							<label for="name"><span class="asterix">*</span>Tipo de documento</label>
 							<select name="tipo de documento">
 								<option value="cc">Cédula de ciudadanía</option>
-								<option value="cc">Cédula de extranjería</option>
-								<option value="cc">Número de identificación válido</option>
+								<option value="ce">Cédula de extranjería</option>
+								<option value="ni">Número de identificación válido</option>
 							</select>
 						</div>
 						<div class="six columns">
