@@ -371,13 +371,16 @@ label{
     }
     &.resume-more{
       li{
-        width:18.4%;
+        width:20.4%;
         &:first-child{
          margin-left:60px; 
-         width:24%;
+         width:21%;
         }
         &:last-child{
          width:10%; 
+        }
+        &:nth-last-child(2){
+         width:18%; 
         }
       }
     }
@@ -571,6 +574,17 @@ img{
     position:relative;
     top:5px;
   }
+}
+
+.small.datepicker{
+  width:90%;
+}
+
+img.ui-datepicker-trigger{
+  display: inline-block;
+  position: relative;
+  left: 15px;
+  top: 9px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), 
