@@ -18,10 +18,9 @@ if ((isset($_GET[0])) && ($_GET[1] == 0))
 			<form  action="<?php echo APPLICATION_URL?>user.controller/create.html"  method="post" id="validable">
 				<div class="panel">
 					<h3>Registro</h3>
-					<p>Si nunca te haz registrado en artBO, incluida la última versión.<br />
-					Ya te registráste en artBO, haz clic <a class="underline" href="login.html">aquí.</a></p>
+					<p>Si nunca te has registrado en artBO el Pabellón Artecámara, incluida la última versión. Si ya te registraste en artBO en el Pabellón Artecámara, haz clic <a class="underline" href="login.html">aquí.</a></p>
 					
-					<span class="caption"><strong>*Nota:</strong>Tenga en cuenta que con este mismo número de identificación deberá registrar el ingreso de sus obras, equipos y otros a Corferias y también podrá participar en futuras convocatorias de Artecámara de la Cámara de Comercio de Bogotá, actualizando sus datos e imágenes </span>
+					<span class="caption"><strong>*Nota:</strong>enga en cuenta que con este mismo número de identificación deberás registrar el ingreso de tus obras, equipos y otros a Corferias y, podrás también participar en futuras convocatorias de Artecámara de la Cámara de Comercio de Bogotá, actualizando tus datos e imágenes. </span>
 				
 					<label for="name"><span class="asterix">*</span>Nombre</label>
 					<input type="text" name="user_name" title="Digite su(s) nombre(s) y Apellidos"/>
@@ -34,21 +33,22 @@ if ((isset($_GET[0])) && ($_GET[1] == 0))
 							<label for="name"><span class="asterix">*</span>Tipo de documento</label>
 							<select name="tipo de documento">
 								<option value="cc">Cédula de ciudadanía</option>
+								<option value="cc">Cédula de extranjería</option>
 								<option value="cc">Número de identificación válido</option>
 							</select>
 						</div>
 						<div class="six columns">
 							<label for="numero_doc"><span class="asterix">*</span>Número de documento</label>
-							<input type="number" name="numero_doc" id="numero_doc" title="Digite su numero de documento"/>
+							<input type="text" name="numero_doc" id="numero_doc" title="Digite su numero de documento"/>
 						</div>
 					</div>
-					<label for="name"><span class="asterix">*</span>Correo Electronico</label>
+					<label for="name"><span class="asterix">*</span>Correo electrónico</label>
 					<input type="email" name="user_email"  title="Digite el correo electrónico"/>
-					<label for="name"><span class="asterix">*</span>Confirmación correo Electronico</label>
+					<label for="name"><span class="asterix">*</span>Confirmación correo electrónico</label>
 					<input type="email" name="user_email_confirm"  alt="email" title="Confirme el correo electrónico digitado"/>
 					<label for="name"><span class="asterix">*</span>Clave</label>
 					<input type="password" name="user_password" title="Digite su contraseña"/>
-					<label for="name"><span class="asterix">*</span>Confirmación Clave</label>
+					<label for="name"><span class="asterix">*</span>Confirmar clave</label>
 					<input type="password" name="user_password_confirm" alt="Confirme la clave digitada" title="Contrase&ntilde;a (repetir)"/>
 				</div>
 				<div class="row">

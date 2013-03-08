@@ -4,7 +4,7 @@ $default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
 ?>
 <!-- panel 2 -->
 <h4>Proyecto</h4>
-<h5>Descripción del proyecto* (Max. 250 palabras)</h5>
+<h5>Descripción del proyecto a presentar* (Max. 250 palabras)</h5>
 <textarea class="expand" name="user_proyect_description" rows="10"><?php echo $user->__get('user_proyect_description');?></textarea>
 
 	<!-- <div class="intitle">
@@ -45,10 +45,10 @@ $default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
     		<select title="Digite año de la obra" name="user_proyect_year">
     			<option <?php if ($user->__get('user_proyect_year') == 2012) echo 'selected="selected"';?>>2012</option>
     			<option <?php if ($user->__get('user_proyect_year') == 2011) echo 'selected="selected"';?>>2011</option>
-    			<option <?php if ($user->__get('user_proyect_year') == 2010) echo 'selected="selected"';?>>2010</option>
+    			<!--<option <?php if ($user->__get('user_proyect_year') == 2010) echo 'selected="selected"';?>>2010</option>
     			<option <?php if ($user->__get('user_proyect_year') == 2009) echo 'selected="selected"';?>>2009</option>
     			<option <?php if ($user->__get('user_proyect_year') == 2008) echo 'selected="selected"';?>>2008</option>
-    			<option <?php if ($user->__get('user_proyect_year') == 2007) echo 'selected="selected"';?>>2007</option>
+    			<option <?php if ($user->__get('user_proyect_year') == 2007) echo 'selected="selected"';?>>2007</option>-->
     		</select>
   		</li>
 		<li>
@@ -85,7 +85,7 @@ $default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
 		    </li>
 	  	</ul>
 	  
-	<span class="caption">Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</span>
+	<span class="caption">Puede cargar imágenes en .JPG o .PNG. El archivo no debe superar los 1000 KB.</span>
 <hr/>
 	<script>
       $(document).ready(function() {

@@ -18,7 +18,7 @@ function validate()
 	var ret	= true;
 	if (document.getElementById("rep_contrasena").value != document.getElementById('contrasena').value) 
 	{ 
-		alert ('Las contraseñas no coinciden.'); 
+		alert ('Las claves no coinciden.'); 
 		ret	= false; 
 	}
 	else if (document.getElementById('contrasena').value == '')
@@ -35,13 +35,13 @@ function validate()
 		<div class="six columns centered"><!-- six columns -->
 			<span class="artBO">Artbo</span><span class="ccB">CCB</span>
 	    	<div class="alert-box error">
-	    		Las contraseñas no coinciden. Prueba de nuevo.
+	    		Las claves no coinciden. Prueba de nuevo.
 	    		<a href="" class="close" title="Cerrar">&times;</a>
 	    	</div>
 	    	<!-- END  casilla de alerta -->
 	    	<form action="<?php echo APPLICATION_URL;?>user.controller/changePasswordOC.html" method="post">
 			<div class="panel"><!-- Panel -->
-			<h3>Restablecer contraseña</h3>
+			<h3>Restablecer clave</h3>
 				<!-- login form -->
 				    	<p>Introduce una nueva contraseña para tu cuenta de artBO.</p>
 				    

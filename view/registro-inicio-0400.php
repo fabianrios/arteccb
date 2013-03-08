@@ -12,18 +12,24 @@
 		<div class="inner-header">
 			<div class="row">
 				<div class="twelve columns">
-					<p>Por favor lea atentamente las siguientes instrucciones antes de iniciar su proceso de aplicación al Pabellón Artecámara - Proyectos de Artistas Emergentes Colombianos de artBO 2013 y recuerde que tiene hasta el 15 de abril de 2013 hasta las 00:00 a.m. para aplicar.</p>
-					<p>Para completar su aplicación, puede empezar por cualquiera de las secciones, pero tenga en cuenta ir guardando los cambios realizados. La aplicación se puede ir completando en diferentes momentos. Recuerde cerrar cesión antes de salir de la aplicación. Para ingresar nuevamente y seguir diligenciando sus datos, sólo ha de iniciar sesión. </p>
-					<h5>Las 4 secciones a diligenciar son:</h5>
+					<h2>Bienvenido a la convocatoria en línea del Pabellón Artecámara en artBO 2013.</h2>
+					<p>El plazo vence el 30 de abril de 2013.</p>
+					<p>Consulte el Reglamento de Participación de artBO aquí.</p>
+					
+					<p>Usted puede ir completando la información solicitada paso a paso o puede empezar por cualquiera de las secciones. Recuerde siempre guardar los cambios realizados. Si usted aplicó en el Pabellón Artecámara de artBO 2012, la información que usted registró bajo su perfil ha sido guardada.</p>
+					
+
+					<h5>Esta es una breve descripción de la información solicitada en cada sección:</h5>
 					<ul class="no-bullet">
-						<li class="thin">1. <strong>Hoja de Vida</strong> (Estudios realizados, selección de exposiciones individuales desde 2009, selección de exposiciones colectivas desde 2009 y premios o becas)</li>
-						<li class="thin">2. <strong>Proyecto:</strong> descripción del proyecto en 250 palabras y tres imágenes de la obra a presentar en Artecámara</li>
-						<li class="thin">3. <strong>Portafolio:</strong> presentar 5 imágenes de obras realizadas desde 2009</li>
-						<li class="thin">4. <strong>Documento:</strong> imagen JPG o archivo PDF de su cédula de ciudadanía o extranjería</li>
+						<li class="thin">1. <strong>Hoja de Vida:</strong> (Estudios realizados, selección de exposiciones individuales desde 2008, selección de exposiciones colectivas desde 2008 y premios y/o becas, ordenar en orden cronológico de lo más recién a lo más antiguo).</li>
+						<li class="thin">2. <strong>Proyecto:</strong> descripción del proyecto en máximo 500 palabras y hasta 3 imágenes del mismo. El proyecto debe haber sido realizado en los 2 últimos años (2011 a la fecha).</li>
+						<li class="thin">3. <strong>Portafolio:</strong> presentar hasta 5 imágenes de obras realizadas en los 5 últimos años (desde 2008 a la fecha). </li>
+						<li class="thin">4. <strong>Documento:</strong> copia de su cédula de ciudadanía o extranjería.</li>
 					</ul>
-					<p>Las imágenes y documentos a subir deben pesar máximo 1000KB. </p>
-					<p>Usted podrá dar por finalizar el proceso una vez haya diligenciado todos los campos obligatorios. Al finalizar, el sistema le enviará por email la ficha técnica con su número de registro y el reporte de su aplicación.
-					Artecámara les desea muchos éxitos. </p>
+					<p>Sus imágenes y documentos deben ser en formato .jpg, .pdf, .png o.gif y de un máximo de 1.000 KB.</p>
+					<p>Usted podrá finalizar el proceso una vez haya diligenciado todos los campos obligatorios. 
+					Cualquier duda que pueda tener, por favor contáctenos: <a href="mailto:agendacultural@ccb.org.co">agendacultural@ccb.org.co</a> 
+					Gracias por su participación!</p>
 				</div>
 			</div>
 		</div>

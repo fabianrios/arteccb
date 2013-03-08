@@ -16,7 +16,7 @@
 	<!-- Set the viewport width to device width for mobile -->
 	<!-- <meta name="viewport" content="width=device-width" /> -->
 
-	<title>ArteCámara</title>
+	<title>Artecámara</title>
   
 	<!-- Included CSS Files -->
 	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/app.css">

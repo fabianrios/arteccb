@@ -15,23 +15,20 @@ if ((isset($_GET[0])) && ($_GET[1] == 0))
 		<div class="eight columns centered"><!-- six columns -->
 			<span class="artBO">Artbo</span><span class="ccB">CCB</span>
 			<header class="intro">
-				<h2>Bienvenido al Proceso de aplicación al Pabellón Artecámara artBO 2013</h2>
-				<h5>Abierto hasta el 15 de abril, a las 00:00 horas (hora Colombia GMT -5)</h5>
-				<h6>Este espacio es para artistas plásticos (y/o colectivos de artistas) colombianos (y/o artistas
-				extranjeros residentes en Colombia desde hace tres años), menores de 40 años a la fecha de
-				inscripción y que no están representados por ninguna galería comercial nacional o internacional.</h6>
-				<h5>Por favor inicie su sesión o regístrese.</h5>
+				<h2>Bienvenido al proceso de aplicación al Pabellón Artecámara en artBO 2013</h2>
+				<h5>El cual estará abierto hasta el 30 de abril a las 23:59 p.m. (hora colombiana). Este espacio es para artistas plásticos colombianos menores de 40 años y sin representación de una galería comercial.</h5>
+				
 			</header>
 			<div class="options">
 				<div class="login">
 					<h3>Inicio de sesión</h3>
-					<h5>Si ya te registráste en el Pabellón Artecámara 2013 0 artBO 2012.</h5>
+					<h5>Si ya te registraste una vez o en 2012.</h5>
 					<a href="<?php echo APPLICATION_URL?>login.html" class="button radius">Inicio de sesión</a>
 				</div>
 				<div class="register">
 					<h3>Registro</h3>
-					<h5>Si nunca te haz registrdo en Pabellón Artecámara.</h5>
-					<a href="<?php echo APPLICATION_URL?>register.html" class="button radius">Registrarse</a>
+					<h5>Si nunca te has registrado en el Pabellón Artecámara.</h5>
+					<a href="<?php echo APPLICATION_URL?>register.html" class="button radius">Regístrese</a>
 				</div>
 			</div>
 								

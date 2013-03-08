@@ -151,7 +151,7 @@
 		// nuevo artista 
 		$("#add-artist").click(function(){
 
-		$(".link_list").hide().append('<li class="link_default"><div class="row"><div class="three columns"><img src="images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr"><label>Nombre</label><br /><input type="text" class="" /></div><div class="three columns"><label>Apellido</label><br /><input type="text" /></div><div class="six columns"><label>Nacionalidad</label><br /><input type="text" /><label for="checkbox3a"><input type="checkbox" id="checkbox3a"> Este artista participará en Artbo</label><a href="#" class="revelar-a hidden" data-reveal-id="artista">Editar</a></div></div></li>').fadeIn(1000);
+		$(".link_list").hide().append('<li class="link_default"><div class="row"><div class="three columns"><img src="images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr"><label>Nombre</label><br /><input type="text" class="" /></div><div class="three columns"><label>Apellido</label><br /><input type="text" /></div><div class="six columns"><label>Nacionalidad</label><br /><input type="text" /><label for="checkbox3a"><input type="checkbox" id="checkbox3a"> Este artista participará en Artecamará</label><a href="#" class="revelar-a hidden" data-reveal-id="artista">Editar</a></div></div></li>').fadeIn(1000);
 		
 		});
 		// end nuevo artista

@@ -5,7 +5,7 @@ if (isset($_GET[0]))
 {
 ?>
 <script language="javascript">
-	confirm ("Gracias por participar en la convocatoria para el Pabellón Artecámara – Artistas Emergentes de Artbo 2012. La lista de artistas seleccionados se dará a conocer el 1 de agosto de 2012 en www.artboonline.com. ");
+	confirm ("Gracias por su participaci&oacute;n. En breve recibir&aacute; un email de confirmaci&oacute;n. La lista de los artistas seleccionados para exponer en el Pabellón Artec&aacute;mara en artBO 2013 se dar&aacute; a conocer a partir del 5 de junio en www.artboonline.com");
 </script>
 <?php
 }
@@ -39,7 +39,7 @@ if (isset($_GET[0]))
 				<div class="twelve columns">
 					
 					<form action="<?php echo APPLICATION_URL?>user.controller/uploadDocuments.html" id="validable" class="" method="post" enctype="multipart/form-data">
-						<p>Sube tus documentos en formato JPG o PDF únicamente. Con un peso máximo de 1000KB</p>
+						<p>Suba sus documentos en formato JPG o PDF únicamente. Con un peso máximo de 1000KB </p>
 							
 							<!-- row -->
 							<div class="row">
@@ -55,7 +55,7 @@ if (isset($_GET[0]))
 										<div class="row">
 											<div class="seven columns">		
 												<h4><span class="asterix">*</span>Documento de identidad</h4>
-												<p>Suba el documento de identidad del artista participante (cédula de ciudadanía o de extranjería)</p>
+												<p>Suba el documento de identidad del artista participante o responsable del colectivo (cédula de ciudadanía o de extranjería)</p>
 								        	</div>
 								        	<div class="five columns">
 							        		

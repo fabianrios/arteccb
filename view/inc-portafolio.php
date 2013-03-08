@@ -3,7 +3,7 @@ $dir		= 'resources/images/'. $user->__get('user_id'). '-' .  makeUrlClear(utf8_d
 $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') . "'");
 ?>
 		<h4>Portafolio</h4>
-					<p><em>Incluya cinco obras realizadas desde 2009 a la fecha.</em></p>
+					<p><em>Incluya cinco obras realizadas desde 2008 a la fecha.</em></p>
 					
 					<ul class="link_list ui-sortable">
 					        	<?php
@@ -127,7 +127,7 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 					                        </li>
 					                      	<li class="obra">
 					                        	<span class="asterix">*</span><strong>Imagen de la obra</strong>
-					                        	<span class="caption">Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</span>
+					                        	<span class="caption">Puede cargar imágenes en .JPG o .PNG. El archivo no debe superar los 1000 KB. </span>
 					                       	    <div id="obra_image_<?php echo $key?>"></div>     
 							                    <?php if($obra->__get('obra_image') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
 							                    <input type="hidden" name="obra_key_<?php echo $i;?>" value="<?php echo $key?>" />

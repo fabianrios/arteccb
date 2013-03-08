@@ -7,15 +7,15 @@
 		<div class="six columns centered"><!-- six columns -->
 			<span class="artBO">Artbo</span><span class="ccB">CCB</span>
 	    	<div class="alert-box error">
-	    		Las contraseñas no coinciden. Prueba de nuevo.
+	    		Las claves no coinciden. Prueba de nuevo.
 	    		<a href="" class="close" title="Cerrar">&times;</a>
 	    	</div>
 	    	<!-- END  casilla de alerta -->
 	    	<form action="#">
 			<div class="panel"><!-- Panel -->
-			<h3>Restablecer contraseña</h3>
+			<h3>Restablecer clave</h3>
 				<!-- login form -->
-				    	<p>Introduce una nueva contraseña para tu cuenta de artBO.</p>
+				    	<p>Introduce una nueva clave para tu cuenta de Artecámara.</p>
 				    
 				    	<div class="mid-input-div"><!-- Div Input -->
 				    		<label>Contrase&ntilde;a</label>
@@ -23,7 +23,7 @@
 				    	</div><!-- END Div Input -->
 				    	
 				    	<div class="mid-input-div"><!-- Div Input -->
-				    		<label>Confirmar contrase&ntilde;a</label>
+				    		<label>Confirmar clave</label>
 				        	<input type="password" class="expand input-text" name="confirmar" required="required">
 				    	</div><!-- END Div Input -->
 

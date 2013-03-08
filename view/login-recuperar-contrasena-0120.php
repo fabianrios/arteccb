@@ -8,13 +8,13 @@ $email = urldecode($_GET[0]);
 <div class="container">
 	<div class="row"><!-- Row -->	
 		<div class="six columns centered"><!-- six columns -->
-			<span class="artBO">Artbo</span><span class="ccB">CCB</span>
+			<span class="artBO">Artecámara</span><span class="ccB">CCB</span>
 			<div class="alert-box success">
 				Correo enviado con &eacute;xito
 				<a href="#" class="close">&times;</a>
 			</div>
 			<div class="panel">
-				<h3>Restablecer contraseña</h3>
+				<h3>Restablecer clave</h3>
 				<p>Hemos enviado un correo a <a class="bold" href="mailto:<?php echo $email?>"><?php echo $email?> </a> con instrucciones. Recuerda revisar en tu carpeta de <strong>Spam</strong> si no lo encuentras.</p>
 			</div>
 			<div class="row">
