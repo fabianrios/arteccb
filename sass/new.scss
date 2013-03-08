@@ -112,6 +112,9 @@ body{
           width: 85%;
           text-align: center; 
         }
+        &:last-child{
+          
+        }
       }
     }
     &.portfolio{
@@ -645,4 +648,3 @@ only screen and (min-device-pixel-ratio: 2) {
     @include spritenew($retina: true);
   }
 }
- 

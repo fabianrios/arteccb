@@ -88,7 +88,7 @@ function alertNotYet()
 					             </div>
 								<!-- End Col 3/4 -->
 								<!-- Col 4/4-->				
-							 <?php if ($user->__get('user_document') != '') { ?><p><a target="_blank" href="resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/<?php echo $user->__get('user_document');?>">Documento Cargado en el sistema</a></p><?php } ?>
+							 <?php if ($user->__get('user_document') != '') { ?><!--<p><a target="_blank" href="resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/<?php echo $user->__get('user_document');?>">Documento Cargado en el sistema</a></p>--><?php } ?>
 							</div>
 							<br />
 							<!-- aceptación de terminos -->

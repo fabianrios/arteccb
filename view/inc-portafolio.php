@@ -96,9 +96,6 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 										?>
 										<li class="link_default">
 												<ul class="no-bullet portfolio">
-												  <li class="handler">
-													<img src="<?php echo APPLICATION_URL?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
-												   </li>
 													<li>
 														<span class="asterix">*</span><strong>Nombre de la obra</strong>
 														<input title="Digite nombre de la obra" name="obra_name_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_name');?>"/>
