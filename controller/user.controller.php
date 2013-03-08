@@ -37,7 +37,7 @@ switch ($action):
 			$insert	= $user->save();
 			$_SESSION['user_id']	= $insert['insert_id'];
 			redirectUrl(APPLICATION_URL.'registro-inicio-0400.html');
-			$html 		= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Le damos la Bienvenida al proceso de aplicaci&oacute;n de Artec&aacute;mara en artBO 2013</h1><p style="margin-bottom:30px;">A partir de ahora, usted podr&aacute; adelantar su proceso de registro e inscripci&oacute;n en el pabell&oacute;n de su inter&eacute;s</p><p>Gracias,</p>artBO</div></div>'; 
+			$html 		= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Le damos la Bienvenida al proceso de aplicación de artBO 2013</h1><p style="margin-bottom:30px;">A partir de ahora, usted podr&aacute; adelantar su proceso de registro e inscripci&oacute;n en el pabell&oacute;n de su inter&eacute;s</p><p>Gracias,</p>artBO</div></div>'; 
 			$subject	= utf8_decode('Registro exitoso');
 			$from		= 'info@artbo.co';
 			$to			= $user->__get('user_email');
@@ -310,6 +310,9 @@ switch ($action):
 
 				$string	= str_replace('obra_name_', '', $key);
 				$obra	= (isset($_POST['obra_id_'.$string])) ? new Obra($_POST['obra_id_'.$string]) : new Obra();
+				echo '<pre>';
+				print_r($obra);
+				echo '</pre>';				
 				if($obra->__get('obra_id') == '')
 				{
 					$obraArray = ObraHelper::retrieveObras("AND obra_key = '" . $_POST['obra_key_'.$string] . "'");
@@ -323,29 +326,7 @@ switch ($action):
 				$obra->__set('obra_year', $_POST['obra_year_'.$string]);
 				$obra->__set('obra_url', $_POST['obra_url_'.$string]);
 				$obra->__set('user_id', $_SESSION['user_id']);
-				if($_FILES['obra_image_'.$string]["name"] != "")
-				{
-
-					if(!file_exists('resources/images/' . makeUrlClear(utf8_decode($user->__get('user_name')))))
-					{
-						mkdir('resources/images/' . makeUrlClear(utf8_decode($user->__get('user_name'))), 0755);
-					}
-
-					if(!file_exists('resources/images/' . makeUrlClear(utf8_decode($user->__get('user_name'))) . '/obras'))
-					{
-						mkdir('resources/images/' . makeUrlClear(utf8_decode($user->__get('user_name'))) . '/obras', 0755);
-					}
-
-					$ext	= getFileExtension($_FILES['obra_image_'.$string]['name']);
-					$name 	= md5(date("YmdHis")). $string . $ext;
 				
-					if(uploadFile('resources/images/' . makeUrlClear(utf8_decode($user->__get('user_name'))) . '/obras/', $_FILES['obra_image_'.$string]['tmp_name'], $name))
-					{
-						//$accept = array('jpg', 'gif', 'png', 'jpeg');
-						//$medio 	= new Medio($name , $accept, 'resources/images/');  
-						$obra->__set('obra_image', $name);						
-					}				
-				}
 				if ($obra->__get('obra_id') != '')  
 					$obra->update();				
 				else
@@ -410,7 +391,7 @@ switch ($action):
 			foreach ($_POST as $key => $value)
 				$user->__set($key, $value);				
 			$user->update();
-			$html		= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Ha finalizado su registro</h1><p  style="margin-bottom:30px;">Usted ha completado el proceso de registro de Artecámara en artBO 2013. <br />Agradecemos su participaci&oacute;n en la convocatoria.</p><br /><p>Gracias,</p>artBO</div></div>';
+			$html		= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Ha finalizado su registro</h1><p  style="margin-bottom:30px;">Usted ha completado el proceso de registro de artBO 2013. <br />Agradecemos su participaci&oacute;n en la convocatoria.</p><br /><p>Gracias,</p>artBO</div></div>';
 			$subject	= utf8_decode('Finalizado registro');
 			$from		= 'info@artbo.co';
 			$to			= $user->__get('user_email');

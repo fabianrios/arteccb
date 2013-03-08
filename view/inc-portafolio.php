@@ -1,6 +1,6 @@
 <?php
 $dir		= 'resources/images/'. $user->__get('user_id'). '-' .  makeUrlClear(utf8_decode($user->__get('user_name'))).'/';
-$obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') . "'");
+$obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') . "' ORDER by obra_id");
 ?>
 		<h4>Portafolio</h4>
 					<p><em>Incluya cinco obras realizadas desde 2008 a la fecha.</em></p>
@@ -102,7 +102,8 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 													<li>
 														<span class="asterix">*</span><strong>Nombre de la obra</strong>
 														<input title="Digite nombre de la obra" name="obra_name_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_name');?>"/>
-													</li>
+														<input type="hidden" name="obra_key_<?php echo $i;?>" value="<?php echo $key?>" />
+                                                    </li>
 													
 													<li>
 														<span class="asterix">*</span><strong>Dimensiones</strong> (mts)
@@ -174,7 +175,8 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 												<li>
 													<span class="asterix">*</span><strong>Nombre de la obra</strong>
 													<input title="Digite nombre de la obra" name="obra_name_<?php echo $i;?>" class="expand input-text" type="text" value="<?php echo $obra->__get('obra_name');?>"/>
-												</li>
+													<input type="hidden" name="obra_key_<?php echo $i;?>" value="<?php echo $key?>" />
+                                                </li>
 												
 												<li>
 													<span class="asterix">*</span><strong>Dimensiones</strong> (mts)
