@@ -1,3 +1,6 @@
+<?php
+$countries	= CountryHelper::retrieveCountries(" AND country_activated = 1 ORDER by country_name");
+?>
 <h4>Estudios Realizados</h4>
 				<p><em>Ordenar del más reciente al más antiguo.</em></p>
 				
@@ -50,12 +53,16 @@
                                         <input name="expo_format_<?php echo $i?>" class="expand input-text" type="hidden" value="<?php echo $exposition->__get('exposition_format');?>" />
                                     </li>
                                     <li class="country">
-                                    	<select name="country_id_" id="">
-                                    		<option value="">Colombia</option>
-                                    		<option value="">Venezuela</option>
-                                    		<option value="">Puerto rico</option>
-                                    		<option value="">Zurinam</option>
-                                    	</select>
+                                    	<select name="expo_country_id_<?php echo $i?>" id="">
+                                        	<?php
+											foreach ($countries as $country)
+											{
+											?>
+                                    			<option value="<?php echo $country->__get('country_id');?>" <?php if ($exposition->__get('country_id') == $country->__get('country_id')) echo 'selected';?>><?php echo utf8_encode($country->__get('country_name'));?></option>
+                                    		<?php
+											}
+											?>
+                                        </select>
                                     </li>
                                     <li class="date">
                                             <select name="expo_year_<?php echo $i?>">
@@ -99,11 +106,15 @@
                                         <input name="expo_format_50" class="expand input-text" type="hidden" />
                                     </li>
                                     <li class="country">
-                                    	<select name="country_id_" id="">
-                                    		<option value="">Colombia</option>
-                                    		<option value="">Venezuela</option>
-                                    		<option value="">Puerto rico</option>
-                                    		<option value="">Zurinam</option>
+                                    	<select name="expo_country_50" id="">
+                                        	<?php
+											foreach ($countries as $country)
+											{
+											?>
+                                    			<option value="<?php echo $country->__get('country_id');?>"><?php echo utf8_encode($country->__get('country_name'));?></option>
+                                    		<?php
+											}
+											?>
                                     	</select>
                                     </li>
                                     <li class="date">
@@ -182,12 +193,16 @@
                                         <input title="Digite formato de la exposión" name="expo_format_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_format');?>" />
                                     </li>-->
                                     <li class="country">
-                                    	<select name="country_id_" id="">
-                                    		<option value="">Colombia</option>
-                                    		<option value="">Venezuela</option>
-                                    		<option value="">Puerto rico</option>
-                                    		<option value="">Zurinam</option>
-                                    	</select>
+                                    	<select name="expo_country_id_<?php echo $i?>" id="">
+                                        	<?php
+											foreach ($countries as $country)
+											{
+											?>
+                                    			<option value="<?php echo $country->__get('country_id');?>" <?php if ($exposition->__get('country_id') == $country->__get('country_id')) echo 'selected';?>><?php echo utf8_encode($country->__get('country_name'));?></option>
+                                    		<?php
+											}
+											?>
+                                        </select>
                                     </li>
                                     <li class="date">
                                             <select  title="digite fecha de la exposición" name="expo_year_<?php echo $i?>">
@@ -231,12 +246,16 @@
                                         <input name="expo_format_1" class="expand input-text" type="text" />
                                     </li>
                                     <li class="country">
-                                    	<select name="country_id_" id="">
-                                    		<option value="">Colombia</option>
-                                    		<option value="">Venezuela</option>
-                                    		<option value="">Puerto rico</option>
-                                    		<option value="">Zurinam</option>
-                                    	</select>
+                                    	<select name="expo_country_id_1" id="">
+                                        	<?php
+											foreach ($countries as $country)
+											{
+											?>
+                                    			<option value="<?php echo $country->__get('country_id');?>"><?php echo utf8_encode($country->__get('country_name'));?></option>
+                                    		<?php
+											}
+											?>
+                                        </select>
                                     </li>
                                     <li class="date">
 	                                    <select name="expo_year_1">
@@ -311,12 +330,16 @@
                                         <input title="Digite formato de la exposión" name="expo_format_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_format');?>" />
                                     </li>-->
                                    <li class="country">
-                                    	<select name="country_id_" id="">
-                                    		<option value="">Colombia</option>
-                                    		<option value="">Venezuela</option>
-                                    		<option value="">Puerto rico</option>
-                                    		<option value="">Zurinam</option>
-                                    	</select>
+                                    	<select name="expo_country_id_<?php echo $i?>" id="">
+                                        	<?php
+											foreach ($countries as $country)
+											{
+											?>
+                                    			<option value="<?php echo $country->__get('country_id');?>" <?php if ($exposition->__get('country_id') == $country->__get('country_id')) echo 'selected';?>><?php echo utf8_encode($country->__get('country_name'));?></option>
+                                    		<?php
+											}
+											?>
+                                        </select>
                                     </li>
                                     <li class="date">
                                         <select title="Digite fecha de la exposición" name="expo_year_<?php echo $i?>">
@@ -358,12 +381,16 @@
                                         <input name="expo_city_<?php echo $i;?>" class="expand input-text" type="text" />
                                     </li>
                                     <li class="country">
-                                    	<select name="country_id_" id="">
-                                    		<option value="">Colombia</option>
-                                    		<option value="">Venezuela</option>
-                                    		<option value="">Puerto rico</option>
-                                    		<option value="">Zurinam</option>
-                                    	</select>
+                                    	<select name="expo_country_id_<?php echo $i;?>" id="">
+                                        	<?php
+											foreach ($countries as $country)
+											{
+											?>
+                                    			<option value="<?php echo $country->__get('country_id');?>"><?php echo utf8_encode($country->__get('country_name'));?></option>
+                                    		<?php
+											}
+											?>
+                                        </select>
                                     </li>
                                     <li class="date">
 	                                    <select name="expo_year_<?php echo $i;?>">
@@ -436,12 +463,16 @@
                                         <input title="Digite ciudad del premio" name="prize_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $prize->__get('prize_city')?>" />
                                     </li>
                                      <li class="country">
-                                    	<select name="country_id_" id="">
-                                    		<option value="">Colombia</option>
-                                    		<option value="">Venezuela</option>
-                                    		<option value="">Puerto rico</option>
-                                    		<option value="">Zurinam</option>
-                                    	</select>
+                                    	<select name="prize_country_id_<?php echo $i?>" id="">
+                                        	<?php
+											foreach ($countries as $country)
+											{
+											?>
+                                    			<option value="<?php echo $country->__get('country_id');?>" <?php if ($prize->__get('country_id') == $country->__get('country_id')) echo 'selected="selected"';?>><?php echo utf8_encode($country->__get('country_name'));?></option>
+                                    		<?php
+											}
+											?>
+                                        </select>
                                     </li>
                                     <li class="date">
                                         <select title="Digite año del premio" name="prize_year_<?php echo $i?>">
@@ -480,6 +511,18 @@
                                     <li>
                                         <input name="prize_city_<?php echo $i?>" class="expand input-text" type="text" />
                                     </li>
+                                     <li class="country">
+                                    	<select name="prize_country_id_<?php echo $i?>" id="">
+                                        	<?php
+											foreach ($countries as $country)
+											{
+											?>
+                                    			<option value="<?php echo $country->__get('country_id');?>"><?php echo utf8_encode($country->__get('country_name'));?></option>
+                                    		<?php
+											}
+											?>
+                                        </select>
+                                    </li>                                    
                                     <li class="date">
 	                                    <select name="prize_year_<?php echo $i?>">
 	                                        <option value="2013">2013</option>

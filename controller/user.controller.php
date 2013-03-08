@@ -169,6 +169,7 @@ switch ($action):
 				$expo->__set('exposition_city', $_POST['expo_city_'.$string]);
 				$expo->__set('exposition_format', $_POST['expo_format_'.$string]);
 				$expo->__set('exposition_type', $_POST['expo_type_'.$string]);
+				$expo->__set('country_id', $_POST['expo_country_id_'.$string]);
 				$expo->__set('user_id', $_SESSION['user_id']);
 				$expo->save();
 			}
