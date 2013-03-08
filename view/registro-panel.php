@@ -38,8 +38,8 @@ function decide($field, $required, $user)
         
 		<div class="mid-input">
 	
-			<label><strong>Fecha de nacimiento (MM/DD/AAAA)</strong></label>
-				<input type="text" title="Digite fecha de nacimiento" id="datepicker" name="user_birthday" value="<?php echo $user->__get('user_birthday');?>" class="small datepicker"/><br/>
+		<label><strong>Fecha de nacimiento (MM/DD/AAAA)</strong></label>
+		<input type="text" title="Digite fecha de nacimiento" id="datepicker" name="user_birthday" value="<?php echo $user->__get('user_birthday');?>" class="small datepicker"/><br/>
 		
 
 		</div>        

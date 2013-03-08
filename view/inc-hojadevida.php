@@ -10,6 +10,9 @@
 							<span class="asterix">*</span><strong>Institución</strong>
 						</li>
 						<li>
+							<span class="asterix">*</span><strong>País</strong>
+						</li>
+						<li>
 							<span class="asterix">*</span><strong>Ciudad</strong>
 						</li>
 						
@@ -41,7 +44,15 @@
                                     </li>
                                     
                                     <li>
-                                    <input title="Digite institución" name="expo_institucion_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_institution');?>" />
+                                    	<input title="Digite institución" name="expo_institucion_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_institution');?>" />
+                                    </li>
+                                    <li>
+                                    	<select name="country_id_" id="">
+                                    		<option value="">Colombia</option>
+                                    		<option value=""></option>
+                                    		<option value=""></option>
+                                    		<option value=""></option>
+                                    	</select>
                                     </li>
                                     <li>
                                         <input title="Digite ciudad de la exposición" name="expo_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_city');?>" />
