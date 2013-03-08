@@ -1,6 +1,6 @@
 <?php
 $dir		= 'resources/images/'. $user->__get('user_id'). '-' .  makeUrlClear(utf8_decode($user->__get('user_name'))).'/';
-$default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
+$default	= 'http://cambelt.co/icon/document/230x170?color=b71632,fefefe';
 ?>
 <!-- panel 2 -->
 <h4>Proyecto</h4>
@@ -67,28 +67,29 @@ $default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
 		  	
 		  	
 		  	<li>
-		  	<img src="http://cambelt.co/icon/document/230x170?color=b71632,fefefe" class="images right" title="Imagen de la obra">
 		  		<?php
                     $image	= ($user->__get('user_proyect_image_1') != '') ? APPLICATION_URL.$dir.$user->__get('user_proyect_image_1') : $default;
                         
-                    ?>           
-                    <div id="user_proyect_image_1"></div>     <?php if($user->__get('user_proyect_image_1') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
+                    ?>            
+				  	<img src="<?php echo $image;?>" class="images right" title="Imagen de la obra">
+           
+                    <div id="user_proyect_image_1"></div>     
                     
 		  	</li>
 		  	<li>
-		  	<img src="http://cambelt.co/icon/document/230x170?color=b71632,fefefe" class="images right" title="Imagen de la obra">
 		  	    		  		<?php
                     $image	= ($user->__get('user_proyect_image_2') != '') ? APPLICATION_URL.$dir.$user->__get('user_proyect_image_2') : $default;
-                        
-                    ?>           
-                    <div id="user_proyect_image_2"></div>     <?php if($user->__get('user_proyect_image_2') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
+                        ?>            
+		  	<img src="<?php echo $image;?>" class="images right" title="Imagen de la obra">
+                    <div id="user_proyect_image_2"></div>     
 		  	</li>
 		  	<li>
-		  	<img src="http://cambelt.co/icon/document/230x170?color=b71632,fefefe" class="images right" title="Imagen de la obra">
 		  	   		  		<?php
                     $image	= ($user->__get('user_proyect_image_3') != '') ? APPLICATION_URL.$dir.$user->__get('user_proyect_image_3') : $default;
                         
-                    ?>           
+                    ?>              
+		  	<img src="<?php echo $image;?>" class="images right" title="Imagen de la obra">
+         
                     <div id="user_proyect_image_3"></div>     <?php if($user->__get('user_proyect_image_3') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
 		    </li>
 	  	</ul>

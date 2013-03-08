@@ -101,10 +101,18 @@ body{
     }
     &.portfolio-last{
       li{
-        width:80%;
-         &.handler{
-           width:4%;
-         }
+        width:100%;
+        img{
+          border: 1px solid #EEE;
+          border-right: 1px solid #CCC;
+          border-bottom: 1px solid #CCC;
+          padding: 5px;
+          background: #F7F7F7;
+          margin: 0 auto;
+          width: 90%;
+          text-align: center; 
+          display:block;
+        }
       }
     }
     &.portfolio{
@@ -551,14 +559,15 @@ img.selected{
 .artBO{
   @include spritenew();
   height:60px;
-  width:115px;
+  width:100px;
   margin:20px 10px;
 }
 .ccB{
-  @include spritenew($x:-120px);
+  @include spritenew($x:-91px); 
   height:60px;
-  width:310px; 
+  width:255px; 
   margin:20px 10px;
+  float:right;
 }
 
 .stand-items img.images{

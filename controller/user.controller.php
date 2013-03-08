@@ -136,15 +136,19 @@ switch ($action):
 			$fields		= UserFieldHelper::retrieveUserFields();
 			foreach ($fields as $field)
 			{
-				if (($user->__get($field) == '') || ($user->__get($field) == 0) || ($user->__get($field) == 'NULL'))
-				$accept	= false;
+				if (($user->__get($field->__get('field_name')) == '') || ($user->__get($field->__get('field_name')) == '0') || ($user->__get($field->__get('field_name')) == 'NULL'))
+					$accept	= false;
 			}
 			if ($accept)
 			{
-				$form	= new UserForm();
-				$form->__set('user_id', $_SESSION['user_id']);
-				$form->__set('form_number', 1);
-				$form->save();
+				$userForms	= UserFormHelper::selectUserForms(" AND user_id = ".escape($_SESSION['user_id'])." AND form_number = 1");
+				if ($userForms['num_rows'] == 0)
+				{
+					$form	= new UserForm();
+					$form->__set('user_id', $_SESSION['user_id']);
+					$form->__set('form_number', 1);
+					$form->save();
+				}
 			}
 		}		
 		$user->update();
@@ -380,6 +384,7 @@ switch ($action):
 	break;
 	case 'uploadDocuments':
 		$user 		= new User($_SESSION['user_id']);
+		$finish = true;
 		if ($user->__get('user_document') == '')
 			$finish	= false;
 		if ($finish)

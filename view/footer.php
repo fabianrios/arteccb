@@ -31,7 +31,7 @@
 		
 		$( "#datepicker2" ).datepicker({
 			showOn: "button",
-			buttonImage: "images/calendar.png",
+			buttonImage: "http://activemgmd.com/ccb/ccb-artista/images/calendar.png",
 			buttonImageOnly: true
 		});
 		
