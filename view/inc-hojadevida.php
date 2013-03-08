@@ -1,5 +1,5 @@
-<h4>Estudios Realizados*</h4>
-				<p><em>Ordenar en orden cronológico del más recién al más antiguo.</em></p>
+<h4>Estudios Realizados</h4>
+				<p><em>Ordenar del más reciente al más antiguo.</em></p>
 				
 				<div class="intitle">
 					<ul class="resume">
@@ -12,6 +12,7 @@
 						<li>
 							<span class="asterix">*</span><strong>Ciudad</strong>
 						</li>
+						
 						<li>
 							<span class="asterix">*</span><strong>Año</strong>
 						</li>
@@ -19,7 +20,7 @@
 				</div>
 				<!-- formulario -->
 				
-					<ul class="link_list-2 ui-sortable">
+					<ul class="link_list ui-sortable">
 						<!-- expo -->
                     	<?php
 						if (count($expositions3) > 0)
@@ -50,7 +51,7 @@
                                     <li class="date">
                                             <select name="expo_year_<?php echo $i?>">
                                             	<?php 
-												for ($j = 2012; $j > 1989; $j--)
+												for ($j = 2013; $j > 1989; $j--)
 												{
 													$selected = ($exposition->__get('exposition_year') == $j) ? 'selected="selected"' : '';
 												?>
@@ -61,7 +62,7 @@
                                             </select>
                                     </li>
                                      <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                   </ul>
                             </li>
@@ -74,7 +75,7 @@
 						?>                          
                             <li class="link_default">
                                   <ul class="no-bullet resume">
-                                    <li>
+                                    <li class="handler">
                                     	<img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
                                     </li>
                                     <li>
@@ -91,7 +92,7 @@
                                     <li class="date">
                                             <select name="expo_year_1">
                                             	<?php 
-												for ($j = 2012; $j > 1989; $j--)
+												for ($j = 2013; $j > 1989; $j--)
 												{
 												?>
                                                 <option value="<?php echo $j;?>"><?php echo $j;?></option>
@@ -101,7 +102,7 @@
                                             </select>
                                     </li>
                                      <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                   </ul>
                             </li>
@@ -110,11 +111,11 @@
 						?>                      
 					<!-- end Expo --> 
 					</ul>	
-					<a href="#" class="label secondary round" id="add-expo-2"><strong>+</strong> Agregar una nueva carrera</a>
+					<a href="#" class="label secondary round" id="add-expo"><strong>+</strong> Agregar una nueva carrera</a>
 				<hr />
 				<br />				
                 <h4>Exposiciones individuales</h4>
-				<p><em>Selección desde 2009 a la fecha</em></p>
+				<p><em>Selección desde 2007 a la fecha.</em></p>
 				
 				<div class="intitle">
 					<ul class="resume-more">
@@ -128,7 +129,7 @@
 							<span class="asterix">*</span><strong>Ciudad</strong>
 						</li>
 						<li>
-							<span class="asterix">*</span><strong>Formato</strong>
+							<span class="asterix">*</span><strong>País</strong>
 						</li>
 						<li>
 							<span class="asterix">*</span><strong>Año</strong>
@@ -137,7 +138,7 @@
 				</div>
 				<!-- formulario -->
 				
-					<ul class="link_list ui-sortable">
+					<ul class="link_list-1 ui-sortable">
 						<!-- expo -->
                     	<?php
 						if (count($expositions) > 0)
@@ -161,9 +162,9 @@
                                     <li>
                                         <input title="Digite ciudad de la exposición" name="expo_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_city');?>" />
                                     </li>
-                                    <li class="format">
+                                    <!--<li class="format">
                                         <input title="Digite formato de la exposión" name="expo_format_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_format');?>" />
-                                    </li>
+                                    </li>-->
                                     <li class="date">
                                             <select  title="digite fecha de la exposición" name="expo_year_<?php echo $i?>">
                                                 <option value="2013" <?php if ($exposition->__get('exposition_year') == 2013) echo 'selected="selected"';?>>2013</option>
@@ -171,12 +172,12 @@
                                                 <option value="2011" <?php if ($exposition->__get('exposition_year') == 2011) echo 'selected="selected"';?>>2011</option>
                                                 <option value="2010" <?php if ($exposition->__get('exposition_year') == 2010) echo 'selected="selected"';?>>2010</option>
                                                 <option value="2009" <?php if ($exposition->__get('exposition_year') == 2009) echo 'selected="selected"';?>>2009</option>
-                                                <!-- <option value="2008" <?php if ($exposition->__get('exposition_year') == 2008) echo 'selected="selected"';?>>2008</option>
-                                                <option value="2007" <?php if ($exposition->__get('exposition_year') == 2007) echo 'selected="selected"';?>>2007</option> -->
+                                                 <option value="2008" <?php if ($exposition->__get('exposition_year') == 2008) echo 'selected="selected"';?>>2008</option>
+                                                <!--<option value="2007" <?php if ($exposition->__get('exposition_year') == 2007) echo 'selected="selected"';?>>2007</option> -->
                                             </select>
                                     </li>
                                     <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                   </ul>
                             </li>                        
@@ -212,12 +213,12 @@
 	                                        <option value="2011">2011</option>
 	                                        <option value="2010">2010</option>
 	                                        <option value="2009">2009</option>
-	                                        <!-- <option value="2008">2008</option>
-	                                        <option value="2007">2007</option> -->
+	                                        <option value="2008">2008</option>
+	                                         <!--<option value="2007">2007</option> -->
 	                                    </select>
                                     </li>
                                   <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                  </ul>
                             </li>
@@ -225,11 +226,11 @@
 						}
 						?>
 					</ul>	
-					<a href="#" class="label secondary round" id="add-expo"><strong>+</strong> Agregar una nueva exposición</a>
+					<a href="#" class="label secondary round" id="add-expo-1"><strong>+</strong> Agregar una nueva exposición</a>
 				<hr />
 				<br />
 				<h4>Exposiciones colectivas</h4>
-				<p><em>Exposiciones colectivas desde 2009 a la fecha.</em></p>
+				<p><em>Exposiciones colectivas desde 2007 a la fecha.</em></p>
 				<div class="intitle">
 					<ul class="resume-more">
 						<li>
@@ -242,14 +243,14 @@
 							<span class="asterix">*</span><strong>Ciudad</strong>
 						</li>
 						<li>
-							<span class="asterix">*</span><strong>Formato</strong>
+							<span class="asterix">*</span><strong>País</strong>
 						</li>
 						<li>
 							<span class="asterix">*</span><strong>Año</strong>
 						</li>
 					</ul>
 				</div>
-					<ul class="link_list-1 ui-sortable">
+					<ul class="link_list-2 ui-sortable">
 						<!-- expo -->
 						<?php
 						if (count($expositions2) > 0)
@@ -274,9 +275,13 @@
                                     <li>
                                         <input title="Digite ciudad de la exposición" name="expo_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_city');?>" />
                                     </li>
-                                    <li class="format">
+                                   <!-- <li class="format">
                                         <input title="Digite formato de la exposión" name="expo_format_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_format');?>" />
-                                    </li>
+                                    </li>-->
+                                    
+                                    <li class="format">
+                                         <input title="Digite el país" name="" class="expand input-text" type="text" value="" />
+                                     </li>
                                     <li class="date">
                                         <select title="Digite fecha de la exposición" name="expo_year_<?php echo $i?>">
                                             <option value="2013" <?php if ($exposition->__get('exposition_year') == 2013) echo 'selected="selected"';?>>2013</option>
@@ -284,12 +289,12 @@
                                             <option value="2011" <?php if ($exposition->__get('exposition_year') == 2011) echo 'selected="selected"';?>>2011</option>
                                             <option value="2010" <?php if ($exposition->__get('exposition_year') == 2010) echo 'selected="selected"';?>>2010</option>
                                             <option value="2009" <?php if ($exposition->__get('exposition_year') == 2009) echo 'selected="selected"';?>>2009</option>
-                                            <!-- <option value="2008" <?php if ($exposition->__get('exposition_year') == 2008) echo 'selected="selected"';?>>2008</option>
-                                            <option value="2007" <?php if ($exposition->__get('exposition_year') == 2007) echo 'selected="selected"';?>>2007</option> -->
+                                           <option value="2008" <?php if ($exposition->__get('exposition_year') == 2008) echo 'selected="selected"';?>>2008</option>
+                                            <!--  <option value="2007" <?php if ($exposition->__get('exposition_year') == 2007) echo 'selected="selected"';?>>2007</option> -->
                                         </select>
                                     </li>
                                      <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                   </ul>
                             </li>
@@ -326,12 +331,12 @@
 	                                        <option value="2011">2011</option>
 	                                        <option value="2010">2010</option>
 	                                        <option value="2009">2009</option>
-	                                        <!-- <option value="2008">2008</option>
-	                                        <option value="2007">2007</option> -->
+	                                        <option value="2008">2008</option>
+	                                        <!-- <option value="2007">2007</option> -->
 	                                    </select>
                                     </li>
                                      <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                 </ul>
                             </li>
@@ -340,11 +345,11 @@
 						?> 						
 					<!-- end Expo --> 
 					</ul>	
-					<a href="#" class="label secondary round" id="add-expo-1"><strong>+</strong> Agregar una nueva exposición</a>
+					<a href="#" class="label secondary round" id="add-expo-2"><strong>+</strong> Agregar una nueva exposición</a>
 				<hr />
 				<br />
 				<h4>Becas y premios</h4>
-				<p><em>Selección de becas y premios desde 2009 a la fecha</em></p>
+				<p><em>Selección de becas y premios desde 2007 a la fecha.</em></p>
 				
 				<div class="intitle">
 					<ul class="no-bullet resume">
@@ -393,12 +398,12 @@
                                             <option value="2011" <?php if ($prize->__get('prize_year') == 2011) echo 'selected="selected"';?>>2011</option>
                                             <option value="2010" <?php if ($prize->__get('prize_year') == 2010) echo 'selected="selected"';?>>2010</option>
                                             <option value="2009" <?php if ($prize->__get('prize_year') == 2009) echo 'selected="selected"';?>>2009</option>
-                                            <!-- <option value="2008" <?php if ($prize->__get('prize_year') == 2008) echo 'selected="selected"';?>>2008</option>
-                                            <option value="2007" <?php if ($prize->__get('prize_year') == 2007) echo 'selected="selected"';?>>2007</option> -->
+                                           <option value="2008" <?php if ($prize->__get('prize_year') == 2008) echo 'selected="selected"';?>>2008</option>
+                                            <!--  <option value="2007" <?php if ($prize->__get('prize_year') == 2007) echo 'selected="selected"';?>>2007</option> -->
                                         </select>
                                     </li>
                                     <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                   </ul>
                             </li>
@@ -430,12 +435,12 @@
 	                                        <option value="2011">2011</option>
 	                                        <option value="2010">2010</option>
 	                                        <option value="2009">2009</option>
-	                                        <!-- <option value="2008">2008</option>
-	                                        <option value="2007">2007</option> -->
+	                                       <option value="2008">2008</option>
+	                                         <!-- <option value="2007">2007</option> -->
 	                                    </select>
                                     </li>
                                     <li class="handler">
-	                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
+	                                	<a href="#" class="delete-expo"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 	                               	</li>
                                   </ul>
                             </li>

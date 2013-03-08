@@ -68,7 +68,7 @@ switch ($action):
 				$args = array('to'	=> $recover->__get('user_email'),
 							'from'    	=> 'info@magdalenamedio.net',
 							'html'     	=> $html,
-							'subject'  	=> 'Recuperar contraseña Ideko',
+							'subject'  	=> 'Recuperar clave ',
 							'fromName' 	=> 'Ideko',
 							'replyTo'  	=> 'info@magdalenamedio.net');	
 			EmailHelper::sendMail($args);

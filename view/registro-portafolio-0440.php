@@ -19,7 +19,7 @@ include_once('menu.php'); ?>
 					<div class="four columns mini-nav-header">
 						<dl class="sub-nav">
 							<dd><a class="save" title="Guardar" href="javascript:void(0);" onClick="document.getElementById('validable').submit();" >Guardar</a></dd>
-							<dd><a class="prev" title="Proyecto Artecámara" href="?php echo APPLICATION_URL?>registro-proyecto-0430.html">Anterior</a></dd>
+							<dd><a class="prev" title="Proyecto Artecámara" href="<?php echo APPLICATION_URL?>registro-proyecto-0430.html">Anterior</a></dd>
 							<dd><h4>4/5</h4></dd>
 							<dd><a class="next" title="Documentos" href="<?php echo APPLICATION_URL?>registro-documentos-0450.html" >Siguiente</a></dd>
 						</dl>	
@@ -30,7 +30,7 @@ include_once('menu.php'); ?>
 		<div class="container">
 			<div class="row form-data">	
 				<div class="twelve columns">
-					<form action="registro-portafolio-0440_submit" method="post" accept-charset="utf-8">
+					<form action="<?php echo APPLICATION_URL?>user.controller/createProyects.html" method="post" id="validable" accept-charset="utf-8">
 						<?php include_once 'inc-portafolio.php'; ?>
 					</form>
 				</div><!--/twelve columns-->

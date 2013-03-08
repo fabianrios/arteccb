@@ -19,7 +19,7 @@ include_once(SITE_VIEW.'menu.php'); ?>
 					<div class="four columns mini-nav-header">
 						<dl class="sub-nav">
 							<dd><a class="save" title="Guardar" href="javascript:void(0);" onClick="document.getElementById('validable').submit();" >Guardar</a></dd>
-							<dd><a class="prev" title="Hoja de vida" href="?php echo APPLICATION_URL?>registro-hoja-vida-0420.html">Anterior</a></dd>
+							<dd><a class="prev" title="Hoja de vida" href="<?php echo APPLICATION_URL?>registro-hoja-vida-0420.html">Anterior</a></dd>
 							<dd><h4>3/5</h4></dd>
 							<dd><a class="next" title="Portafolio" href="<?php echo APPLICATION_URL?>registro-portafolio-0440.html" >Siguiente</a></dd>
 						</dl>	
@@ -46,7 +46,7 @@ include_once(SITE_VIEW.'menu.php'); ?>
 						<div class="four columns">
 							<div class="right">
 								<a title="Hoja de vida" href="<?php echo APPLICATION_URL?>registro-hoja-vida-0420.html" class="graytxt">Anterior</a>  
-								<a href="<?php echo APPLICATION_URL?>registro-documentos-0440.html" title="Portafolio" class="button radius">Siguiente: Portafolio</a>
+								<a href="<?php echo APPLICATION_URL?>registro-portafolio-0440.html" title="Portafolio" class="button radius">Siguiente: Portafolio</a>
 							</div>
 						</div>
 					</div>
@@ -58,7 +58,6 @@ include_once(SITE_VIEW.'menu.php'); ?>
 			<span><a href="#">Términos y Condiciones</a> del Sitio</span>
 		</div>
 	</div><!--/row main-row-->
-	
 	
 <script language="javascript">
 $(document).ready(function() {

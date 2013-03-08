@@ -24,7 +24,7 @@ include_once('header-nologin2.php');
 			
 				<h3>Restablecer contraseña</h3>
 				<!-- login form --> 
-						<p>Introduzca el correo electrónico con el que se registró y le enviaremos una nueva contraseña.</p>
+						<p>Introduce el correo electrónico que utilizas para tu cuenta de Artecámara y te enviaremos un enlace para restablecer tu clave.</p>
 				    	<div class="mid-input-div"><!-- Div Input -->
 				    		<label>Correo electrónico</label>
 				        	<input type="text" class="expand input-text" name="user_email">
@@ -33,7 +33,7 @@ include_once('header-nologin2.php');
 			</div>  <!-- End Panel -->
 			<div class="row">
 				<div class="six columns"><a class="whitetxt bold" href="<?php echo APPLICATION_URL?>home.html" title="Volver al inicio">Volver al inicio</a></div>
-				<div class="six columns"><input type="submit" class="button radius right" value="Restablecer contraseña"></div>
+				<div class="six columns"><input type="submit" class="button radius right" value="Restablecer clave"></div>
 			</div>
 		</form>
 		</div><!-- six columns -->

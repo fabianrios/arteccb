@@ -4,7 +4,19 @@
 	<script src="<?php echo APPLICATION_URL?>javascripts/app.js"></script>
 	<script src="<?php echo APPLICATION_URL?>javascripts/jquery-ui-1.8.18.custom.min.js"></script>
 	<script src="<?php echo APPLICATION_URL?>javascripts/validator.js"></script>
-
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader.js"></script>
+	<script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/util.js"></script>
+	<script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/button.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/ajax.requester.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/deletefile.ajax.requester.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/handler.base.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/window.receive.message.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/handler.form.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/handler.xhr.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/uploader.basic.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/dnd.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/uploader.js"></script>
+    <script src="<?php echo APPLICATION_URL?>javascripts/fileuploader/jquery-plugin.js"></script>
 	<?php $name = explode("/", $path); ?>
 
 	<!-- Included JS Files -->
@@ -139,7 +151,7 @@
 		// nuevo artista 
 		$("#add-artist").click(function(){
 
-		$(".link_list").hide().append('<li class="link_default"><div class="row"><div class="three columns"><img src="images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr"><label>Nombre</label><br /><input type="text" class="" /></div><div class="three columns"><label>Apellido</label><br /><input type="text" /></div><div class="six columns"><label>Nacionalidad</label><br /><input type="text" /><label for="checkbox3a"><input type="checkbox" id="checkbox3a"> Este artista participará en Artbo</label><a href="#" class="revelar-a hidden" data-reveal-id="artista">Editar</a></div></div></li>').fadeIn(1000);
+		$(".link_list").hide().append('<li class="link_default"><div class="row"><div class="three columns"><img src="images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr"><label>Nombre</label><br /><input type="text" class="" /></div><div class="three columns"><label>Apellido</label><br /><input type="text" /></div><div class="six columns"><label>Nacionalidad</label><br /><input type="text" /><label for="checkbox3a"><input type="checkbox" id="checkbox3a"> Este artista participará en Artecamará</label><a href="#" class="revelar-a hidden" data-reveal-id="artista">Editar</a></div></div></li>').fadeIn(1000);
 		
 		});
 		// end nuevo artista

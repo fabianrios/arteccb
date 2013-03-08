@@ -1,6 +1,10 @@
+<?php
+$dir		= 'resources/images/'. $user->__get('user_id'). '-' .  makeUrlClear(utf8_decode($user->__get('user_name'))).'/';
+$default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
+?>
 <!-- panel 2 -->
 <h4>Proyecto</h4>
-<h5>Descripción del proyecto* (Max. 250 palabras)</h5>
+<h5>Descripción del proyecto a presentar* (Max. 250 palabras)</h5>
 <textarea class="expand" name="user_proyect_description" rows="10"><?php echo $user->__get('user_proyect_description');?></textarea>
 
 	<!-- <div class="intitle">
@@ -41,10 +45,10 @@
     		<select title="Digite año de la obra" name="user_proyect_year">
     			<option <?php if ($user->__get('user_proyect_year') == 2012) echo 'selected="selected"';?>>2012</option>
     			<option <?php if ($user->__get('user_proyect_year') == 2011) echo 'selected="selected"';?>>2011</option>
-    			<option <?php if ($user->__get('user_proyect_year') == 2010) echo 'selected="selected"';?>>2010</option>
+    			<!--<option <?php if ($user->__get('user_proyect_year') == 2010) echo 'selected="selected"';?>>2010</option>
     			<option <?php if ($user->__get('user_proyect_year') == 2009) echo 'selected="selected"';?>>2009</option>
     			<option <?php if ($user->__get('user_proyect_year') == 2008) echo 'selected="selected"';?>>2008</option>
-    			<option <?php if ($user->__get('user_proyect_year') == 2007) echo 'selected="selected"';?>>2007</option>
+    			<option <?php if ($user->__get('user_proyect_year') == 2007) echo 'selected="selected"';?>>2007</option>-->
     		</select>
   		</li>
 		<li>
@@ -59,18 +63,66 @@
 
 	    <ul class="no-bullet uploadimages">
 		  	<li>
-		  		<input type="file" title="Imagen de la obra"  name="user_proyect_image_1"><?php if($user->__get('user_proyect_image_1') != '') { ?><img height="50" width="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/proyecto/<?php echo $user->__get('user_proyect_image_1')?>"><?php }?>
+		  		<?php
+                    $image	= ($user->__get('user_proyect_image_1') != '') ? APPLICATION_URL.$dir.$user->__get('user_proyect_image_1') : $default;
+                        
+                    ?>           
+                    <div id="user_proyect_image_1"></div>     <?php if($user->__get('user_proyect_image_1') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
 		  	</li>
 		  	<li>
-		  	    <input type="file" title="Imagen de la obra"  name="user_proyect_image_2"><?php if($user->__get('user_proyect_image_2') != '') { ?><img height="50" width="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/proyecto/<?php echo $user->__get('user_proyect_image_2')?>"><?php }?>
+		  	    		  		<?php
+                    $image	= ($user->__get('user_proyect_image_2') != '') ? APPLICATION_URL.$dir.$user->__get('user_proyect_image_2') : $default;
+                        
+                    ?>           
+                    <div id="user_proyect_image_2"></div>     <?php if($user->__get('user_proyect_image_2') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
 		  	</li>
 		  	<li>
-		  	    <input type="file" title="Imagen de la obra"  name="user_proyect_image_3"><?php if($user->__get('user_proyect_image_3') != '') { ?><img height="50" width="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/proyecto/<?php echo $user->__get('user_proyect_image_3')?>"><?php }?>
+		  	   		  		<?php
+                    $image	= ($user->__get('user_proyect_image_3') != '') ? APPLICATION_URL.$dir.$user->__get('user_proyect_image_3') : $default;
+                        
+                    ?>           
+                    <div id="user_proyect_image_3"></div>     <?php if($user->__get('user_proyect_image_3') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
 		    </li>
 	  	</ul>
 	  
-	<span class="caption">Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</span>
+	<span class="caption">Puede cargar imágenes en .JPG o .PNG. El archivo no debe superar los 1000 KB.</span>
 <hr/>
-
+	<script>
+      $(document).ready(function() {
+        var manualuploader = new qq.FineUploader({
+		  debug: true, 												 
+          element: $('#user_proyect_image_1')[0],
+          request: {
+            endpoint: '<?php echo APPLICATION_URL;?>upload.controller/<?php echo $_SESSION['user_id'];?>/user_proyect_image_1.html'
+          },
+          autoUpload: true,
+          text: {
+            uploadButton: '<i class="icon-plus icon-white"></i> Seleccione archivo'
+          }
+        });
+        var seconduploader = new qq.FineUploader({
+		  debug: true, 												 
+          element: $('#user_proyect_image_2')[0],
+          request: {
+            endpoint: '<?php echo APPLICATION_URL;?>upload.controller/<?php echo $_SESSION['user_id'];?>/user_proyect_image_2.html'
+          },
+          autoUpload: true,
+          text: {
+            uploadButton: '<i class="icon-plus icon-white"></i> Seleccione archivo'
+          }
+        });		
+        var thirduploader = new qq.FineUploader({
+		  debug: true, 												 
+          element: $('#user_proyect_image_3')[0],
+          request: {
+            endpoint: '<?php echo APPLICATION_URL;?>upload.controller/<?php echo $_SESSION['user_id'];?>/user_proyect_image_3.html'
+          },
+          autoUpload: true,
+          text: {
+            uploadButton: '<i class="icon-plus icon-white"></i> Seleccione archivo'
+          }
+        });	
+      });
+   </script>  
 
 <!-- END formulario -->

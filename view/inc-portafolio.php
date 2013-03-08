@@ -1,15 +1,19 @@
-
-		
+<?php
+$dir		= 'resources/images/'. $user->__get('user_id'). '-' .  makeUrlClear(utf8_decode($user->__get('user_name'))).'/';
+$obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') . "'");
+?>
 		<h4>Portafolio</h4>
-					<p><em>Incluya cinco obras realizadas desde 2009 a la fecha.</em></p>
+					<p><em>Incluya cinco obras realizadas desde 2008 a la fecha.</em></p>
 					
 					<ul class="link_list ui-sortable">
 					        	<?php
+					        	$i = 1;
 								if (count($obras) > 0)
 								{
-									$i = 1;
+									
 									foreach ($obras as $obra)
 									{
+										$key 		= ($obra->__get('obra_key') != '') ? $obra->__get('obra_key') : md5(date('YmdHis') . $i);
 								?>  
 					                <li class="link_default">
 					                    <ul class="no-bullet portfolio">
@@ -48,13 +52,36 @@
 					                      	<li class="obra">
 					                        	<span class="asterix">*</span><strong>Imagen de la obra</strong>
 					                        	<label>Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</label>
-					                       	    <input title="Imagen de la obra" name="obra_image_<?php echo $i;?>" type="file"><?php if($obra->__get('obra_image') != '') { ?><img width="50" height="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/obras/<?php echo $obra->__get('obra_image')?>"><?php }?>
+					                       	    <?php
+							                    $image	= ($obra->__get('obra_image') != '') ? APPLICATION_URL.$dir.'portafolio/'.$obra->__get('obra_image') : $default;
+							                        
+							                    ?>           
+							                    <div id="obra_image_<?php echo $key?>"></div>     
+							                    <?php if($obra->__get('obra_image') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
+							                    <input type="hidden" name="obra_key_<?php echo $i;?>" value="<?php echo $key?>" />
 					                      	</li>
 					                        <li class="handler">
 			                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 			                               	</li>
 					                    </ul>
-					                </li>                        
+					                </li>
+									<script>
+								      $(document).ready(function() {
+								      	eval('var uploaders<?php echo $key?> = { uploader<?php echo $key?>: null };');
+								      	eval('var currentUploader = uploaders<?php echo $key?>.uploader<?php echo $key?>;');
+								        var currentUploader = new qq.FineUploader({
+										  debug: true, 												 
+								          element: $('#obra_image_<?php echo $key?>')[0],
+								          request: {
+								            endpoint: '<?php echo APPLICATION_URL;?>upload_works.controller/<?php echo $_SESSION['user_id'];?>/obra_image_<?php echo $key?>_image/<?php echo $key?>.html'
+								          },
+								          autoUpload: true,
+								          text: {
+								            uploadButton: '<i class="icon-plus icon-white"></i> Seleccione archivo'
+								          }
+								        });	
+								      });
+								   </script>                  
 					            <?php
 									$i++;
 									} 
@@ -62,6 +89,7 @@
 								else
 								{
 									$obra	= new Obra();
+									$key 		= ($obra->__get('obra_key') != '') ? $obra->__get('obra_key') : md5(date('YmdHis') . 'new');
 								?>
 					            <li class="link_default">
 					                    <ul class="no-bullet portfolio">
@@ -99,14 +127,33 @@
 					                        </li>
 					                      	<li class="obra">
 					                        	<span class="asterix">*</span><strong>Imagen de la obra</strong>
-					                        	<span class="caption">Puede cargar imágenes en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</span>
-					                       	    <input  title="Imagen de la obra" name="obra_image_<?php echo $i;?>" type="file"><?php if($obra->__get('obra_image') != '') { ?><img width="50" height="50" src="<?php echo APPLICATION_URL?>resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/obras/<?php echo $obra->__get('obra_image')?>"><?php }?>
+					                        	<span class="caption">Puede cargar imágenes en .JPG o .PNG. El archivo no debe superar los 1000 KB. </span>
+					                       	    <div id="obra_image_<?php echo $key?>"></div>     
+							                    <?php if($obra->__get('obra_image') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
+							                    <input type="hidden" name="obra_key_<?php echo $i;?>" value="<?php echo $key?>" />
 					                      	</li>
 					                        <li class="handler">
 			                                	<a href="#"><img src="<?php echo APPLICATION_URL?>images/trash.gif" alt="caneca" title="caneca" width="37" height="37" /></a>
 			                               	</li>
 					                    </ul>
 					                </li>
+									<script>
+								      $(document).ready(function() {
+								      	eval('var uploaders<?php echo $key?> = { uploader<?php echo $key?>: null };');
+								      	eval('var currentUploader = uploaders<?php echo $key?>.uploader<?php echo $key?>;');
+								        var currentUploader = new qq.FineUploader({
+										  debug: true, 												 
+								          element: $('#obra_image_<?php echo $key?>')[0],
+								          request: {
+								            endpoint: '<?php echo APPLICATION_URL;?>upload_works.controller/<?php echo $_SESSION['user_id'];?>/obra_image_<?php echo $key?>_image/<?php echo $key?>.html'
+								          },
+								          autoUpload: true,
+								          text: {
+								            uploadButton: '<i class="icon-plus icon-white"></i> Seleccione archivo'
+								          }
+								        });	
+								      });
+								   </script>    
 					                 <?php
 								}
 								?>                                                

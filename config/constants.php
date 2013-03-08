@@ -1,6 +1,6 @@
 <?php
 //CONFIG
-define ("TESTMODE", false);				//CONFIGURED FOR STAGING OR PRODUCTION
+define ("TESTMODE", true);				//CONFIGURED FOR STAGING OR PRODUCTION
 define ("DEBUG", false);		
 define ("DEBUG_VISIBLE", true);		// ?
 define ("APPLICATION_LOCALE", "es");	// SET APPLICATION LOCALE 
@@ -19,8 +19,8 @@ if (TESTMODE)
 	ini_set('display_startup_errors', 'On');
 	ini_set('memory_limit', '250M'); 
 	
-	define ("APPLICATION_URL", "/ccb-artista/"); 
-	define ("APPLICATION_FULL_URL", "http://190.145.56.83/ccb-artista/"); 
+	define ("APPLICATION_URL", "/arteccb/"); 
+	define ("APPLICATION_FULL_URL", "http://192.168.0.15/arteccb/"); 
 	//LOCALHOST
 	define ("DB_NAME", "ccb-artist");
 	define ("DB_HOST", "localhost"); 

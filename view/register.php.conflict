@@ -44,7 +44,11 @@ if ((isset($_GET[0])) && ($_GET[1] == 0))
 					</div>
 					<label for="name"><span class="asterix">*</span>Correo electrónico</label>
 					<input type="email" name="user_email"  title="Digite el correo electrónico"/>
+<<<<<<< HEAD
+					<label for="name"><span class="asterix">*</span>Confirme su correo electrónico</label>
+=======
 					<label for="name"><span class="asterix">*</span>Confirmación correo electrónico</label>
+>>>>>>> 8eaed2fd460003c6f9fd8d669029b80e24ff70b0
 					<input type="email" name="user_email_confirm"  alt="email" title="Confirme el correo electrónico digitado"/>
 					<label for="name"><span class="asterix">*</span>Clave</label>
 					<input type="password" name="user_password" title="Digite su contraseña"/>
