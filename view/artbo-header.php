@@ -15,7 +15,6 @@
 					if (isset($user))
 					{
 					?>
-                    <img src="<?php echo APPLICATION_URL?>resources/images/26x26/<?php echo $user->__get('user_image')?>" class="left"  height="26" width="26" alt="Perfil"/>
 					<p class="left"><strong><?php echo $user->__get('user_name');?></strong><br />
 					<a href="<?php echo APPLICATION_URL?>datos-artista-0300.html" title="Clic aquí para editar información del artista">Editar Perfil</a> | <a href="<?php echo APPLICATION_URL?>exit.html" title="Salir">Salir</a> </p>
 					<?php

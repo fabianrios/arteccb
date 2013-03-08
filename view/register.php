@@ -31,7 +31,7 @@ else
 					<label for="name"><span class="asterix">*</span>Apellido</label>
 					<input type="text" name="userlast_name" title="Digite su(s) apellido(s)"/>
 					<label for="name">Nombre del Colectivo</label>
-					<input type="text" name="collective_name" title="Digite el nombre del colectivo"/>
+					<input type="text" name="collective_name" title="Digite el nombre del colectivo" class="notValidable"/>
 					<div class="row">
 						<div class="six columns">
 							<label for="name"><span class="asterix">*</span>Tipo de documento</label>
