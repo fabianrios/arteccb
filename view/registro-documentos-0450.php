@@ -9,8 +9,22 @@ if (isset($_GET[0]))
 </script>
 <?php
 }
+$userForms	= UserFormHelper::retrieveUserForms(" AND user_id = ".escape($_SESSION['user_id']));
+$class		= 'nulled';
+if (count($userForms) == 4)
+{
+	$action		= "document.getElementById('validable').submit();";
+	$class		= '';
+}
+else
+	$action		= "alertNotYet()";
 ?>
-			
+<script language="javascript">
+function alertNotYet()
+{
+	alert ('Debe completar los pasos anteriores antes de guardar su formulario');
+}
+</script>			
 	<div class="row main-row">	
 		<!-- <div class="alert-box success">
 	    	Sus datos han sido guardados
@@ -26,8 +40,8 @@ if (isset($_GET[0]))
 					
 					<div class="four columns mini-nav-header">
 						<dl class="sub-nav">
-							<dd><a class="save" title="Guardar" href="javascript:void(0);" onClick="document.getElementById('validable').submit();" >Guardar</a></dd>
-							<dd><a class="prev" title="Portafolio" href="<?php echo APPLICATION_URL?>registro-portafolio-0450.html">Anterior</a></dd>
+							<dd><a class="save" title="Guardar" href="javascript:void(0);" onClick="<?php echo $action;?>" >Guardar</a></dd>
+							<dd><a class="prev" title="Portafolio" href="<?php echo APPLICATION_URL?>registro-portafolio-0440.html">Anterior</a></dd>
 							<dd><h4>5/5</h4></dd>
 						</dl>	
 					</div>
@@ -61,14 +75,13 @@ if (isset($_GET[0]))
 							        		
 								        		<img src="http://cambelt.co/icon/camera/235x150?color=b71632,fefefe" class="images right" title="Imagen del director">
 		</div>			<div class="five columns">			        		 
-<?php
-							                    $image	= ($user->__get('user_certificate') != '') ? APPLICATION_URL.$dir.$user->__get('user_certificate') : $default;
+												<?php
+							                    $image	= ($user->__get('user_document') != '') ? APPLICATION_URL.$dir.$user->__get('user_certificate') : $default;
 							                        
 							                    ?>      
-							                    <?php if($user->__get('user_certificate') != '') { ?><img class="images right" src="<?php echo $image?>"><?php }?>     
-							                    <div id="user_certificate"></div>     
+							                    <?php if($user->__get('user_document') != '') { ?><img class="images right" src="<?php echo $image?>"><?php }?>     
+							                    <div id="user_document"></div>     
 								        		 </div>
-								        		 <?php if ($user->__get('user_document') != '') { ?><p><a target="_blank" href="resources/images/<?php echo makeUrlClear(utf8_decode($user->__get('user_name')))?>/<?php echo $user->__get('user_document');?>">Documento Cargado en el sistema</a></p><?php } ?>								        	
 								   
 										</div>
 								    </li>
@@ -108,7 +121,7 @@ if (isset($_GET[0]))
 						<div class="four columns">
 							<div class="right">
 								<a title="Portafolio" href="<?php echo APPLICATION_URL?>registro-portafolio-0450.html" class="graytxt">Anterior</a>
-								<a href="javascript:void(0);" onClick="document.getElementById('validable').submit();" title="Declaro conocer y aceptar las condiciones y el reglamento de participación" class="button radius guardar">Finalizar</a>  
+								<a href="javascript:void(0);" onClick="<?php echo $action;?>" class="button radius <?php echo $class;?>">Finalizar</a>  
 							</div>
 						</div>
 					</div>
@@ -124,9 +137,9 @@ if (isset($_GET[0]))
       $(document).ready(function() {
         var manualuploader = new qq.FineUploader({
 		  debug: true, 												 
-          element: $('#user_certificate')[0],
+          element: $('#user_document')[0],
           request: {
-            endpoint: '<?php echo APPLICATION_URL;?>upload.controller/<?php echo $_SESSION['user_id'];?>/user_certificate.html'
+            endpoint: '<?php echo APPLICATION_URL;?>upload.controller/<?php echo $_SESSION['user_id'];?>/user_document.html'
           },
           autoUpload: true,
           text: {

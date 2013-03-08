@@ -22,7 +22,7 @@ include_once(SITE_VIEW.'menu.php');
 					
 					<div class="four columns mini-nav-header">
 						<dl class="sub-nav">
-							<dd><a class="save" title="Guardar" href="javascript:void(0);" onClick="document.getElementById('validable').submit();" >Guardar</a></dd>
+							<dd><a class="save" title="Guardar" href="javascript:void(0);" onClick="$('#validable2').attr('action','<?php echo APPLICATION_URL?>user.controller/createExpo/stay.html'); $('#validable2').submit();" >Guardar</a></dd>
 							<dd><a class="prev" title="Registro" href="<?php echo APPLICATION_URL;?>registro-artista-0410.html">Anterior</a></dd>
 							<dd><h4>2/5</h4></dd>
 							<dd><a class="next" title="Proyecto Artecámara" href="<?php echo APPLICATION_URL;?>registro-proyecto-0430.html" >Siguiente</a></dd>
@@ -35,7 +35,7 @@ include_once(SITE_VIEW.'menu.php');
 			<div class="row form-data">	
 				<div class="twelve columns">
 					
-					<form action="<?php echo APPLICATION_URL?>user.controller/createExpo.html" id="validable" class="" method="post">
+					<form action="<?php echo APPLICATION_URL?>user.controller/createExpo.html" id="validable2" class="" method="post">
 					<?php include_once 'inc-hojadevida.php'; ?>
 					</form>
 					
@@ -53,7 +53,7 @@ include_once(SITE_VIEW.'menu.php');
 						<div class="five columns">
 							<div class="right">
 								<a title="Registro" href="<?php echo APPLICATION_URL;?>registro-artista-0410.html" class="graytxt">Anterior</a>  
-								<a href="<?php echo APPLICATION_URL;?>registro-proyecto-0430.html" title="Siguiente: Artecámara" class="button radius">Siguiente: Proyecto Artecámara</a>
+								<a href="javascript:void(0);" onclick="$('#validable2').submit();" title="Siguiente: Artecámara" class="button radius">Siguiente: Proyecto Artecámara</a>
 							</div>
 						</div>
 					</div>

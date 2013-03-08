@@ -22,7 +22,7 @@ switch ($action):
 			else
 				redirectUrl(APPLICATION_URL."register/norecord.html");
 		}
-	break
+	break;
 	//REGISTRO
 	case 'create':
 		$users	= UserHelper::retrieveUsers(" AND user_email = '" . escape($_POST['user_email']) . "'");
@@ -60,7 +60,9 @@ switch ($action):
 	//OLVIDO CONTRASEÑA
 	case 'recover_password':
 		$users	= UserHelper::retrieveUsers(" AND user_email = '" . escape($_POST['user_email']) . "'");
-		$password 	= substr(md5(date('YmdHis')), 0, 8);
+		if (count($users) > 0)
+		{
+			$password 	= substr(md5(date('YmdHis')), 0, 8);
 			$user 		=& $users[0];
 			$user->__set('user_verification', md5($password));
 			$user->update();
@@ -120,24 +122,13 @@ switch ($action):
 		$user->update();
 		redirectUrl(APPLICATION_URL.'registro-galerias-0410.html');
 	break;
+	//PRIMERA PAGINA
 	case 'first':
 		$user 		= new User($_SESSION['user_id']);
 		foreach ($_POST as $key => $value)
 			$user->__set($key, $value);	
 		$user->__set('user_phone', $_POST['phone_0'].'-'.$_POST['phone_1'].'-'.$_POST['phone_2']);
-		$user->__set('user_mobile', $_POST['mobile_0'].'-'.$_POST['mobile_1'].'-'.$_POST['mobile_2']);		
-		if($_FILES["user_director_image"]["name"] != "")
-		{
-			$ext	= getFileExtension($_FILES["user_director_image"]['name']);
-			$name 	= md5(date("YmdHis")) . $ext;
-		
-			if(uploadFile('resources/images/', $_FILES["user_director_image"]['tmp_name'], $name))
-			{
-				$accept = array('jpg', 'gif', 'png', 'jpeg');
-				$medio 	= new Medio($name , $accept, 'resources/images/');  
-				$user->__set('user_director_image', $name);						
-			}				
-		}	
+		$user->__set('user_mobile', $_POST['mobile_0'].'-'.$_POST['mobile_1'].'-'.$_POST['mobile_2']);				
 		$userForms	= UserFormHelper::selectUserForms(" AND user_id = ".escape($_SESSION['user_id'])." AND form_number = 1");
 		if ($userForms['num_rows'] == 0)
 		{
@@ -300,7 +291,7 @@ switch ($action):
 		{
 			$form	= new UserForm();
 			$form->__set('user_id', $_SESSION['user_id']);
-			$form->__set('form_number', 2);
+			$form->__set('form_number', 3);
 			$form->save();
 		}		
 		if (!isset($_GET[1]))
@@ -332,7 +323,7 @@ switch ($action):
 		{
 			$form	= new UserForm();
 			$form->__set('user_id', $_SESSION['user_id']);
-			$form->__set('form_number', 2);
+			$form->__set('form_number', 4);
 			$form->save();
 		}		
 		if (!isset($_GET[1]))
@@ -382,7 +373,7 @@ switch ($action):
 		$user 	=  new User($_SESSION['user_id']);	
 		$user->__set('user_password', md5($_POST['contrasena']));
 		$user->update();
-		redirectUrl(APPLICATION_URL."datos-galeria-0300/exito.html");
+		redirectUrl(APPLICATION_URL."datos-artista-0300/exito.html");
 	break;	
 		
 endswitch;
