@@ -126,6 +126,10 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 															<span class="asterix">*</span><strong>Formato o técnica</strong>
 															<input title="Digite formato o técnica de la obra" name="obra_format_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_format');?>" />
 														</li>
+														<li class="url">
+															<strong>Url de la obra</strong>
+															<input title="Digite url de la obra" name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
+														</li>
 														<li class="date">
 															<span class="asterix">*</span><strong>Año</strong>	
 																<select title="Digite año de la obra" name="obra_year_<?php echo $i;?>">
@@ -136,10 +140,6 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 																	<option value="2008" <?php if ($obra->__get('obra_year') == 2008) echo 'selected="selected"';?>>2008</option>
 																	<option value="2007" <?php if ($obra->__get('obra_year') == 2007) echo 'selected="selected"';?>>2007</option>
 																</select>
-														</li>
-														<li class="url">
-															<strong>Url de la obra</strong>
-															<input title="Digite url de la obra" name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
 														</li>
 													</ul>
 												</div>
@@ -176,7 +176,7 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 									<li class="link_default">
 											<div class="row">
 													<div class="four columns">
-														<ul class="no-bullet portfolio-last">
+														<ul class=" no-bullet portfolio-last">
 															<li>
 																<span class="asterix">*</span><strong>Imagen de la obra</strong>
 																<?php if($obra->__get('obra_image') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
@@ -203,6 +203,10 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 																	<span class="asterix">*</span><strong>Formato o técnica</strong>
 																	<input title="Digite formato o técnica de la obra" name="obra_format_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_format');?>" />
 																</li>
+																<li class="url">
+																	<strong>Url de la obra</strong>
+																	<input title="Digite url de la obra" name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
+																</li>
 																<li class="date">
 																	<span class="asterix">*</span><strong>Año</strong>	
 																		<select title="Digite año de la obra" name="obra_year_<?php echo $i;?>">
@@ -213,10 +217,6 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 																			<option value="2008" <?php if ($obra->__get('obra_year') == 2008) echo 'selected="selected"';?>>2008</option>
 																			<option value="2007" <?php if ($obra->__get('obra_year') == 2007) echo 'selected="selected"';?>>2007</option>
 																		</select>
-																</li>
-																<li class="url">
-																	<strong>Url de la obra</strong>
-																	<input title="Digite url de la obra" name="obra_url_<?php echo $i;?>"  class="expand input-text" type="text" value="<?php echo $obra->__get('obra_url');?>" />
 																</li>
 															</ul>
 														</div>
