@@ -62,14 +62,21 @@ $default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
 		
 
 	    <ul class="no-bullet uploadimages">
+		  	
+		  			  	
+		  	
+		  	
 		  	<li>
+		  	<img src="http://cambelt.co/icon/document/230x170?color=b71632,fefefe" class="images right" title="Imagen de la obra">
 		  		<?php
                     $image	= ($user->__get('user_proyect_image_1') != '') ? APPLICATION_URL.$dir.$user->__get('user_proyect_image_1') : $default;
                         
                     ?>           
                     <div id="user_proyect_image_1"></div>     <?php if($user->__get('user_proyect_image_1') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
+                    
 		  	</li>
 		  	<li>
+		  	<img src="http://cambelt.co/icon/document/230x170?color=b71632,fefefe" class="images right" title="Imagen de la obra">
 		  	    		  		<?php
                     $image	= ($user->__get('user_proyect_image_2') != '') ? APPLICATION_URL.$dir.$user->__get('user_proyect_image_2') : $default;
                         
@@ -77,6 +84,7 @@ $default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
                     <div id="user_proyect_image_2"></div>     <?php if($user->__get('user_proyect_image_2') != '') { ?><img width="50" src="<?php echo $image?>"><?php }?>
 		  	</li>
 		  	<li>
+		  	<img src="http://cambelt.co/icon/document/230x170?color=b71632,fefefe" class="images right" title="Imagen de la obra">
 		  	   		  		<?php
                     $image	= ($user->__get('user_proyect_image_3') != '') ? APPLICATION_URL.$dir.$user->__get('user_proyect_image_3') : $default;
                         
@@ -86,7 +94,7 @@ $default	= 'http://cambelt.co/icon/camera/480x360?color=b71632,fefefe';
 	  	</ul>
 	  
 	<span class="caption">Puede cargar imágenes en .JPG o .PNG. El archivo no debe superar los 1000 KB.</span>
-<hr/>
+
 	<script>
       $(document).ready(function() {
         var manualuploader = new qq.FineUploader({
