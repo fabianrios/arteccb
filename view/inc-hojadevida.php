@@ -310,11 +310,14 @@
                                    <!-- <li class="format">
                                         <input title="Digite formato de la exposión" name="expo_format_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $exposition->__get('exposition_format');?>" />
                                     </li>-->
-                                    
-                                    <li class="format">
-                                         <input title="Digite el país" name="" class="expand input-text" type="text" value="" />
-                                     </li>
-                                     
+                                   <li class="country">
+                                    	<select name="country_id_" id="">
+                                    		<option value="">Colombia</option>
+                                    		<option value="">Venezuela</option>
+                                    		<option value="">Puerto rico</option>
+                                    		<option value="">Zurinam</option>
+                                    	</select>
+                                    </li>
                                     <li class="date">
                                         <select title="Digite fecha de la exposición" name="expo_year_<?php echo $i?>">
                                             <option value="2013" <?php if ($exposition->__get('exposition_year') == 2013) echo 'selected="selected"';?>>2013</option>
@@ -354,8 +357,13 @@
                                     <li>
                                         <input name="expo_city_<?php echo $i;?>" class="expand input-text" type="text" />
                                     </li>
-                                    <li class="format">
-                                        <input name="expo_format_<?php echo $i;?>" class="expand input-text" type="text" />
+                                    <li class="country">
+                                    	<select name="country_id_" id="">
+                                    		<option value="">Colombia</option>
+                                    		<option value="">Venezuela</option>
+                                    		<option value="">Puerto rico</option>
+                                    		<option value="">Zurinam</option>
+                                    	</select>
                                     </li>
                                     <li class="date">
 	                                    <select name="expo_year_<?php echo $i;?>">
@@ -385,7 +393,7 @@
 				<p><em>Selección de becas y premios desde 2008 a la fecha.</em></p>
 				
 				<div class="intitle">
-					<ul class="no-bullet resume">
+					<ul class="no-bullet resume-more">
 						<li>
 							<strong>Nombre del premio</strong>
 						</li>
@@ -394,6 +402,9 @@
 						</li>
 						<li>
 							<strong>Ciudad</strong>
+						</li>
+						<li>
+							<strong>Colombia</strong>
 						</li>
 						<li>
 							<strong>Año</strong>
@@ -411,7 +422,7 @@
 							{
 						?>                          
                             <li class="link_default">
-                                  <ul class="no-bullet resume">
+                                  <ul class="no-bullet resume-more">
                                     <li class="handler">
                                     	<img src="<?php echo APPLICATION_URL;?>images/drag_handle.gif" alt="drag_handle" width="11" height="11" class="image_handle nsr">
                                     </li>
@@ -423,6 +434,14 @@
                                     </li>
                                     <li>
                                         <input title="Digite ciudad del premio" name="prize_city_<?php echo $i?>" class="expand input-text" type="text" value="<?php echo $prize->__get('prize_city')?>" />
+                                    </li>
+                                     <li class="country">
+                                    	<select name="country_id_" id="">
+                                    		<option value="">Colombia</option>
+                                    		<option value="">Venezuela</option>
+                                    		<option value="">Puerto rico</option>
+                                    		<option value="">Zurinam</option>
+                                    	</select>
                                     </li>
                                     <li class="date">
                                         <select title="Digite año del premio" name="prize_year_<?php echo $i?>">
