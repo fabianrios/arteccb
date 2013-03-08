@@ -115,7 +115,7 @@
 				<hr />
 				<br />				
                 <h4>Exposiciones individuales</h4>
-				<p><em>Selección desde 2007 a la fecha.</em></p>
+				<p><em>Selección desde 2008 a la fecha.</em></p>
 				
 				<div class="intitle">
 					<ul class="resume-more">
@@ -230,7 +230,7 @@
 				<hr />
 				<br />
 				<h4>Exposiciones colectivas</h4>
-				<p><em>Exposiciones colectivas desde 2007 a la fecha.</em></p>
+				<p><em>Exposiciones colectivas desde 2008 a la fecha.</em></p>
 				<div class="intitle">
 					<ul class="resume-more">
 						<li>
@@ -349,7 +349,7 @@
 				<hr />
 				<br />
 				<h4>Becas y premios</h4>
-				<p><em>Selección de becas y premios desde 2007 a la fecha.</em></p>
+				<p><em>Selección de becas y premios desde 2008 a la fecha.</em></p>
 				
 				<div class="intitle">
 					<ul class="no-bullet resume">
