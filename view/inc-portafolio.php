@@ -17,7 +17,7 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 								?>  
 					                <li class="link_default">
 						            <div class="row">
-					                    <div class="five columns">
+					                    <div class="four columns">
 					                    	<ul class="no-bullet portfolio-last">
 				                        	<li>
 						                    	<span class="asterix">*</span><strong>Imagen de la obra</strong>
@@ -31,7 +31,7 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 						                    </li>
 			                               </ul>
 				                    	</div>
-				                    	<div class="seven columns">
+				                    	<div class="eight columns">
 		                    		        <ul class="no-bullet portfolio">
 				                    		    <li>
 				                    		        <span class="asterix">*</span><strong>Nombre de la obra</strong>

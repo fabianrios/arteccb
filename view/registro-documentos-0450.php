@@ -67,26 +67,24 @@ function alertNotYet()
 								<ul class="documents no-bullet">	
 									<li>
 										<div class="row">
-											<div class="seven columns">		
+											<div class="eight columns">		
 												<h4><span class="asterix">*</span>Documento de identidad</h4>
 												<p>Suba el documento de identidad del artista participante o responsable del colectivo (cédula de ciudadanía o de extranjería)</p>
 								        	</div>
-								        	<div class="five columns">
-							        		
+								        	<!-- <div class="four columns">
 								        		<img src="http://cambelt.co/icon/camera/235x150?color=b71632,fefefe" class="images right" title="Imagen del director">
-		</div>			<div class="five columns">			        		 
+											</div> -->
+											<div class="four columns"> 		 
 												<?php
 							                    $image	= ($user->__get('user_document') != '') ? APPLICATION_URL.$dir.$user->__get('user_certificate') : $default;
 							                        
 							                    ?>      
 							                    <?php if($user->__get('user_document') != '') { ?><img class="images right" src="<?php echo $image?>"><?php }?>     
 							                    <div id="user_document"></div>     
-								        		 </div>
-								   
+								        	 </div>
 										</div>
 								    </li>
 								   </ul>
-
 					             </div>
 								<!-- End Col 3/4 -->
 								<!-- Col 4/4-->				
