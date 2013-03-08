@@ -42,9 +42,9 @@ if ((isset($_GET[0])) && ($_GET[1] == 0))
 							<input type="number" name="numero_doc" id="numero_doc" title="Digite su numero de documento"/>
 						</div>
 					</div>
-					<label for="name"><span class="asterix">*</span>Correo Electronico</label>
+					<label for="name"><span class="asterix">*</span>Correo electrónico</label>
 					<input type="email" name="user_email"  title="Digite el correo electrónico"/>
-					<label for="name"><span class="asterix">*</span>Confirmación correo Electronico</label>
+					<label for="name"><span class="asterix">*</span>Confirme su correo electrónico</label>
 					<input type="email" name="user_email_confirm"  alt="email" title="Confirme el correo electrónico digitado"/>
 					<label for="name"><span class="asterix">*</span>Clave</label>
 					<input type="password" name="user_password" title="Digite su contraseña"/>

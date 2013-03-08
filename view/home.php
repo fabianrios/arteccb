@@ -30,7 +30,7 @@ if ((isset($_GET[0])) && ($_GET[1] == 0))
 				</div>
 				<div class="register">
 					<h3>Registro</h3>
-					<h5>Si nunca te haz registrdo en Pabellón Artecámara.</h5>
+					<h5>Si nunca te haz registrado en Pabellón Artecámara.</h5>
 					<a href="<?php echo APPLICATION_URL?>register.html" class="button radius">Registrarse</a>
 				</div>
 			</div>

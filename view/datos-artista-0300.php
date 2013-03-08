@@ -21,7 +21,7 @@
 					<img src="<?php echo APPLICATION_URL?>images/resources/200X200/perfil.png" alt="perfil" width="200" height="200" class="images"><br />
 					
 							<input type="file" name="user_image" class=""/><br /><br/>
-							<p>Puede subir una imagen en .jpg, .png o .gif. El archivo no debe superar los 1000 KB.</p>
+							<p>Puede subir una imagen en .JPG o .PNG. El archivo no debe superar los 1000 KB.</p>
 							<hr />
 						</div>
 						<!-- END imagen galeria -->
