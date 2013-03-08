@@ -300,6 +300,74 @@ switch ($action):
 		else		
 			redirectUrl(APPLICATION_URL.'registro-proyecto-0430/saved.html');
 	break;	
+	case 'createPortfolio':
+		$user		= new User($_SESSION['user_id']);
+		foreach ($_POST as $key => $value)
+		{
+			if (strpos($key, 'obra_name_') !== false)
+			{
+				//$deleteSQL   = "DELETE FROM user_obras WHERE user_id = " . $_SESSION['user_id'];
+
+				$string	= str_replace('obra_name_', '', $key);
+				$obra	= (isset($_POST['obra_id_'.$string])) ? new Obra($_POST['obra_id_'.$string]) : new Obra();
+				if($obra->__get('obra_id') == '')
+				{
+					$obraArray = ObraHelper::retrieveObras("AND obra_key = '" . $_POST['obra_key_'.$string] . "'");
+					if(count($obraArray) > 0)
+						$obra = $obraArray[0];
+				}
+				$obra->__set('obra_name', $value);
+				$obra->__set('obra_dimensions', $_POST['obra_dimensions_'.$string]);
+				$obra->__set('obra_materials', $_POST['obra_materials_'.$string]);
+				$obra->__set('obra_format', $_POST['obra_format_'.$string]);
+				$obra->__set('obra_year', $_POST['obra_year_'.$string]);
+				$obra->__set('obra_url', $_POST['obra_url_'.$string]);
+				$obra->__set('user_id', $_SESSION['user_id']);
+				if($_FILES['obra_image_'.$string]["name"] != "")
+				{
+
+					if(!file_exists('resources/images/' . makeUrlClear(utf8_decode($user->__get('user_name')))))
+					{
+						mkdir('resources/images/' . makeUrlClear(utf8_decode($user->__get('user_name'))), 0755);
+					}
+
+					if(!file_exists('resources/images/' . makeUrlClear(utf8_decode($user->__get('user_name'))) . '/obras'))
+					{
+						mkdir('resources/images/' . makeUrlClear(utf8_decode($user->__get('user_name'))) . '/obras', 0755);
+					}
+
+					$ext	= getFileExtension($_FILES['obra_image_'.$string]['name']);
+					$name 	= md5(date("YmdHis")). $string . $ext;
+				
+					if(uploadFile('resources/images/' . makeUrlClear(utf8_decode($user->__get('user_name'))) . '/obras/', $_FILES['obra_image_'.$string]['tmp_name'], $name))
+					{
+						//$accept = array('jpg', 'gif', 'png', 'jpeg');
+						//$medio 	= new Medio($name , $accept, 'resources/images/');  
+						$obra->__set('obra_image', $name);						
+					}				
+				}
+				if ($obra->__get('obra_id') != '')  
+					$obra->update();				
+				else
+					$obra->save();
+
+			}
+		}
+		$userForms	= UserFormHelper::selectUserForms(" AND user_id = ".escape($_SESSION['user_id'])." AND form_number = 4");
+		if ($userForms['num_rows'] == 0)
+		{
+			$form	= new UserForm();
+			$form->__set('user_id', $_SESSION['user_id']);
+			$form->__set('form_number', 4);
+			$form->save();
+		}
+		/*
+		if (!isset($_GET[1]))
+			redirectUrl(APPLICATION_URL.'registro-documentos-0450.html');
+		else		
+			redirectUrl(APPLICATION_URL.'registro-portafolio-0440/saved.html');		
+		*/
+	break;
 	case 'createArtist':
 		$connection  = Connection::getInstance();
 		$deleteSQL   = "DELETE FROM user_artists WHERE user_id = " . $_SESSION['user_id'];
