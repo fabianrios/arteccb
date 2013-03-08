@@ -120,19 +120,19 @@
 				<div class="intitle">
 					<ul class="resume-more">
 						<li>
-							<span class="asterix">*</span><strong>Nombre de la exposición</strong>
+							<strong>Nombre de la exposición</strong>
 						</li>
 						<li>
-							<span class="asterix">*</span><strong>Institución</strong>
+							<strong>Institución</strong>
 						</li>
 						<li>
-							<span class="asterix">*</span><strong>Ciudad</strong>
+							<strong>Ciudad</strong>
 						</li>
 						<li>
-							<span class="asterix">*</span><strong>País</strong>
+							<strong>País</strong>
 						</li>
 						<li>
-							<span class="asterix">*</span><strong>Año</strong>
+							<strong>Año</strong>
 						</li>
 					</ul>
 				</div>
@@ -234,19 +234,19 @@
 				<div class="intitle">
 					<ul class="resume-more">
 						<li>
-							<span class="asterix">*</span><strong>Nombre de la exposición</strong>
+							<strong>Nombre de la exposición</strong>
 						</li>
 						<li>
-							<span class="asterix">*</span><strong>Institución</strong>
+							<strong>Institución</strong>
 						</li>
 						<li>
-							<span class="asterix">*</span><strong>Ciudad</strong>
+							<strong>Ciudad</strong>
 						</li>
 						<li>
-							<span class="asterix">*</span><strong>País</strong>
+							<strong>País</strong>
 						</li>
 						<li>
-							<span class="asterix">*</span><strong>Año</strong>
+							<strong>Año</strong>
 						</li>
 					</ul>
 				</div>
@@ -354,16 +354,16 @@
 				<div class="intitle">
 					<ul class="no-bullet resume">
 						<li>
-							<span class="asterix">*</span><strong>Nombre del premio</strong>
+							<strong>Nombre del premio</strong>
 						</li>
 						<li>
-							<span class="asterix">*</span><strong>Institución</strong>
+							<strong>Institución</strong>
 						</li>
 						<li>
-							<span class="asterix">*</span><strong>Ciudad</strong>
+							<strong>Ciudad</strong>
 						</li>
 						<li>
-							<span class="asterix">*</span><strong>Año</strong>
+							<strong>Año</strong>
 						</li>
 					</ul>
 				</div>

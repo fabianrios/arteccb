@@ -22,7 +22,7 @@ include_once('header-nologin2.php');
 			<form action="<?php echo APPLICATION_URL?>user.controller/recover_password.html" class="nice" method="post" id="validable">
 				<div class="panel"><!-- Panel -->
 			
-				<h3>Restablecer contraseña</h3>
+				<h3>Restablecer clave</h3>
 				<!-- login form --> 
 						<p>Introduce el correo electrónico que utilizas para tu cuenta de Artecámara y te enviaremos un enlace para restablecer tu clave.</p>
 				    	<div class="mid-input-div"><!-- Div Input -->

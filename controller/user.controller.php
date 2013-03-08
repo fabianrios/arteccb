@@ -29,8 +29,8 @@ switch ($action):
 			$user 		=& $users[0];
 			$user->__set('user_verification', md5($password));
 			$user->update();
-			$html  	   .= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Recordar Clave</h1><p style="margin-bottom:30px;">Hemos recibido una peticion para recordar su contrase&ntilde;a. Para completar el proceso de reestablecer contrase&ntilde;a visite la siguiente url:</p><a style="text-decoration: none; color: #3a6cdd;" href="http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html">http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html</a><br /><p>Si usted no ha solicitado este cambio porfavor ignore este correo.</p><p>Gracias,</p><span>Soporte </span>artBO</div></div>'; 
-			$subject	= utf8_decode('Recuperar contraseña');
+			$html  	   .= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Restablecer Clave</h1><p style="margin-bottom:30px;">Hemos recibido una petici&oacute;n para restablecer su clave. Para completar el proceso de restablecer su clave visite la siguiente url:</p><a style="text-decoration: none; color: #3a6cdd;" href="http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html">http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html</a><br /><p>Si usted no ha solicitado este cambio por favor ignore este correo.</p><p>Gracias,</p><span>Soporte </span>artBO</div></div>'; 
+			$subject	= utf8_decode('Restablecer clave');
 			$from		= 'info@artbo.co';
 			$to			= $user->__get('user_email');
 			$fromName	= 'CCB Artbo';
