@@ -2,6 +2,25 @@
 $countries	= CountryHelper::retrieveCountries(" AND country_activated = 1 ORDER by country_name");
 $phone		= explode("-", $user->__get('user_phone'));
 $mobile		= explode("-", $user->__get('user_mobile'));
+//VER CAMPOS REQUERIDOS
+$required	= array();
+$fields		= UserFieldHelper::retrieveUserFields();
+foreach ($fields as $field)
+	$required[$field->__get('field_name')]	= 1;
+// VALIDAR ERRORES
+$userForms	= UserFormHelper::selectUserForms(" AND user_id = ".escape($_SESSION['user_id'])." AND form_number = 1");
+function decide($field, $required, $user)
+{
+	if (!isset($required[$field]))
+		return '';
+	else
+	{
+		if (($user->__get($field) == '') || ($user->__get($field) == '0') || ($user->__get($field) == "NULL"))
+			return 'error';
+		else
+			return '';
+	}
+}
 ?>
 
 <!-- Panel Datos Contacto -->
