@@ -5,7 +5,7 @@ if (isset($_GET[0]))
 {
 ?>
 <script language="javascript">
-	confirm ("Gracias por su participaci&oacute;n. En breve recibir&aacute; un email de confirmaci&oacute;n. La lista de los artistas seleccionados para exponer en el Pabellón Artec&aacute;mara en artBO 2013 se dar&aacute; a conocer a partir del 5 de junio en www.artboonline.com");
+	confirm ("Gracias por participar en la convocatoria del Pabellón Artecámara en artBO 2013. En breve, recibirás un email de confirmación. El listado de los artistas seleccionados podrá ser consultado en www.artboonline.com a partir del 5 de Junio de 2013.");
 </script>
 <?php
 }
@@ -42,7 +42,6 @@ function alertNotYet()
 					
 					<div class="four columns mini-nav-header">
 						<dl class="sub-nav">
-							<dd><a class="save" title="Finalizar" href="javascript:void(0);" onClick="<?php echo $action;?>" >Finalizar</a></dd>
 							<dd><a class="prev" title="Portafolio" href="<?php echo APPLICATION_URL?>registro-portafolio-0440.html">Anterior</a></dd>
 							<dd><h4>5/5</h4></dd>
 						</dl>	
@@ -120,7 +119,7 @@ function alertNotYet()
 						</div>
 						<div class="four columns">
 							<div class="right">
-								<a title="Portafolio" href="<?php echo APPLICATION_URL?>registro-portafolio-0440.html" class="graytxt">Anterior</a>
+								<a title="Portafolio" href="<?php echo APPLICATION_URL?>registro-portafolio-0450.html" class="graytxt">Anterior</a>
 								<a href="javascript:void(0);" onClick="<?php echo $action;?>" class="button radius <?php echo $class;?>">Finalizar</a>  
 							</div>
 						</div>
