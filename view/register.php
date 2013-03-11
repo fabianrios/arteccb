@@ -22,9 +22,9 @@ else
 			<form  action="<?php echo APPLICATION_URL?>user.controller/create.html"  method="post" id="validable">
 				<div class="panel">
 					<h3>Registro</h3>
-					<p>Si nunca te has registrado en artBO el Pabellón Artecámara, incluida la última versión. Si ya te registraste en artBO en el Pabellón Artecámara, haz clic <a class="underline" href="login.html">aquí.</a></p>
+					<p>Si nunca te has registrado en artBO el Pabellón Artecámara, incluida la última versión. Si ya te registraste en artBO en el Pabellón Artecámara, haz clic <a class="underline" href="<?php echo APPLICATION_URL;?>login.html">aquí</a> o <a href="<?php echo APPLICATION_URL;?>home.html" class="underline">vuelve al inicio</a>.</p>
 					
-					<span class="caption"><strong>*Nota:</strong>enga en cuenta que con este mismo número de identificación deberás registrar el ingreso de tus obras, equipos y otros a Corferias y, podrás también participar en futuras convocatorias de Artecámara de la Cámara de Comercio de Bogotá, actualizando tus datos e imágenes. </span>
+					<span class="caption"><strong>*Nota:</strong> Tenga en cuenta que con este mismo número de identificación deberás registrar el ingreso de tus obras, equipos y otros a Corferias y, podrás también participar en futuras convocatorias de Artecámara de la Cámara de Comercio de Bogotá, actualizando tus datos e imágenes. </span>
 				
 					<label for="name"><span class="asterix">*</span>Nombre</label>
 					<input type="text" name="user_name" title="Digite su(s) nombre(s) y Apellidos"/>
