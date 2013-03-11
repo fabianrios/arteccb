@@ -3,7 +3,7 @@
 include_once('header-nologin2.php'); 
 ?>
 <!-- content -->
-<body>
+<body style="background-color:#000;">
 	
 <div class="container">
 	<div class="row"><!-- Row -->	

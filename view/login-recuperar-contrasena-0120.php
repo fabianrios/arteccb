@@ -4,7 +4,7 @@ include_once('header-nologin2.php');
 $email = urldecode($_GET[0]);
 ?>
 
-<body>		
+<body style="background-color:#000;">		
 <div class="container">
 	<div class="row"><!-- Row -->	
 		<div class="six columns centered"><!-- six columns -->

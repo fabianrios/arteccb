@@ -8,7 +8,7 @@ if ((isset($_GET[0])) && ($_GET[1] == 0))
 
 ?>
 
-<body>
+<body style="background-color:#000;">
   
 <div class="container">
 	<div class="row"><!-- Row -->	
@@ -37,8 +37,8 @@ if ((isset($_GET[0])) && ($_GET[1] == 0))
 </div>	
 <!-- End content -->
 
+<?php include_once('randomizer.php'); ?>
 
 <!-- 3. footer -->
 <?php include_once('footer.php'); ?>
 <!-- 3. End footer -->
-<?php include_once('randomizer.php'); ?>

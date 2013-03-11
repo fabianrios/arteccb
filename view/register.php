@@ -12,7 +12,7 @@ else
 }
 ?>
 
-<body>
+<body style="background-color:#000;">
 <!-- content -->
 <div class="container">
 	<div class="row"><!-- Row -->	
