@@ -4,7 +4,7 @@ $default	= 'http://cambelt.co/icon/document/230x170?color=b71632,fefefe';
 ?>
 <!-- panel 2 -->
 <h4>Proyecto</h4>
-<p><em>Descripción del proyecto a presentar* (Max. 250 palabras)</em></p>
+<p><em>Descripción del proyecto a presentar* (Max. 500 palabras)</em></p>
 <textarea class="expand" name="user_proyect_description" rows="10"><?php echo $user->__get('user_proyect_description');?></textarea>
 
 	<!-- <div class="intitle">
