@@ -59,8 +59,8 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 			                    		                <option value="2011" <?php if ($obra->__get('obra_year') == 2011) echo 'selected="selected"';?>>2011</option>
 			                    		                <option value="2010" <?php if ($obra->__get('obra_year') == 2010) echo 'selected="selected"';?>>2010</option>
 			                    		                <option value="2009" <?php if ($obra->__get('obra_year') == 2009) echo 'selected="selected"';?>>2009</option>
-			                    		                <!-- <option value="2008" <?php if ($obra->__get('obra_year') == 2008) echo 'selected="selected"';?>>2008</option>
-			                    		                <option value="2007" <?php if ($obra->__get('obra_year') == 2007) echo 'selected="selected"';?>>2007</option> -->
+			                    		               <option value="2008" <?php if ($obra->__get('obra_year') == 2008) echo 'selected="selected"';?>>2008</option>
+			                    		                  <!--<option value="2007" <?php if ($obra->__get('obra_year') == 2007) echo 'selected="selected"';?>>2007</option> -->
 			                    		            </select>
 				                    		    </li>
 				                    		</ul>
@@ -138,7 +138,7 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 																	<option value="2010" <?php if ($obra->__get('obra_year') == 2010) echo 'selected="selected"';?>>2010</option>
 																	<option value="2009" <?php if ($obra->__get('obra_year') == 2009) echo 'selected="selected"';?>>2009</option>
 																	<option value="2008" <?php if ($obra->__get('obra_year') == 2008) echo 'selected="selected"';?>>2008</option>
-																	<option value="2007" <?php if ($obra->__get('obra_year') == 2007) echo 'selected="selected"';?>>2007</option>
+																	<!-- <option value="2007" <?php if ($obra->__get('obra_year') == 2007) echo 'selected="selected"';?>>2007</option> -->
 																</select>
 														</li>
 													</ul>
@@ -215,7 +215,7 @@ $obras		= ObraHelper::retrieveObras("AND user_id = '" . $user->__get('user_id') 
 																			<option value="2010" <?php if ($obra->__get('obra_year') == 2010) echo 'selected="selected"';?>>2010</option>
 																			<option value="2009" <?php if ($obra->__get('obra_year') == 2009) echo 'selected="selected"';?>>2009</option>
 																			<option value="2008" <?php if ($obra->__get('obra_year') == 2008) echo 'selected="selected"';?>>2008</option>
-																			<option value="2007" <?php if ($obra->__get('obra_year') == 2007) echo 'selected="selected"';?>>2007</option>
+																			<!-- <option value="2007" <?php if ($obra->__get('obra_year') == 2007) echo 'selected="selected"';?>>2007</option> -->
 																		</select>
 																</li>
 															</ul>
