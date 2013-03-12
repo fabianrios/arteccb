@@ -37,7 +37,7 @@ switch ($action):
 			$insert	= $user->save();
 			$_SESSION['user_id']	= $insert['insert_id'];
 			redirectUrl(APPLICATION_URL.'registro-inicio-0400.html');
-			$html 		= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Le damos la Bienvenida al proceso de aplicación del Pabell&oacute;n Artec&aacute;mara en artBO 2013</h1><p style="margin-bottom:30px;">A partir de ahora, usted podr&aacute; adelantar su proceso de registro e inscripci&oacute;n.</p><p>artBO, Feria Internacional de Arte de Bogotá</p></div>'; 
+			$html 		= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Le damos la Bienvenida al proceso de aplicación del Pabell&oacute;n Artec&aacute;mara en artBO 2013</h1><p style="margin-bottom:30px;">A partir de ahora, usted podr&aacute; adelantar su proceso de registro e inscripci&oacute;n.</p><p>artBO, Feria Internacional de Arte de Bogot&aacute;</p></div>'; 
 			$subject	= utf8_decode('Registro exitoso');
 			$from		= 'agendacultural@ccb.org.co';
 			$to			= $user->__get('user_email');
@@ -66,7 +66,7 @@ switch ($action):
 			$user 		=& $users[0];
 			$user->__set('user_verification', md5($password));
 			$user->update();
-			$html  	   .= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Restablecer Clave</h1><p style="margin-bottom:30px;">Hemos recibido una petici&oacute;n para restablecer su clave. Para completar el proceso de restablecer su clave, haga clic en el siguiente link o c&oacute;pielo en su navegador: url:</p><a style="text-decoration: none; color: #3a6cdd;" href="http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html">http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html</a><br /><p>Si usted no ha solicitado este cambio, por favor haga caso omiso de este correo.</p><p>artBO, Feria Internacional de Arte de Bogotá</p></div>'; 
+			$html  	   .= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Restablecer Clave</h1><p style="margin-bottom:30px;">Hemos recibido una petici&oacute;n para restablecer su clave. Para completar el proceso de restablecer su clave, haga clic en el siguiente link o c&oacute;pielo en su navegador: url:</p><a style="text-decoration: none; color: #3a6cdd;" href="http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html">http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html</a><br /><p>Si usted no ha solicitado este cambio, por favor haga caso omiso de este correo.</p><p>artBO, Feria Internacional de Arte de Bogot&aacute;</p></div>'; 
 			$subject	= utf8_decode('Restablecer clave');
 			$from		= 'agendacultural@ccb.org.co';
 			$to			= $user->__get('user_email');
@@ -392,7 +392,7 @@ switch ($action):
 			foreach ($_POST as $key => $value)
 				$user->__set($key, $value);				
 			$user->update();
-			$html		= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Ha finalizado su registro</h1><p style="margin-bottom:30px;">Usted ha completado el proceso de registro del Pabell&oacute;n Artec&aacute;mara en artBO 2013. <br />Agradecemos su participaci&oacute;n en la convocatoria.</p><p>artBO, Feria Internacional de Arte de Bogotá</p></div>';
+			$html		= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Ha finalizado su registro</h1><p style="margin-bottom:30px;">Usted ha completado el proceso de registro del Pabell&oacute;n Artec&aacute;mara en artBO 2013. <br />Agradecemos su participaci&oacute;n en la convocatoria.</p><p>artBO, Feria Internacional de Arte de Bogot&aacute;</p></div>';
 			$subject	= utf8_decode('Finalizado registro');
 			$from		= 'agendacultural@ccb.org.co';
 			$to			= $user->__get('user_email');
