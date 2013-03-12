@@ -8,7 +8,7 @@ $email = urldecode($_GET[0]);
 <div class="container">
 	<div class="row"><!-- Row -->	
 		<div class="six columns centered"><!-- six columns -->
-			<span class="artBO">Artecámara</span><span class="ccB">CCB</span>
+			<a href="home.html"><span class="artBO">Artbo</span></a><a href="home.html"><span class="ccB">CCB</span></a>
 			<div class="alert-box success">
 				Correo enviado con &eacute;xito
 				<a href="#" class="close">&times;</a>

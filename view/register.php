@@ -15,9 +15,9 @@ else
 <body style="background-color:#000;">
 <!-- content -->
 <div class="container">
-	<div class="row"><!-- Row -->	
+	<div class="row"><!-- Row -->
 		<div class="six columns centered"><!-- six columns -->
-			<span class="artBO">Artbo</span><span class="ccB">CCB</span>
+			<a href="home.html"><span class="artBO">Artbo</span></a><a href="home.html"><span class="ccB">CCB</span></a>
 			<?php echo $error;?>
 			<form  action="<?php echo APPLICATION_URL?>user.controller/create.html"  method="post" id="validable">
 				<div class="panel">

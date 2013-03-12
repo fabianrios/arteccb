@@ -46,7 +46,7 @@ include_once('menu.php'); ?>
 						<div class="four columns">
 							<div class="right">
 								<a title="Proyecto Artecámara" href="<?php echo APPLICATION_URL?>registro-proyecto-0430.html" class="graytxt">Anterior</a>  
-								<a href="javascript:void(0);" onclick="$('#validable2').submit();" title="Documentos" class="button radius">Siguiente: Portafolio</a>
+								<a href="javascript:void(0);" onclick="$('#validable2').submit();" title="Documentos" class="button radius">Siguiente: Documentos</a>
 							</div>
 						</div>
 					</div>

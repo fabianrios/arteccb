@@ -13,7 +13,7 @@ if ((isset($_GET[0])) && ($_GET[1] == 0))
 <div class="container">
 	<div class="row"><!-- Row -->	
 		<div class="eight columns centered"><!-- six columns -->
-			<span class="artBO">Artbo</span><span class="ccB">CCB</span>
+			<a href="home.html"><span class="artBO">Artbo</span></a><a href="home.html"><span class="ccB">CCB</span></a>
 			<header class="intro">
 				<h2>Proceso de aplicación a Pabellón Artecámara artBO 2013</h2>
 				<h5>Abierto hasta el 30 de abril, a las 23:59 horas (hora Colombia GMT -5)</h5>
