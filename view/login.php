@@ -11,7 +11,7 @@ if (isset($_GET[0]))
 <div class="container">
 	<div class="row"><!-- Row -->	
 		<div class="six columns centered"><!-- six columns -->
-			<span class="artBO">Artbo</span><span class="ccB">CCB</span>
+			<a href="home.html"><span class="artBO">Artbo</span></a><a href="home.html"><span class="ccB">CCB</span></a>
 			<form action="<?php echo APPLICATION_URL?>user.controller/login.html"  method="post">
 				<div class="panel radius">
 					<h3>Inicio de Sesión</h3>
