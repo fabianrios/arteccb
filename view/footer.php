@@ -36,16 +36,16 @@
 		});
 		
 		$( "#sortable" ).sortable();
-		$( "#sortable" ).disableSelection();
-		
+		//$( "#sortable" ).disableSelection();  
+		 
 		$(".link_list").sortable({
 			placeholder: "ui-state-highlight"
 		});
-		$(".link_list").disableSelection();
+		//$(".link_list").disableSelection();
 		
-		$( ".products-li" ).sortable();
-		$( ".products-li" ).disableSelection();
-		
+		$( ".products-li" ).sortable(); 
+		//$( ".products-li" ).disableSelection();
+		 
 	});
 	
 	

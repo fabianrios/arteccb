@@ -4,7 +4,7 @@
 
 
 <!-- 2.menu-->
-<?php include_once(SITE_VIEW.'menu.php'); ?>
+<?php // include_once(SITE_VIEW.'menu.php'); ?>
 <!-- 2. End menu -->
 
 <div class="row main-row">	
