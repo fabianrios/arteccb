@@ -204,14 +204,15 @@ div.alert-box.success {
 .nav-bar li a {
   margin: 0 16px;
   height: 40px;
+  cursor: pointer;
 }
 
-/* line 155, ../sass/foundation-overrides.scss */
+/* line 156, ../sass/foundation-overrides.scss */
 .block-grid.five-up h4 {
   margin: 2px 0;
 }
 
-/* line 159, ../sass/foundation-overrides.scss */
+/* line 160, ../sass/foundation-overrides.scss */
 a:focus {
   outline-color: lightgray;
 }

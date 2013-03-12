@@ -14,8 +14,8 @@ if (isset($_GET[0]))
 			<a href="home.html"><span class="artBO">Artbo</span></a><a href="home.html"><span class="ccB">CCB</span></a>
 			<form action="<?php echo APPLICATION_URL?>user.controller/login.html"  method="post">
 				<div class="panel radius">
-					<h3>Inicio de Sesión</h3>
-					<p>Si nunca te has registrado en el Pabellón Artecámara, incluida la última versión, haz clic <a class="underline" href="<?php echo APPLICATION_URL?>register.html">aquí.</a></p>
+					<h3>Inicio de sesión</h3>
+					<p>Si nunca se ha registrado en el Pabellón Artecámara, incluida la última versión, haga clic <a class="underline" href="<?php echo APPLICATION_URL?>register.html">aquí.</a></p>
 					<?php echo $error;?>
 					<label for="name">Correo electrónico</label>
 					<input type="email"  name="user_email" title="Digite el correo electrónico" required="required"/>

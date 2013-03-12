@@ -3,6 +3,12 @@
 
 
 
+<<<<<<< HEAD
+<!-- 2.menu-->
+<?php // include_once(SITE_VIEW.'menu.php'); ?>
+<!-- 2. End menu -->
+=======
+>>>>>>> 251e61de8ff92da7f62acbcf5725f16c7d8da75c
 
 <div class="row main-row">	
 	<div class="panel nopadding">
@@ -35,3 +41,4 @@
 <!-- 4. footer -->			
 <?php include_once('footer.php'); ?>
 <!-- 4. End footer -->
+
