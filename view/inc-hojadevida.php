@@ -1,7 +1,7 @@
 <?php
 $countries	= CountryHelper::retrieveCountries(" AND country_activated = 1 ORDER by country_name");
 ?>
-<h4>Estudios Realizados</h4>
+<h4>Estudios realizados</h4>
 				<p><em>Ordenar del más reciente al más antiguo.</em></p>
 				
 				<div class="intitle">
