@@ -15,7 +15,7 @@
 			<div class="panel"><!-- Panel -->
 			<h3>Restablecer clave</h3>
 				<!-- login form -->
-				    	<p>Introduce una nueva clave para tu cuenta de Artecámara.</p>
+				    	<p>Introduzca una nueva clave para su cuenta de Artecámara.</p>
 				    
 				    	<div class="mid-input-div"><!-- Div Input -->
 				    		<label>Contrase&ntilde;a</label>
