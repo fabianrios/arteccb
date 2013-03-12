@@ -17,7 +17,7 @@
 					<p>Consulte el Reglamento de Participación de artBO <a href="http://www.artboonline.com/documentos/2129_reglamento_convocatoria_artecamara2013.pdf" target="_blank">aquí</a>.</p>
 					
 					<p>Para completar su aplicación, tenga en cuenta:</p>
-						<ul>
+						<ul class="no-bullet">
 					<li>Puede empezar por cualquiera de las secciones.</li>
 					<li>Guarde constantemente los cambios realizados.</li> 
 					<li>La aplicación se puede ir completando en diferentes momentos.</li> 

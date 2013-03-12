@@ -431,7 +431,7 @@ $countries	= CountryHelper::retrieveCountries(" AND country_activated = 1 ORDER 
 							<strong>Ciudad</strong>
 						</li>
 						<li>
-							<strong>Colombia</strong>
+							<strong>País</strong>
 						</li>
 						<li>
 							<strong>Año</strong>
