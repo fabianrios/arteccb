@@ -30,7 +30,7 @@
 	    </li>
 	    <li id="2">
 	    	<span class="spriteArrow"></span>
-			<a href="<?php echo APPLICATION_URL?>registro-hoja-vida-0420.html" class="main" title="Hoja de vida"><span class="number-menu">2</span>Hoja de Vida</a>
+			<a href="<?php echo APPLICATION_URL?>registro-hoja-vida-0420.html" class="main" title="Hoja de vida"><span class="number-menu">2</span>Hoja de vida</a>
 	    </li>
 	    <li id="3">
 	    	<span class="spriteArrow"></span>
