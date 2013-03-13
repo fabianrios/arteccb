@@ -8,7 +8,7 @@ include_once('header-nologin2.php');
 <div class="container">
 	<div class="row"><!-- Row -->	
 		<div class="six columns centered"><!-- six columns -->
-			<span class="artBO">Artbo</span><span class="ccB">CCB</span>
+			<a href="home.html"><span class="artBO">Artbo</span></a><a href="home.html"><span class="ccB">CCB</span></a> 
 			<?php
 			if (isset($_GET[0]))
 			{
@@ -24,7 +24,7 @@ include_once('header-nologin2.php');
 			
 				<h3>Restablecer clave</h3>
 				<!-- login form --> 
-						<p>Introduce el correo electrónico que utilizas para tu cuenta de Artecámara y te enviaremos un enlace para restablecer tu clave.</p>
+						<p>Introduzca el correo electrónico que utiliza para su cuenta de Artecámara y le enviaremos un enlace para restablecer su clave.</p>
 				    	<div class="mid-input-div"><!-- Div Input -->
 				    		<label>Correo electrónico</label>
 				        	<input type="text" class="expand input-text" name="user_email">

@@ -30,6 +30,16 @@ function decide($field, $required, $user)
 <div class="six columns">
 	<div class="panel-2"><!-- panel -->	
 			
+		<div class="mid-input">
+			<label><span class="asterix">*</span> Nombre</label>	
+			<input type="text" title="Digite su nombre" class="expand input-text"  name="y" value=""/>
+		</div>
+		
+		<div class="mid-input">
+			<label><span class="asterix">*</span> Apellido</label>	
+			<input type="text" title="Digite su apellido" class="expand input-text"  name="user_born_city" value=""/>
+		</div>
+
 
 		<div class="mid-input">
 			<label><span class="asterix">*</span> Lugar de nacimiento</label>	

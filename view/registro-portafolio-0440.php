@@ -46,7 +46,7 @@ include_once('menu.php'); ?>
 						<div class="four columns">
 							<div class="right">
 								<a title="Proyecto Artecámara" href="<?php echo APPLICATION_URL?>registro-proyecto-0430.html" class="graytxt">Anterior</a>  
-								<a href="javascript:void(0);" onclick="$('#validable2').submit();" title="Documentos" class="button radius">Siguiente: Portafolio</a>
+								<a href="javascript:void(0);" onclick="$('#validable2').submit();" title="Documentos" class="button radius">Siguiente: Documentos</a>
 							</div>
 						</div>
 					</div>
@@ -55,7 +55,7 @@ include_once('menu.php'); ?>
 		</div><!-- END Main: Panel -->
 		<div class="advisory">
 			<span>Recomendamos visualizar en: IE 9.0 - Firefox 10.0 - Safari 5.1 - Chrome 17.0     |     Optimizada 1024 x 768</span>
-			<span><a href="#">Términos y Condiciones</a> del Sitio</span>
+			<span><a href="http://www.artboonline.com/documentos/2129_reglamento_convocatoria_artecamara2013.pdf" target="_blank">Términos y Condiciones</a> del Sitio</span>
 		</div>
 	</div><!--/row main-row-->
 	

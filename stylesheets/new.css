@@ -404,115 +404,116 @@ header.intro h6 {
 label {
   font-weight: bold;
   margin: 15px 0 8px;
+  cursor: default;
 }
 
-/* line 369, ../sass/new.scss */
+/* line 370, ../sass/new.scss */
 .intitle {
   padding: 5px 0;
 }
-/* line 372, ../sass/new.scss */
+/* line 373, ../sass/new.scss */
 .intitle ul li {
   float: left;
   list-style-type: none;
 }
-/* line 377, ../sass/new.scss */
+/* line 378, ../sass/new.scss */
 .intitle ul.expos li {
   width: 20%;
 }
-/* line 379, ../sass/new.scss */
+/* line 380, ../sass/new.scss */
 .intitle ul.expos li:first-child {
   margin-left: 60px;
   width: 51%;
 }
-/* line 386, ../sass/new.scss */
+/* line 387, ../sass/new.scss */
 .intitle ul.resume li {
   width: 24.4%;
 }
-/* line 388, ../sass/new.scss */
+/* line 389, ../sass/new.scss */
 .intitle ul.resume li:first-child {
   margin-left: 60px;
 }
-/* line 391, ../sass/new.scss */
+/* line 392, ../sass/new.scss */
 .intitle ul.resume li:last-child {
   width: 10%;
 }
-/* line 397, ../sass/new.scss */
+/* line 398, ../sass/new.scss */
 .intitle ul.resume-more li {
   width: 20.4%;
 }
-/* line 399, ../sass/new.scss */
+/* line 400, ../sass/new.scss */
 .intitle ul.resume-more li:first-child {
   margin-left: 60px;
   width: 21%;
 }
-/* line 403, ../sass/new.scss */
+/* line 404, ../sass/new.scss */
 .intitle ul.resume-more li:last-child {
   width: 10%;
 }
-/* line 406, ../sass/new.scss */
+/* line 407, ../sass/new.scss */
 .intitle ul.resume-more li.country {
   width: 17%;
 }
-/* line 412, ../sass/new.scss */
+/* line 413, ../sass/new.scss */
 .intitle ul.ferias li {
   width: 18%;
 }
-/* line 414, ../sass/new.scss */
+/* line 415, ../sass/new.scss */
 .intitle ul.ferias li:first-child {
   margin-left: 60px;
   width: 36%;
 }
-/* line 421, ../sass/new.scss */
+/* line 422, ../sass/new.scss */
 .intitle ul.artistas li {
   width: 29.4%;
 }
-/* line 423, ../sass/new.scss */
+/* line 424, ../sass/new.scss */
 .intitle ul.artistas li:first-child {
   margin-left: 60px;
 }
 
-/* line 432, ../sass/new.scss */
+/* line 433, ../sass/new.scss */
 .inner-footer {
   background-color: #eee;
 }
-/* line 434, ../sass/new.scss */
+/* line 435, ../sass/new.scss */
 .inner-footer strong {
   line-height: 3;
 }
-/* line 437, ../sass/new.scss */
+/* line 438, ../sass/new.scss */
 .inner-footer a {
   margin: 0 5px;
   font-weight: bold;
 }
 
-/* line 443, ../sass/new.scss */
+/* line 444, ../sass/new.scss */
 .graytxt {
   color: #4C4C4C;
 }
 
-/* line 447, ../sass/new.scss */
+/* line 448, ../sass/new.scss */
 .advisory {
   margin-bottom: 30px;
 }
-/* line 449, ../sass/new.scss */
+/* line 450, ../sass/new.scss */
 .advisory span {
   font-size: 12px;
   color: #5b5b5b;
   display: block;
   line-height: 1.4;
 }
-/* line 455, ../sass/new.scss */
+/* line 456, ../sass/new.scss */
 .advisory a {
   color: #000;
   text-decoration: underline;
 }
 
-/* line 461, ../sass/new.scss */
+/* line 462, ../sass/new.scss */
 .redtxt {
   color: #BB0C35;
 }
 
-/* line 468, ../sass/new.scss */
+/* line 469, ../sass/new.scss */
 .nav-bar li span.spriteArrow {
   background: url("../images/spriteArrow.jpg");
   height: 39px;
@@ -520,45 +521,45 @@ label {
   display: inline-block;
   float: left;
 }
-/* line 475, ../sass/new.scss */
+/* line 476, ../sass/new.scss */
 .nav-bar li span.number-menu {
   padding: 3px 8px;
 }
-/* line 479, ../sass/new.scss */
+/* line 480, ../sass/new.scss */
 .nav-bar li:hover {
   background: transparent;
   cursor: pointer;
 }
-/* line 482, ../sass/new.scss */
+/* line 483, ../sass/new.scss */
 .nav-bar li:hover a {
   color: #fff;
 }
-/* line 485, ../sass/new.scss */
+/* line 486, ../sass/new.scss */
 .nav-bar li:hover span.number-menu {
   color: #bbb;
 }
-/* line 489, ../sass/new.scss */
+/* line 490, ../sass/new.scss */
 .nav-bar li.active {
   background: #BB0C35;
 }
-/* line 491, ../sass/new.scss */
+/* line 492, ../sass/new.scss */
 .nav-bar li.active:last-child {
   float: right;
 }
-/* line 493, ../sass/new.scss */
+/* line 494, ../sass/new.scss */
 .nav-bar li.active:last-child a {
   margin: 0 35px;
 }
-/* line 498, ../sass/new.scss */
+/* line 499, ../sass/new.scss */
 .nav-bar li.active span.spriteArrow {
   background-position: 0 -40px;
 }
-/* line 504, ../sass/new.scss */
+/* line 505, ../sass/new.scss */
 .nav-bar li.active + li span.spriteArrow {
   background-position: 0 -80px;
 }
 
-/* line 513, ../sass/new.scss */
+/* line 514, ../sass/new.scss */
 .doctype-data {
   width: 45%;
   float: left;
@@ -566,7 +567,7 @@ label {
   display: inline-block;
 }
 
-/* line 520, ../sass/new.scss */
+/* line 521, ../sass/new.scss */
 .docnumber-data {
   width: 38%;
   float: right;
@@ -574,25 +575,25 @@ label {
   display: inline-block;
 }
 
-/* line 527, ../sass/new.scss */
+/* line 528, ../sass/new.scss */
 .caption {
   color: #808080;
   margin: 10px 0;
   display: block;
 }
 
-/* line 533, ../sass/new.scss */
+/* line 534, ../sass/new.scss */
 .block {
   display: block;
   height: 80px;
 }
 
-/* line 538, ../sass/new.scss */
+/* line 539, ../sass/new.scss */
 input[type="file"] {
   margin: 15px 0;
 }
 
-/* line 543, ../sass/new.scss */
+/* line 544, ../sass/new.scss */
 img.selected {
   border: 0;
   -webkit-box-shadow: rgba(187, 12, 53, 0.2) 0 0 10px;
@@ -605,7 +606,7 @@ img.selected {
   transform: rotate(-3deg);
 }
 
-/* line 562, ../sass/new.scss */
+/* line 563, ../sass/new.scss */
 .artBO {
   background: url("../images/sprite_new.png") 0 0;
   display: inline-block;
@@ -614,12 +615,12 @@ img.selected {
   width: 100px;
   margin: 20px 10px;
 }
-/* line 555, ../sass/new.scss */
+/* line 556, ../sass/new.scss */
 .artBO else {
   background: url("../images/sprite_new2x.png") 0 0;
 }
 
-/* line 568, ../sass/new.scss */
+/* line 569, ../sass/new.scss */
 .ccB {
   background: url("../images/sprite_new.png") -91px 0;
   display: inline-block;
@@ -629,45 +630,45 @@ img.selected {
   margin: 20px 10px;
   float: right;
 }
-/* line 555, ../sass/new.scss */
+/* line 556, ../sass/new.scss */
 .ccB else {
   background: url("../images/sprite_new2x.png") -91px 0;
 }
 
-/* line 576, ../sass/new.scss */
+/* line 577, ../sass/new.scss */
 .stand-items img.images {
   margin-top: 10px;
 }
 
-/* line 581, ../sass/new.scss */
+/* line 582, ../sass/new.scss */
 input[type="text"].legal {
   display: inline-block;
   width: 300px;
 }
-/* line 585, ../sass/new.scss */
+/* line 586, ../sass/new.scss */
 input[type="text"].doc {
   display: inline-block;
   width: 200px;
 }
 
-/* line 592, ../sass/new.scss */
+/* line 593, ../sass/new.scss */
 .documents h4 {
   margin-top: 0;
 }
 
-/* line 598, ../sass/new.scss */
+/* line 599, ../sass/new.scss */
 img.logo {
   position: relative;
   top: 5px;
 }
 
-/* line 604, ../sass/new.scss */
+/* line 605, ../sass/new.scss */
 .small.datepicker {
   width: 90%;
   display: inline-block;
 }
 
-/* line 609, ../sass/new.scss */
+/* line 610, ../sass/new.scss */
 img.ui-datepicker-trigger {
   display: inline-block;
   position: relative;
@@ -675,7 +676,7 @@ img.ui-datepicker-trigger {
   top: 9px;
 }
 
-/* line 616, ../sass/new.scss */
+/* line 617, ../sass/new.scss */
 .qq-upload-button {
   width: 150px;
   background: white;
@@ -702,33 +703,33 @@ img.ui-datepicker-trigger {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 632, ../sass/new.scss */
+/* line 633, ../sass/new.scss */
 .qq-upload-button:hover {
   border-bottom: 4px solid gray;
 }
 
-/* line 637, ../sass/new.scss */
+/* line 638, ../sass/new.scss */
 .qq-drop-processing {
   display: none;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
-  /* line 644, ../sass/new.scss */
+  /* line 645, ../sass/new.scss */
   .artBO {
     display: inline-block;
     text-indent: -9999px;
   }
-  /* line 555, ../sass/new.scss */
+  /* line 556, ../sass/new.scss */
   .artBO else {
     background: url("../images/sprite_new2x.png") 0 0;
   }
 
-  /* line 647, ../sass/new.scss */
+  /* line 648, ../sass/new.scss */
   .ccB {
     display: inline-block;
     text-indent: -9999px;
   }
-  /* line 555, ../sass/new.scss */
+  /* line 556, ../sass/new.scss */
   .ccB else {
     background: url("../images/sprite_new2x.png") 0 0;
   }

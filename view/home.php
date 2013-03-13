@@ -13,21 +13,22 @@ if ((isset($_GET[0])) && ($_GET[1] == 0))
 <div class="container">
 	<div class="row"><!-- Row -->	
 		<div class="eight columns centered"><!-- six columns -->
-			<span class="artBO">Artbo</span><span class="ccB">CCB</span>
+			<a href="home.html"><span class="artBO">Artbo</span></a><a href="home.html"><span class="ccB">CCB</span></a>
 			<header class="intro">
-				<h2>Bienvenido al proceso de aplicación al Pabellón Artecámara en artBO 2013</h2>
-				<h5>El cual estará abierto hasta el 30 de abril a las 23:59 p.m. (hora colombiana). Este espacio es para artistas plásticos colombianos menores de 40 años y sin representación de una galería comercial.</h5>
+				<h2>Proceso de aplicación a Pabellón Artecámara artBO 2013</h2>
+				<h5>Abierto hasta el 30 de abril, a las 23:59 horas (hora Colombia GMT -5)</h5>
+				<h5>Este espacio es para artistas plásticos colombianos menores de 40 años y sin representación de una galería comercial.</h5>
 				
 			</header>
 			<div class="options">
 				<div class="login">
 					<h3>Inicio de sesión</h3>
-					<h5>Si ya te registraste una vez o en 2012.</h5>
+					<h5>Si ya se registró una vez o en 2012.</h5>
 					<a href="<?php echo APPLICATION_URL?>login.html" class="button radius">Inicio de sesión</a>
 				</div>
 				<div class="register">
 					<h3>Registro</h3>
-					<h5>Si nunca te has registrado en el Pabellón Artecámara.</h5>
+					<h5>Si nunca se ha registrado en el Pabellón Artecámara.</h5>
 					<a href="<?php echo APPLICATION_URL?>register.html" class="button radius">Regístrese</a>
 				</div>
 			</div>
