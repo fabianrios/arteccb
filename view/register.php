@@ -29,7 +29,7 @@ else
 					<label for="name"><span class="asterix">*</span>Nombre</label>
 					<input type="text" name="user_name" title="Digite su(s) nombre(s) y Apellidos"/>
 					<label for="name"><span class="asterix">*</span>Apellido</label>
-					<input type="text" name="userlast_name" title="Digite su(s) apellido(s)"/>
+					<input type="text" name="user_surname" title="Digite su(s) apellido(s)"/>
 					<label for="name">Nombre del colectivo</label>
 					<input type="text" name="collective_name" title="Digite el nombre del colectivo" class="notValidable"/>
 					<div class="row">
