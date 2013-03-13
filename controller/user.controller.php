@@ -69,7 +69,7 @@ switch ($action):
 			$user 		=& $users[0];
 			$user->__set('user_verification', md5($password));
 			$user->update();
-			$html  	   .= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Restablecer Clave</h1><p style="margin-bottom:30px;">Hemos recibido una petici&oacute;n para restablecer su clave. Para completar el proceso de restablecer su clave, haga clic en el siguiente link o c&oacute;pielo en su navegador: url:</p><a style="text-decoration: none; color: #3a6cdd;" href="http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html">http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html</a><br /><p>Si usted no ha solicitado este cambio, por favor haga caso omiso de este correo.</p><p>artBO, Feria Internacional de Arte de Bogot&aacute;</p></div>'; 
+			$html  	   .= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Restablecer Clave</h1><p style="margin-bottom:30px;">Hemos recibido una petici&oacute;n para restablecer su clave. Para completar el proceso de restablecer su clave, haga clic en el siguiente link o c&oacute;pielo en su navegador:</p><a style="text-decoration: none; color: #3a6cdd;" href="http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html">http://activemgmd.com/ccb/ccb-artista/restablecer-contrasena/'.md5($password).'.html</a><br /><p>Si usted no ha solicitado este cambio, por favor haga caso omiso de este correo.</p><p>artBO, Feria Internacional de Arte de Bogot&aacute;</p></div>'; 
 			$subject	= utf8_decode('Restablecer clave');
 			$from		= 'agendacultural@ccb.org.co';
 			$to			= $user->__get('user_email');
@@ -445,7 +445,7 @@ switch ($action):
 			foreach ($expositions as $exposition)
 			{
 				$country	= new Country($exposition->__get('country_id'));
-				$html .= '<p>Nombre de la exposicion: <em>'.$exposition->__get('exposition_name').'</em><br />Instituci&oacute;n: <em>'.$exposition->__get('exposition_institution').'</em><br />Ciudad: <em>'.$exposition->__get('exposition_city').'</em><br />Pa&iacute;s: <em>'.$country->__get('country_name').'</em><br />A&ntilde;o: <em>'.$exposition->__get('exposition_year').'</em><br /></p>';
+				$html .= '<p>Nombre de la exposici&oacute;n: <em>'.$exposition->__get('exposition_name').'</em><br />Instituci&oacute;n: <em>'.$exposition->__get('exposition_institution').'</em><br />Ciudad: <em>'.$exposition->__get('exposition_city').'</em><br />Pa&iacute;s: <em>'.$country->__get('country_name').'</em><br />A&ntilde;o: <em>'.$exposition->__get('exposition_year').'</em><br /></p>';
 			}
 			//EXPOSICIONES COLECTIVAS
 			$html	.= "<h4>Exposiciones colectivas</h4>";
@@ -453,7 +453,7 @@ switch ($action):
 			foreach ($expositions2 as $exposition)
 			{
 				$country	= new Country($exposition->__get('country_id'));
-				$html .= '<p>Nombre de la exposicion: <em>'.$exposition->__get('exposition_name').'</em><br />Instituci&oacute;n: <em>'.$exposition->__get('exposition_institution').'</em><br />Ciudad: <em>'.$exposition->__get('exposition_city').'</em><br />Pa&iacute;s: <em>'.$country->__get('country_name').'</em><br />A&ntilde;o: <em>'.$exposition->__get('exposition_year').'</em><br /></p>';
+				$html .= '<p>Nombre de la exposici&oacute;n: <em>'.$exposition->__get('exposition_name').'</em><br />Instituci&oacute;n: <em>'.$exposition->__get('exposition_institution').'</em><br />Ciudad: <em>'.$exposition->__get('exposition_city').'</em><br />Pa&iacute;s: <em>'.$country->__get('country_name').'</em><br />A&ntilde;o: <em>'.$exposition->__get('exposition_year').'</em><br /></p>';
 			}
 			//PREMIOS
 			$html	.= "<h4>Becas y premios</h4>";
