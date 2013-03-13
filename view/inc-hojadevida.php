@@ -242,9 +242,9 @@ $countries	= CountryHelper::retrieveCountries(" AND country_activated = 1 ORDER 
                                     <li>
                                         <input name="expo_city_1" class="expand input-text" type="text" />
                                     </li>
-                                    <li class="format">
+                                    <!--<li class="format">
                                         <input name="expo_format_1" class="expand input-text" type="text" />
-                                    </li>
+                                    </li>-->
                                     <li class="country">
                                     	<select name="expo_country_id_1" id="">
                                         	<?php

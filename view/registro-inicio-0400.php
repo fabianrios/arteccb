@@ -18,12 +18,14 @@
 					
 					<p>Para completar su aplicación, tenga en cuenta:</p>
 						<ul class="no-bullet">
-					<li>Puede empezar por cualquiera de las secciones.</li>
-					<li>Guarde constantemente los cambios realizados.</li> 
-					<li>La aplicación se puede ir completando en diferentes momentos.</li> 
-					<li>Cierre la sesión antes de salir de la aplicación. </li>
-					<li>Para acceder nuevamente, ingrese con sus datos de usuario y clave.</li>  
-					<li>Si se registró en 2012, sus datos están guardados.	</li>
+
+					<li class="thin">1. Puede empezar por cualquiera de las secciones.</li>
+					<li class="thin">2. Guarde constantemente los cambios realizados.</li> 
+					<li class="thin">3. La aplicación se puede ir completando en diferentes momentos.</li> 
+					<li class="thin">4. Cierre la sesión antes de salir de la aplicación. </li>
+					<li class="thin">5. Para acceder nuevamente, ingrese con sus datos de usuario y clave.</li>  
+					<li class="thin">6. Si se registró en 2012, sus datos están guardados.	</li>
+
 						</ul>
 					
 
@@ -31,12 +33,12 @@
 
 					<h5>Descripción de la información solicitada en cada sección:</h5>
 					<ul class="no-bullet">
-						<li class="thin">1. <strong>Hoja de Vida:</strong> estudios realizados, selección de exposiciones individuales desde 2008, selección de exposiciones colectivas desde 2008 y premios y/o becas (ordenar en orden cronológico de lo más recién a lo más antiguo).</li>
-						<li class="thin">2. <strong>Proyecto:</strong> descripción del proyecto en máximo 500 palabras y hasta tres imágenes del mismo. El proyecto debe haber sido realizado en los dos últimos años (2011 a la fecha).</li>
-						<li class="thin">3. <strong>Portafolio:</strong> presentar hasta cinco imágenes de obras realizadas desde 2008. </li>
-						<li class="thin">4. <strong>Documento:</strong> imagen .JPG o archivo .PDF de su cédula de ciudadanía o extranjería.</li>
+						<li class="thin"><strong>Hoja de Vida:</strong> estudios realizados, selección de exposiciones individuales desde 2008, selección de exposiciones colectivas desde 2008 y premios y/o becas (ordenar en orden cronológico de lo más recién a lo más antiguo).</li>
+						<li class="thin"><strong>Proyecto:</strong> descripción del proyecto en máximo 500 palabras y hasta tres imágenes del mismo. El proyecto debe haber sido realizado en los dos últimos años (2011 a la fecha).</li>
+						<li class="thin"><strong>Portafolio:</strong> presentar hasta cinco imágenes de obras realizadas desde 2008. </li>
+						<li class="thin"><strong>Documento:</strong> imagen .JPG o archivo .PDF de su cédula de ciudadanía o extranjería.</li>
 					</ul>
-					<p>Sus imágenes y documentos deben ser en formato .jpg, .pdf, .png o.gif y de un máximo de 1.000 KB.</p>
+					<p>Sus imágenes y documentos deben ser en formato .JPG, .PDF, .PNG y de un máximo de 1.000 KB.</p>
 					<p>Usted podrá finalizar el proceso una vez haya diligenciado todos los campos obligatorios. Contáctenos en: <a href="mailto:agendacultural@ccb.org.co">agendacultural@ccb.org.co</a>.</p> 
 					<p>Gracias por su participación.</p>
 				</div>
