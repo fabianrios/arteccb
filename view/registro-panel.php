@@ -32,12 +32,12 @@ function decide($field, $required, $user)
 			
 		<div class="mid-input">
 			<label><span class="asterix">*</span> Nombre</label>	
-			<input type="text" title="Digite su nombre" class="expand input-text"  name="y" value=""/>
+			<input type="text" title="Digite su nombre" class="expand input-text"  name="user_name" value="<?php echo $user->__get('user_name');?>"/>
 		</div>
 		
 		<div class="mid-input">
 			<label><span class="asterix">*</span> Apellido</label>	
-			<input type="text" title="Digite su apellido" class="expand input-text"  name="user_born_city" value=""/>
+			<input type="text" title="Digite su apellido" class="expand input-text"  name="user_surname" value="<?php echo $user->__get('user_surname');?>"/>
 		</div>
 
 

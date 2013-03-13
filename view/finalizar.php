@@ -33,5 +33,7 @@
 	<!-- 3. END Row main -->
 
 <!-- 4. footer -->			
-<?php include_once('footer.php'); ?>
+<?php include_once('footer.php'); 
+session_destroy();
+?>
 <!-- 4. End footer -->

@@ -3,7 +3,7 @@ $action = isset($_POST['action']) ? $_POST['action'] : $_GET[0];
 switch ($action):
 	//USUARIO NO REGISTRADO
 	case 'login':
-		$user 	= UserHelper::retrieveUsers("AND user_email = '".escape($_POST['user_email']). "' AND user_password = '" .md5($_POST['user_password']) . "'");
+		$user 	= UserHelper::retrieveUsers("AND user_email = '".escape($_POST['user_email']). "' AND user_password = '" .md5($_POST['user_password']) . "' AND user_finalizado = 0");
 		if(count($user) > 0)
 		{
 			if ($user[0]->__get('user_id') != '')	//user_users user
@@ -382,6 +382,13 @@ switch ($action):
 			redirectUrl(APPLICATION_URL.'registro-artistas-0440/saved.html');	
 		
 	break;
+	case 'saveDocuments':
+		$user 		= new User($_SESSION['user_id']);
+		foreach ($_POST as $key => $value)
+			$user->__set($key, $value);				
+		$user->update();		
+		redirectUrl(APPLICATION_URL.'registro-documentos-0450.html');		
+	break;
 	case 'uploadDocuments':
 		$user 		= new User($_SESSION['user_id']);
 		$finish = true;
@@ -390,7 +397,8 @@ switch ($action):
 		if ($finish)
 		{
 			foreach ($_POST as $key => $value)
-				$user->__set($key, $value);				
+				$user->__set($key, $value);		
+			$user->__set('user_finalizado', 1);
 			$user->update();
 			$html		= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Ha finalizado su registro</h1><p style="margin-bottom:30px;">Usted ha completado el proceso de registro del Pabell&oacute;n Artec&aacute;mara en artBO 2013. <br />Agradecemos su participaci&oacute;n en la convocatoria.</p><p>artBO, Feria Internacional de Arte de Bogot&aacute;</p></div>';
 			$subject	= utf8_decode('Finalizado registro');

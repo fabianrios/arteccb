@@ -13,7 +13,7 @@ $userForms	= UserFormHelper::retrieveUserForms(" AND user_id = ".escape($_SESSIO
 $class		= 'nulled';
 if (count($userForms) == 4)
 {
-	$action		= "document.getElementById('validable').submit();";
+	$action		= "document.getElementById('validable2').submit();";
 	$class		= '';
 }
 else
@@ -42,6 +42,8 @@ function alertNotYet()
 					
 					<div class="four columns mini-nav-header">
 						<dl class="sub-nav">
+							<dd><a class="save" title="Guardar" href="javascript:void(0);" onClick="$('#validable2').attr('action','<?php echo APPLICATION_URL?>user.controller/saveDocuments.html'); $('#validable2').submit();" >Guardar</a></dd>
+                        
 							<dd><a class="prev" title="Portafolio" href="<?php echo APPLICATION_URL?>registro-portafolio-0440.html">Anterior</a></dd>
 							<dd><h4>5/5</h4></dd>
 						</dl>	
@@ -53,7 +55,7 @@ function alertNotYet()
 			<div class="row form-data">	
 				<div class="twelve columns">
 					
-					<form action="<?php echo APPLICATION_URL?>user.controller/uploadDocuments.html" id="validable" class="" method="post" enctype="multipart/form-data">
+					<form action="<?php echo APPLICATION_URL?>user.controller/uploadDocuments.html" id="validable2" class="" method="post" enctype="multipart/form-data">
 						<p>Suba sus documentos en formato JPG o PDF únicamente. Con un peso máximo de 1000KB </p>
 							
 							<!-- row -->
@@ -94,12 +96,12 @@ function alertNotYet()
 							<br />
 							<!-- aceptación de terminos -->
 							<div>
-							<p> Yo <input type="text" class="legal" placeholder="Nombre del Artista"  name="user_name_accept" value="<?php echo $user->__get('user_name_accept');?>" /> Identificado con
-								<input type="text" class="doc" placeholder="Número de Cédula" name="user_document_accept" value="<?php echo $user->__get('user_document_accept');?>"  /> 
+							<p> Yo <input type="text" class="legal" title="Nombre del Artista"  placeholder="Nombre del Artista"  name="user_name_accept" value="<?php echo $user->__get('user_name_accept');?>" /> Identificado con
+								<input type="text" class="doc" title="Número de Cédula" placeholder="Número de Cédula" name="user_document_accept" value="<?php echo $user->__get('user_document_accept');?>"  /> 
 							declaro conocer y aceptar <a href="http://www.artboonline.com/documentos/2129_reglamento_convocatoria_artecamara2013.pdf" target="_blank">las condiciones y el reglamento de participación</a> en el Pabellón Artecámara de artBO 2013. 
 							</p>
 							
-							<input type="checkbox" name="user_accept" value="1" <?php if($user->__get('user_accept') == 1) { echo 'checked="checked"'; }?> /><span> Acepto las condiciones y el reglamento de participación</span>
+							<input type="checkbox" name="user_accept" class="accept" value="1" <?php if($user->__get('user_accept') == 1) { echo 'checked="checked"'; }?> title="Acepte los terminos y condiciones" /><span> Acepto las condiciones y el reglamento de participación</span>
 							</div>
 							<!-- aceptación de terminos -->
 					
