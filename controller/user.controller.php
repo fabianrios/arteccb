@@ -406,7 +406,7 @@ switch ($action):
 								'replyTo'	=> $replyTo);	
 	
 			EmailHelper::sendMail($args);				
-			redirectUrl(APPLICATION_URL.'registro-documentos-0440/saved.html');
+			redirectUrl(APPLICATION_URL.'finalizar.html');
 			
 		}
 		{
