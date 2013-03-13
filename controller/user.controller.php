@@ -41,7 +41,7 @@ switch ($action):
 			$subject	= utf8_decode('Registro exitoso');
 			$from		= 'agendacultural@ccb.org.co';
 			$to			= $user->__get('user_email');
-			$fromName	= 'Artec&aacute;mara | artBO';
+			$fromName	= 'Artecámara | artBO';
 			$replyTo	= 'agendacultural@ccb.org.co';
 			$args 		= array('html'		=> $html,
 								'from'		=> $from,
@@ -70,7 +70,7 @@ switch ($action):
 			$subject	= utf8_decode('Restablecer clave');
 			$from		= 'agendacultural@ccb.org.co';
 			$to			= $user->__get('user_email');
-			$fromName	= 'Artec&aacute;mara | artBO';
+			$fromName	= 'Artecámara | artBO';
 			$replyTo	= 'agendacultural@ccb.org.co';
 			$args 		= array('html'		=> $html,
 								'from'		=> $from,
@@ -404,7 +404,7 @@ switch ($action):
 			$subject	= utf8_decode('Finalizado registro');
 			$from		= 'agendacultural@ccb.org.co';
 			$to			= $user->__get('user_email');
-			$fromName	= 'Artec&aacute;mara | artBO';
+			$fromName	= 'Artecámara | artBO';
 			$replyTo	= 'agendacultural@ccb.org.co';
 			$args 		= array('html'		=> $html,
 								'from'		=> $from,
