@@ -83,7 +83,8 @@ function alertNotYet()
 							                      if (strpos($image, '.pdf')  !== false) $image	= 'http://cambelt.co/icon/document/230x170?color=3fc46b,fefefe';  
 							                    ?>      
 							                    <img class="images right" src="<?php echo $image?>"> 
-                                                <?php if($user->__get('user_document') != '') { ?><p><a href="<?php echo  APPLICATION_URL.$dir.$user->__get('user_document');?>">Archivo actual</a></p><?php }?>   
+                                                 
+                                                 <div class="right"><small><?php if($user->__get('user_document') != '') { ?><a href="<?php echo  APPLICATION_URL.$dir.$user->__get('user_document');?>"><strong>ARCHIVO ACTUAL</strong></a><?php }?> </small></div>
 							                    <div id="user_document"></div>     
 								        	 </div>
 										</div>
