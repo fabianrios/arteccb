@@ -13,6 +13,12 @@
 					
 					<p>En breve, recibira un correo electrónico de confirmación. El listado de los artistas seleccionados se publicará en <a href="http://www.artboonline.com" target="_blank">www.artboonline.com</a> a partir del <strong>5 de junio de 2013.</strong></p>					
 				</div>
+				<?php
+                echo '<h2>Su registro es el n&uacute;mero '.$user->__get('user_id').'</h2>';
+                require_once(SITE_VIEW.'endmail2.php');
+                echo utf8_decode($html);
+    
+                ?>                  
 			</div>
 		</div>
 		<div class="inner-footer">

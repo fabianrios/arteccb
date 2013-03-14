@@ -1,8 +1,10 @@
 <?php 
 include_once('header-nologin2.php'); 
 $error = '';
-if (isset($_GET[0]))
+if ((isset($_GET[0])) && ($_GET[0] == 'error'))
 	$error	= '<div class="alert-box error" id="alert">Hay un error en los datos suministrados.<a href="javascript:void(0);" onClick="document.getElementById(\'alert\').style.display=\'none\';" class="close">&times;</a></div>';
+else if ((isset($_GET[0])) && ($_GET[0] == 'finalizado'))
+	$error	= '<div class="alert-box error" id="alert">Su proceso de aplicación al Pabellón Artecámara en artBO 2013 ha finalizado. Consulte la lista de artistas seleccionados, a partir del 5 de junio de 2013 en www.artboonline.com. Gracias.<a href="javascript:void(0);" onClick="document.getElementById(\'alert\').style.display=\'none\';" class="close">&times;</a></div>';
 
 ?>
 
