@@ -11,7 +11,7 @@
 				<div class="twelve columns">
 					<h3>Gracias por participar en la convocatoria del Pabellón Artecámara en artBO 2013.</h3> 
 					
-					<p>A continuación, puede ver los datos registrados. Para futuras referencias, <strong>recuerde imprimir esta pantalla pues no es posible acceder a ella ni a su perfil nuevamente</strong>. El listado de los artistas seleccionados se publicará en<a href="http://www.artboonline.com" target="_blank">www.artboonline.com</a> a partir del <strong>5 de junio de 2013.</strong></p>					
+					<p>A continuación puede ver los datos registrados. Para futuras referencias, <strong>recuerde imprimir esta pantalla pues no es posible acceder a ella ni a su perfil nuevamente</strong>. El listado de los artistas seleccionados se publicará en <a href="http://www.artboonline.com" target="_blank">www.artboonline.com</a> a partir del <strong>5 de junio de 2013.</strong></p>					
 				</div>
 				<?php
                 echo '<h2>Su registro es el n&uacute;mero '.$user->__get('user_id').'</h2>';
