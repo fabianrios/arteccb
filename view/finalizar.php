@@ -40,6 +40,6 @@
 
 <!-- 4. footer -->			
 <?php include_once('footer.php'); 
-session_destroy();
+//session_destroy();
 ?>
 <!-- 4. End footer -->
