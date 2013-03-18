@@ -17,7 +17,7 @@ if (count($mobile) < 3)
 	$mobile[1]	= '';
 	$mobile[2]	= '';
 }
-$html	= '<div style="background: #f5f5f5; padding-bottom: 30px;margin-top: 0; width: 600px; font-family: Arial;"><div style="background: #9c1a36; padding: 10px 50px;"><img src="http://i.imgur.com/pUNnGGF.png" alt="artBO" /></div><div style="margin-top: 30px; padding: 10px 50px;"><h1 style="margin-bottom:30px;">Ha finalizado su registro</h1><p style="margin-bottom:30px;">Usted ha completado el proceso de registro del Pabell&oacute;n Artec&aacute;mara en artBO 2013. <br />Agradecemos su participaci&oacute;n en la convocatoria.</p><p>artBO, Feria Internacional de Arte de Bogot&aacute;</p></div>';
+$html	= '';
 //FIRST
 $html	.= '<h3>Registro</h3><p>Nombre: <em>'.$user->__get('user_name').'</em><br />Apellido: <em>'.$user->__get('user_surname').'</em><br />Lugar de nacimiento: <em>'.$user->__get('user_born_city').'</em><br />Fecha de nacimiento: <em>'.$user->__get('user_birthday').'</em><br />Ciudad de residencia: <em>'.$user->__get('user_city').'</em><br />Pa&iacute;s de residencia: <em>'.$country->__get('country_name').'</em><br />Direcci&oacute;n de residencia <em>'.$user->__get('user_address').'</em><br />Tel&eacute;fono: '.$phone[0].' <em></em> '.$phone[1].' <em></em> '.$phone[2].'<em></em><br />M&oacute;vil: '.$mobile[0].' <em></em> '.$mobile[1].' <em></em> '.$mobile[2].' <em></em><br /></p>';
 //HOJA DE VIDA
