@@ -160,3 +160,10 @@ div.alert-box{
 a:focus{
   outline-color:lightgray; 
 }
+
+
+.lt-ie9 .handler a img {
+  max-width: 35px;
+  width:35px;
+  height:35px; 
+}
