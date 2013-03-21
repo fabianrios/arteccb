@@ -326,9 +326,10 @@
                      	<?php
 						if (count($prizes) > 0)
 						{
-							$i = 200;
+							$i = 500;
 							foreach ($prizes as $prize)
 							{
+								$i++;
 						?>                          
                             <li class="link_default">
                                 <table>
@@ -363,11 +364,12 @@
                                 </table>
                             </li>
                             <?php
+								
                             }
                          }
 						 else
 						 {
-						 	$i	= (count($prizes) > 0) ? count($prizes)+100 : 200;
+						 	$i	= (count($prizes) > 0) ? count($prizes)+1000 : 2000;
 						 	?>
                             <li class="link_default">
                                 <table>

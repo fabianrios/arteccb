@@ -447,6 +447,7 @@ $countries	= CountryHelper::retrieveCountries(" AND country_activated = 1 ORDER 
 							$i = 200;
 							foreach ($prizes as $prize)
 							{
+								$i++;
 						?>                          
                             <li class="link_default">
                                   <ul class="no-bullet resume-more">

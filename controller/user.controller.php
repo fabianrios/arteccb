@@ -186,6 +186,7 @@ switch ($action):
 		$connection->query($deleteSQL);		
 		foreach ($_POST as $key => $value)
 		{
+			
 			if (strpos($key, 'prize_name_') !== false)
 			{
 				$string	= str_replace('prize_name_', '', $key);
@@ -194,8 +195,10 @@ switch ($action):
 				$expo->__set('prize_year', $_POST['prize_year_'.$string]);
 				$expo->__set('prize_institution', $_POST['prize_institution_'.$string]);
 				$expo->__set('prize_city', $_POST['prize_city_'.$string]);
+				$expo->__set('country_id', $_POST['prize_country_id_'.$string]);
 				$expo->__set('user_id', $_SESSION['user_id']);
 				$expo->save();
+				
 			}
 		}
 		$userForms	= UserFormHelper::selectUserForms(" AND user_id = ".escape($_SESSION['user_id'])." AND form_number = 2");
