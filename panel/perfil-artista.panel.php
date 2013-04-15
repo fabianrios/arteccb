@@ -52,8 +52,7 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/jquery.mCustomScrollbar.css">
 	
 	
-	
-	<script type="text/javascript" src="<?php echo APPLICATION_URL?>//use.typekit.net/fzq1qvs.js"></script>
+	<script type="text/javascript" src="//use.typekit.net/fzq1qvs.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 	
