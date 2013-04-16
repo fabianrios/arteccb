@@ -290,6 +290,7 @@ ul.main-menu{
   h3{
     color: #fff; 
     margin: 0 0 10px 0;
+    text-transform: capitalize;
   }
   ul{
     margin: 0;
@@ -517,9 +518,13 @@ ul.main-menu{
 
 .galleryfic{
   position:relative;
+  width: 60%;
+  float: left;
+  height: 450px;
+  overflow: hidden;
   .resume{
     position: absolute;
-    bottom: 2px;
+    bottom: 0;
     background: #000;
     background: rgba(0,0,0,.74);
     width: 100%;
@@ -532,6 +537,7 @@ ul.main-menu{
   }
   img{
     width: 100%;
+    float: none;
   }
   .handlers{
     width: 100%;

@@ -105,7 +105,7 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 <!-- 2. Navigation -->
 <div class="row breadcrumb">
 	<div class="six columns">
-		<a href="<?php echo APPLICATION_URL?>indice-artistas.panel.html" class="getback"><span><img src="<?php echo APPLICATION_URL?>images/smallarrow.png" alt="" width="17" height="16" /></span>INDICE DE GALERÍAS</a>
+		<a href="<?php echo APPLICATION_URL?>indice-artistas.panel.html" class="getback"><span><img src="<?php echo APPLICATION_URL?>images/smallarrow.png" alt="" width="17" height="16" /></span>INDICE DE ARTISTAS</a>
 	</div>
 	<div class="six columns">
 		<ul class="main-menu no-bullet">
@@ -138,7 +138,18 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 			</div>
 			
 			<div class="profile-resume">
-				<img src="<?php echo APPLICATION_URL.$dir.$user->__get('user_proyect_image_1')?>" alt="" width="597" />
+				<div class="galleryfic">
+					<div class="handlers">
+						<a href="#" class="nav-anterior" ><img src="/ccb/ccb-galerias/images/toleft.jpg" alt="" width="20" height="20"></a>
+		                <a class="right nav-siguiente" ><img src="/ccb/ccb-galerias/images/toright.jpg" alt="" width="20" height="20"></a>
+					</div>
+            		<div>
+						<img src="<?php echo APPLICATION_URL.$dir.$user->__get('user_proyect_image_1')?>" alt="" width="597" />
+                        <div class="resume">
+                            <?php echo $user->__get('user_proyect_name')?> | <?php echo $user->__get('user_proyect_dimensions')?> | <?php echo $user->__get('user_proyect_year')?>
+                        </div>
+					</div>
+				</div>
 				<!-- para el placeholder -->
 				<!-- <img src="http://cambelt.co/597x447/<?php echo $user->__get('user_proyect_name')?>?color=b2b2b2" /> -->
 				<div class="resum">
@@ -154,7 +165,7 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 				<div class="container">
 					<div class="row">
 						<div class="three columns">
-							<h3><?php echo $user->__get('user_name')?> <?php echo $user->__get('user_surname')?></h3>
+							<h3><?php echo strtolower($user->__get('user_name'))?> <?php echo strtolower($user->__get('user_surname'))?></h3>
 							<ul>
 								<li>
 									<h6>CORREO ELECTRONICO</h6>
