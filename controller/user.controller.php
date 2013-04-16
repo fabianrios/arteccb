@@ -3,12 +3,14 @@ $action = isset($_POST['action']) ? $_POST['action'] : $_GET[0];
 switch ($action):
 	//USUARIO NO REGISTRADO
 	case 'login':
-		$user 	= UserHelper::retrieveUsers("AND user_email = '".escape($_POST['user_email']). "' AND user_password = '" .md5($_POST['user_password']) . "' AND user_finalizado = 0");
+		$user 	= UserHelper::retrieveUsers("AND user_email = '".escape($_POST['user_email']). "' AND user_password = '" .md5($_POST['user_password']) . "'");
 		if(count($user) > 0)
 		{
 			if ($user[0]->__get('user_id') != '')	//user_users user
 			{
 				$_SESSION['user_id']	= $user[0]->__get('user_id');
+				$user[0]->__set('user_date_login', date('Y-m-d H:i:s'));
+				$user[0]->update();
 				redirectUrl(APPLICATION_URL.'registro-inicio-0400.html');
 			}
 		}
@@ -35,7 +37,7 @@ switch ($action):
 			foreach ($_POST as $key => $value)
 				$user->__set($key, $value);
 			$user->__set('user_password', md5($_POST['user_password']));
-			$user->__set('user_date_creation', formatDate());			
+			$user->__set('user_creation_datetime', formatDate());			
 			$user->__set('user_state', 'A');
 			$insert	= $user->save();
 			$_SESSION['user_id']	= $insert['insert_id'];
@@ -398,12 +400,13 @@ switch ($action):
 	case 'uploadDocuments':
 		$user 		= new User($_SESSION['user_id']);
 		$finish = true;
-		if ($user->__get('user_document') == '')
+		foreach ($_POST as $key => $value)
+			$user->__set($key, $value);	
+		if (($user->__get('user_document') == '') || ($user->__get('user_gallery_document') == '') || ($user->__get('user_document_type') == ''))
 			$finish	= false;
 		if ($finish)
 		{
-			foreach ($_POST as $key => $value)
-				$user->__set($key, $value);		
+	
 			$user->__set('user_finalizado', 1);
 			$user->update();
 			$dir		= 'resources/images/'. $user->__get('user_id'). '-' .  makeUrlClear(utf8_decode($user->__get('user_name'))).'/';
@@ -525,7 +528,7 @@ switch ($action):
 		{
 		?>
 			<script language="javascript">
-                alert ('Debe subir el documento solicitado en la anterior página.');
+                alert ('Debe subir el documento solicitado y completar los datos en la anterior página.');
                 window.location.href="<?php echo APPLICATION_URL;?>registro-documentos-0450.html";
             </script>
         <?php
@@ -539,6 +542,13 @@ switch ($action):
 		$user->update();
 		redirectUrl(APPLICATION_URL."datos-artista-0300/exito.html");
 	break;	
+	
+	case 'activate':
+		$user 	= new User($_GET[1]);
+		$state	= ($user->__get('user_state') == 'A') ? 'I' : 'A';
+		$user->updateField('user_state', $state);
+		redirectUrl(APPLICATION_URL . 'indice-artistas.panel.html');
+	break;
 		
 endswitch;
 ?>
