@@ -17,12 +17,12 @@ qq.FineUploaderBasic = function(o){
             uuidName: 'qquuid',
             totalFileSizeName: 'qqtotalfilesize'
         },
-        validation: {
-            allowedExtensions: [],
-            sizeLimit: 0,
-            minSizeLimit: 0,
-            stopOnFirstInvalidFile: true
-        },
+			validation: {
+			    allowedExtensions: ['jpg', 'pdf', 'png' ],
+			    sizeLimit: 1000000,
+			    minSizeLimit: 0,
+			    stopOnFirstInvalidFile: true
+			},
         callbacks: {
             onSubmit: function(id, name){},
             onComplete: function(id, name, responseJSON){},
@@ -40,14 +40,14 @@ qq.FineUploaderBasic = function(o){
             onDelete: function(id){},
             onDeleteComplete: function(id, xhr, isError){}
         },
-        messages: {
-            typeError: "{file} has an invalid extension. Valid extension(s): {extensions}.",
-            sizeError: "{file} is too large, maximum file size is {sizeLimit}.",
-            minSizeError: "{file} is too small, minimum file size is {minSizeLimit}.",
-            emptyError: "{file} is empty, please select files again without it.",
-            noFilesError: "No files to upload.",
-            onLeave: "Los archivos están subiendo. Si abandona está página la carga se cancelará."
-        },
+			messages: {
+			    typeError: "{file} La extensión no es válida. Extensiones válidas(s): {extensions}.",
+			    sizeError: "{file} Es muy grande, el tamaño máximo del archivo es {sizeLimit}.",
+			    minSizeError: "{file} is too small, minimum file size is {minSizeLimit}.",
+			    emptyError: "{file} is empty, please select files again without it.",
+			    noFilesError: "No files to upload.",
+			    onLeave: "Los archivos están siendo cargados. Por favor espere, o cancelará la carga."
+			},
         retry: {
             enableAuto: false,
             maxAutoAttempts: 3,

@@ -18,8 +18,8 @@ qq.FineUploader = function(o){
         text: {
             uploadButton: ' Subir un archivo ',
             cancelButton: ' Cancelar ',
-            retryButton: ' Reintentar ',
-            deleteButton: ' Borrar',
+            retryButton: '  ',
+            deleteButton: ' ',
             failUpload: ' Carga fallida ',
             dragZone: 'Arrastre los archivos',
             dropProcessing: 'Procesando archivos arrastrados...',
