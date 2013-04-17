@@ -12,7 +12,7 @@ $page				= isset($_GET[3]) ? $_GET[3] : 1;
 $filter 			= '';
 if($search != 'null')
 {
-	$filter = "AND (user_name LIKE '%" . $search . "%' OR user_surname LIKE '%" . $search . "%' OR user_gallery_document LIKE '%" . $search . "%' OR user_proyect_name LIKE '%" . $search . "%')"; 
+	$filter = "AND (user_name LIKE '%" . $search . "%' OR user_surname LIKE '%" . $search . "%' OR user_gallery_document LIKE '%" . $search . "%' OR user_document_accept LIKE '%" . $search . "%' OR user_proyect_name LIKE '%" . $search . "%')"; 
 }
 $userResult 		= UserHelper::selectUsers($filter . " AND user_finalizado = 1 ORDER by " . $order);
 $pager  			= new PanelPager($size . '/' . $order . '/' . $search, '', '', APPLICATION_URL . 'indice-artistas.panel', $size, $userResult["num_rows"], $page);
@@ -156,7 +156,7 @@ $_SESSION["users"] 	= serialize($userIds);
 								<tr>
 									<td><a href="<?php echo APPLICATION_URL?>perfil-artista.panel/<?php echo $user->__get('user_id')?>.html"><?php echo $user->__get('user_name')?> <?php echo $user->__get('user_surname')?></a></td>
 									<td><a href="mailto:<?php echo $user->__get('user_email')?>"><?php echo $user->__get('user_email')?></a></td>
-									<td><?php echo $user->__get('user_gallery_document')?></td>
+									<td><?php echo $user->__get('user_document_accept')?></td>
 									<td><span class="label <?php echo ($user->__get('user_state') == 'A') ? 'red' : 'gray'; ?>"><?php echo ($user->__get('user_state') == 'A') ? 'activo' : 'inactivo'; ?></span></td>
 									<td><a href="<?php echo APPLICATION_URL?>perfil-artista.panel/<?php echo $user->__get('user_id')?>.html"><img src="<?php echo APPLICATION_URL?>images/view.png" alt="" width="24" height="24" /></a></td>
 								</tr>								
