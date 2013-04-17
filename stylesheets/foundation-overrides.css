@@ -69,19 +69,19 @@ textarea:focus {
   width: auto;
   background: #BB0C35;
   border: 0;
-  border-bottom: 4px solid #9d0b2c;
+  border-bottom: 4px solid #9D0B2C;
   padding: 15px 26px 13px;
 }
 /* line 55, ../sass/foundation-overrides.scss */
 .button:hover, .button:focus {
   background-color: #9D0B2C;
-  border-bottom: 4px solid #9d0b2c;
+  border-bottom: 4px solid #9D0B2C;
   outline-color: white;
 }
 /* line 60, ../sass/foundation-overrides.scss */
 .button.small {
   padding: 10px 15px 7px;
-  border-bottom: 2px solid #9d0b2c;
+  border-bottom: 2px solid #9D0B2C;
 }
 /* line 64, ../sass/foundation-overrides.scss */
 .button.nulled {
@@ -93,7 +93,7 @@ textarea:focus {
 /* line 72, ../sass/foundation-overrides.scss */
 .panel {
   border: 0;
-  border-bottom: 5px solid #b4b5b4;
+  border-bottom: 5px solid #B4B5B4;
   background: whitesmoke;
   margin-bottom: 10px;
   -moz-border-radius-bottomleft: 5px;
@@ -131,7 +131,7 @@ form.custom div.custom.dropdown a.selector {
   width: 32px;
   height: 28px;
   margin-top: 2px;
-  border-left: 1px solid #dddddd;
+  border-left: 1px solid #DDD;
 }
 
 /* line 103, ../sass/foundation-overrides.scss */
@@ -215,4 +215,11 @@ div.alert-box.success {
 /* line 160, ../sass/foundation-overrides.scss */
 a:focus {
   outline-color: lightgray;
+}
+
+/* line 165, ../sass/foundation-overrides.scss */
+.lt-ie9 .handler a img {
+  max-width: 35px;
+  width: 35px;
+  height: 35px;
 }
