@@ -212,7 +212,11 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 							}
 							?>
 	                        <div class="resume">
+<<<<<<< HEAD
 	                            <?php echo $user->__get('user_proyect_name')?> | <?php echo $user->__get('user_proyect_year')?>
+=======
+	                            <?php echo $user->__get('user_proyect_name')?> | <?php echo $user->__get('user_proyect_dimensions')?> | <?php echo $user->__get('user_proyect_year')?>
+>>>>>>> 5e12133283788be24e653ae7553f57dd5c6f3a6f
 	                        </div>
 						</div>
 					</div>

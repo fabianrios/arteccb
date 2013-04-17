@@ -135,7 +135,7 @@ class Builder
 				if(is_int(mysql_escape_string($this->objectArray[$field])))
 					$insertSql .= mysql_escape_string($this->objectArray[$field]);
 				else
-					$insertSql .= "'" . str_replace('\\\"', '"', mysql_escape_string($this->objectArray[$field])) . "'";
+					$insertSql .= "'" . str_replace('\\\"', '"', mysql_escape_string(stripslashes($this->objectArray[$field]))) . "'";
 				
 				if($totalFields != $count)
 					$insertSql .= ", "	;  
@@ -160,7 +160,7 @@ class Builder
 			if(is_int(mysql_escape_string($this->objectArray[$field])))
 				$updateSql .= $field . " = " . mysql_escape_string($this->objectArray[$field]);
 			else
-				$updateSql .= $field . " = '" . str_replace('\\\"', '"', mysql_escape_string($this->objectArray[$field])) . "'";
+				$updateSql .= $field . " = '" . str_replace('\\"', '"', mysql_escape_string(stripslashes($this->objectArray[$field]))) . "'";
 			if($totalFields != $count)
 				$updateSql .= ", "	; 
 			$count++;
@@ -174,7 +174,7 @@ class Builder
 	protected function delete()
 	{
 		$deleteSql = sprintf("DELETE FROM " .$this->table ."
-					  WHERE " . $this->identifyer . " = %d", mysql_escape_string($this->objectArray[$this->identifyer]));						  
+					  WHERE " . $this->identifyer . " = %d", mysql_escape_string(stripslashes($this->objectArray[$this->identifyer])));						  
 					  
 		$deleteQry = $this->connection->query($deleteSql);
 		
