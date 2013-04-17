@@ -1,4 +1,6 @@
 <?php
+if (!isset($_SESSION['panel_id']))
+	redirectUrl(APPLICATION_URL.'login.panel.html');
 $user 			= new User($_GET[0]);
 $userIds		= unserialize($_SESSION["users"]);
 $found			= false;
@@ -50,11 +52,12 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/foundation-overrides.css">
 	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/phase.css">
 	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/jquery.mCustomScrollbar.css">
-	
+	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>css/lightbox.css">
 	
 	<script type="text/javascript" src="//use.typekit.net/fzq1qvs.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
+	
+	<script language="JavaScript">var ApplicationUrl = '<?php echo APPLICATION_URL?>';</script>
 	
 	<script src="<?php echo APPLICATION_URL?>javascripts/jquery.min.js"></script>
 	<script src="<?php echo APPLICATION_URL?>javascripts/modernizr.foundation.js"></script>
@@ -62,13 +65,48 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 	<script src="<?php echo APPLICATION_URL?>javascripts/app.js"></script>
 	<script src="<?php echo APPLICATION_URL?>javascripts/jquery-ui-1.8.18.custom.min.js"></script>
 	<script src="<?php echo APPLICATION_URL?>javascripts/validator.js"></script>
-	
+	<script src="<?php echo APPLICATION_URL?>javascripts/lightbox.js"></script>
+	<script src="<?php echo APPLICATION_URL?>javascripts/jquery.smooth-scroll.min.js"></script>	
 	
 	<!--[if lt IE 9]>
 		<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/ie.css">
 	<![endif]-->
 
+	<script language="JavaScript">
+	$(function() {
+		$('.nav-siguiente').click(function (evt) {
+			evt.preventDefault();
+			
+			e = $('.fader').children('IMG:visible');
+			
+			if(e.next('IMG').length > 0)
+			{				
+				e.next('IMG').fadeIn();
+			}
+			else
+			{
+				$($('.fader').children('IMG')[0]).fadeIn();
+			}
+			e.fadeOut();
+		});
+		$('.nav-anterior').click(function (evt) {
+			evt.preventDefault();
+			
+			e = $('.fader').children('IMG:visible');
+			
+			if(e.prev('IMG').length > 0)
+			{				
+				e.prev('IMG').fadeIn();
+			}
+			else
+			{
+				$($('.fader').children('IMG')[($('.fader').children('IMG').length - 1)]).fadeIn();
+			}
+			e.fadeOut();
+		});		
+	});
 
+	</script>
 	<!-- IE Fix for HTML5 Tags -->
 	<!--[if lt IE 9]>
 		<script src="<?php echo APPLICATION_URL?>http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -87,13 +125,15 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 				<img class="logo" src="<?php echo APPLICATION_URL?>images/sprite_new.png" height="76" width="436" alt="logo" />
 		</div>
 		<!-- END columns 1/2 -->
-		
+		<?php
+		$userP	= new UserP($_SESSION['panel_id']);
+		?>		
 		<!-- columns 2/2 -->
 		<div class="eight columns lateralder ">
 			<div class="perfil-data">
 				<div class="perfil second left">
-					<p class="left"><strong><?php echo $user->__get('user_name') . ' ' . $user->__get('user_surname')?></strong>
-					<a href="<?php echo APPLICATION_URL;?>panel.controller/startSession/<?php echo $user->__get('user_id');?>.html" title="Clic aquí para editar información del artista">Editar perfil</a> | <a href="#" title="Salir">Salir</a> </p>
+					<p class="left"><strong><?php echo $userP->__get('user_name') ?></strong>
+					<a href="<?php echo APPLICATION_URL;?>panel.controller/startSession/<?php echo $user->__get('user_id');?>.html" title="Clic aquí para editar información del artista">Editar perfil</a> | <a href="<?php echo APPLICATION_URL ?>login.panel.html" title="Salir">Salir</a> </p>
                 </div>
 			</div>
 		</div>
@@ -138,20 +178,47 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 			</div>
 			
 			<div class="profile-resume">
-				<div class="galleryfic">
-					<div class="handlers">
-						<a href="#" class="nav-anterior" ><img src="/ccb/ccb-galerias/images/toleft.jpg" alt="" width="20" height="20"></a>
-		                <a class="right nav-siguiente" ><img src="/ccb/ccb-galerias/images/toright.jpg" alt="" width="20" height="20"></a>
+					<div class="galleryfic">
+						<div class="handlers">
+							<a href="#" class="nav-anterior" ><img src="<?php echo APPLICATION_URL?>images/toleft.jpg" alt="" width="20" height="20"></a>
+			                <a href="#" class="right nav-siguiente" ><img src="<?php echo APPLICATION_URL?>images/toright.jpg" alt="" width="20" height="20"></a>
+						</div>
+	            		<div class="fader">
+							<?php
+							$first = true;
+							foreach(range(1,3) as $number)
+							{
+								if(trim($user->__get('user_proyect_image_' . $number)) != '')
+								{
+									$style = '';
+									if(!$first)
+										$style = "display:none;";
+									$first = false;
+									if(file_exists($dir.$user->__get('user_proyect_image_' . $number)))
+									{
+
+										?>
+										<img style="<?php echo $style?>" src="<?php echo APPLICATION_URL.$dir.$user->__get('user_proyect_image_' . $number)?>" alt="" width="597" />								
+										<?php
+									}
+									else
+									{
+										?>
+										<img style="<?php echo $style?>" src="http://cambelt.co/597x447/<?php echo $user->__get('user_proyect_name')?>?color=b2b2b2" />
+										<?php
+									}
+								
+								}
+							}
+							?>
+	                        <div class="resume">
+	                            <?php echo $user->__get('user_proyect_name')?> | <?php echo $user->__get('user_proyect_year')?>
+	                        </div>
+						</div>
 					</div>
-            		<div>
-						<img src="<?php echo APPLICATION_URL.$dir.$user->__get('user_proyect_image_1')?>" alt="" width="597" />
-                        <div class="resume">
-                            <?php echo $user->__get('user_proyect_name')?> | <?php echo $user->__get('user_proyect_dimensions')?> | <?php echo $user->__get('user_proyect_year')?>
-                        </div>
-					</div>
-				</div>
-				<!-- para el placeholder -->
-				<!-- <img src="http://cambelt.co/597x447/<?php echo $user->__get('user_proyect_name')?>?color=b2b2b2" /> -->
+					<!-- para el placeholder -->
+					<!-- <img src="http://cambelt.co/597x447/<?php echo $user->__get('user_proyect_name')?>?color=b2b2b2" /> -->
+				<!--  -->
 				<div class="resum">
 					<h4><?php echo $user->__get('user_proyect_name')?></h4>
 					<span class="specification"><?php echo $user->__get('user_proyect_format')?> | <?php echo $user->__get('user_proyect_dimensions')?> | <?php echo $user->__get('user_proyect_year')?></span> 
@@ -165,7 +232,7 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 				<div class="container">
 					<div class="row">
 						<div class="three columns">
-							<h3><?php echo strtolower($user->__get('user_name'))?> <?php echo strtolower($user->__get('user_surname'))?></h3>
+							<h3><?php echo $user->__get('user_name')?> <?php echo $user->__get('user_surname')?></h3>
 							<ul>
 								<li>
 									<h6>CORREO ELECTRONICO</h6>
@@ -185,7 +252,7 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 								</li>
 								<li>
 									<h6>IDENTIFICACIÓN</h6>
-									<span><?php echo $user->__get('user_gallery_document')?></span>
+									<span><?php echo $user->__get('user_document_accept')?></span>
 								</li>
 								<li>
 									<h6>TELÉFONO</h6>
@@ -197,7 +264,7 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 								</li>
 								<li>
 									<h6>PAÍS</h6>
-									<span><?php echo $country->__get('country_name')?></span>
+									<span><?php echo utf8_encode($country->__get('country_name'))?></span>
 								</li>
 								<li>
 									<h6>FECHA DE NACIMIENTO</h6>
@@ -232,7 +299,9 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 							?>
 							
 							<div class="project-pic">
+								<a href="<?php echo APPLICATION_FULL_URL.$dir.'portafolio/'.$obra->__get('obra_image')?>"  rel="lightbox">
 								<img src="<?php echo APPLICATION_FULL_URL.$dir.'portafolio/'.$obra->__get('obra_image')?>" alt="" width="530" height="331" />
+								</a>
 							</div>
 							<div class="specs">
 								<ul>
@@ -248,10 +317,18 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 										<h6>Dimensiones</h6>
 										<span><?php echo $obra->__get('obra_dimensions')?></span>
 									</li>
-									<li>
-										<h6>Url de la obra</h6>
-										<span><a href="<?php echo $obra->__get('obra_url')?>" target="_blank">Ver</a></span>
-									</li>
+									<?php
+									if(trim($obra->__get('obra_url')) != '')
+									{
+										?>
+										<li>
+											<h6>Url de la obra</h6>
+											<span><a href="<?php echo $obra->__get('obra_url')?>" target="_blank">Ver</a></span>
+										</li>
+										<?php
+									}
+									?>
+									
 								</ul>
 							</div>
 						</div>
@@ -268,27 +345,30 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 									<?php
 									foreach ($expositions3 as $exposition)
 									{
-										$country	= new Country($exposition->__get('country_id'));
-										?>
-										<ul>
-											<li>
-												<h6>Nombre de la Carrera</h6>
-												<span><?php echo $exposition->__get('exposition_name'); ?></span>
-											</li>
-											<li>
-												<h6>Institución</h6>
-												<span><?php echo $exposition->__get('exposition_institution'); ?></span>
-											</li>
-											<li class="city">
-												<h6>Ciudad</h6>
-												<span><?php echo $exposition->__get('exposition_city'); ?></span>
-											</li>
-											<li class="country">
-												<h6>Pais</h6>
-												<span><?php echo $country->__get('country_name'); ?></span>
-											</li>
-										</ul>
-										<?php
+										if(trim($exposition->__get('exposition_name')) != '')
+										{
+											$country	= new Country($exposition->__get('country_id'));
+											?>
+											<ul>
+												<li>
+													<h6>Nombre de la Carrera</h6>
+													<span><?php echo $exposition->__get('exposition_name'); ?></span>
+												</li>
+												<li>
+													<h6>Institución</h6>
+													<span><?php echo $exposition->__get('exposition_institution'); ?></span>
+												</li>
+												<li class="city">
+													<h6>Ciudad</h6>
+													<span><?php echo $exposition->__get('exposition_city'); ?></span>
+												</li>
+												<li class="country">
+													<h6>Pais</h6>
+													<span><?php echo utf8_encode($country->__get('country_name')); ?></span>
+												</li>
+											</ul>
+											<?php
+										}
 									}
 									?>
 								</div>
@@ -327,10 +407,13 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 										<?php
 										foreach ($expositions as $exposition)
 										{
-											$country	= new Country($exposition->__get('country_id'));
-											?>
-											<li><h5><?php echo $exposition->__get('exposition_name')?></h5><span><?php echo $exposition->__get('exposition_institution')?>, <?php echo $exposition->__get('exposition_city')?>, <?php echo $country->__get('country_name')?>. <?php echo $exposition->__get('exposition_year')?></span></li>
-											<?php
+											if(trim($exposition->__get('exposition_name')) != '')
+											{
+												$country	= new Country($exposition->__get('country_id'));
+												?>
+												<li><h5><?php echo $exposition->__get('exposition_name')?></h5><span><?php echo $exposition->__get('exposition_institution')?>, <?php echo $exposition->__get('exposition_city')?>, <?php echo utf8_encode($country->__get('country_name'))?>. <?php echo $exposition->__get('exposition_year')?></span></li>
+												<?php
+											}
 										}
 										?>
 									</ul>
@@ -350,10 +433,13 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 										<?php
 										foreach ($expositions2 as $exposition)
 										{
-											$country	= new Country($exposition->__get('country_id'));
-											?>
-											<li><h5><?php echo $exposition->__get('exposition_name')?></h5><span><?php echo $exposition->__get('exposition_institution')?>, <?php echo $exposition->__get('exposition_city')?>, <?php echo $country->__get('country_name')?>. <?php echo $exposition->__get('exposition_year')?></span></li>
-											<?php
+											if(trim($exposition->__get('exposition_name')) != '')
+											{
+												$country	= new Country($exposition->__get('country_id'));
+												?>
+												<li><h5><?php echo $exposition->__get('exposition_name')?></h5><span><?php echo $exposition->__get('exposition_institution')?>, <?php echo $exposition->__get('exposition_city')?>, <?php echo utf8_encode($country->__get('country_name'))?>. <?php echo $exposition->__get('exposition_year')?></span></li>
+												<?php
+											}
 										}
 										?>		
 									</ul>

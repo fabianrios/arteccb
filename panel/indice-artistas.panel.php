@@ -1,5 +1,7 @@
 <?php
-$size				= isset($_GET[0]) ? $_GET[0] : '5';
+if (!isset($_SESSION['panel_id']))
+	redirectUrl(APPLICATION_URL.'login.panel.html');
+$size				= isset($_GET[0]) ? $_GET[0] : '20';
 $order				= isset($_GET[1]) ? escape(urldecode($_GET[1])) : 'user_date_login DESC';
 
 if(isset($_POST["search_criteria"]))
@@ -10,7 +12,7 @@ $page				= isset($_GET[3]) ? $_GET[3] : 1;
 $filter 			= '';
 if($search != 'null')
 {
-	$filter = "AND (user_name LIKE '%" . $search . "%' OR user_surname LIKE '%" . $search . "%' OR user_gallery_document LIKE '%" . $search . "%' OR user_proyect_name LIKE '%" . $search . "%')"; 
+	$filter = "AND (user_name LIKE '%" . $search . "%' OR user_surname LIKE '%" . $search . "%' OR user_gallery_document LIKE '%" . $search . "%' OR user_document_accept LIKE '%" . $search . "%' OR user_proyect_name LIKE '%" . $search . "%')"; 
 }
 $userResult 		= UserHelper::selectUsers($filter . " AND user_finalizado = 1 ORDER by " . $order);
 $pager  			= new PanelPager($size . '/' . $order . '/' . $search, '', '', APPLICATION_URL . 'indice-artistas.panel', $size, $userResult["num_rows"], $page);
@@ -41,6 +43,7 @@ $_SESSION["users"] 	= serialize($userIds);
 	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/style.css">
 	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/foundation-overrides.css">
 	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>stylesheets/phase.css">
+	<link rel="stylesheet" href="<?php echo APPLICATION_URL?>css/lightbox.css">
 	
 	
 	
@@ -79,13 +82,15 @@ $_SESSION["users"] 	= serialize($userIds);
 				<img class="logo" src="<?php echo APPLICATION_URL?>images/sprite_new.png" height="76" width="436" alt="logo" />
 		</div>
 		<!-- END columns 1/2 -->
-		
+		<?php
+		$userP	= new UserP($_SESSION['panel_id']);
+		?>		
 		<!-- columns 2/2 -->
 		<div class="eight columns lateralder ">
 			<div class="perfil-data">
 				<div class="perfil second left">
-					<p class="left"><strong>Angelica Gamboa</strong>
-					<a href="#" title="Clic aquí para editar información del artista">Editar perfil</a> | <a href="#" title="Salir">Salir</a> </p>
+					<p class="left"><strong><?php echo $userP->__get('user_name') ?></strong>
+					<a href="<?php echo APPLICATION_URL ?>login.panel.html" title="Salir">Salir</a> </p>
                 </div>
 			</div>
 		</div>
@@ -119,9 +124,11 @@ $_SESSION["users"] 	= serialize($userIds);
 								<div class="whomany">
 									<span>Mostrar</span>
 									<select name="registers" id="" onchange="window.location.href = '<?php echo APPLICATION_URL?>indice-artistas.panel/' + this.value + '.html';">
-										<option value="5" <?php echo ($size == '5') ? 'selected' : '';?>>5</option>
-										<option value="10" <?php echo ($size == '10') ? 'selected' : '';?>>10</option>
 										<option value="20" <?php echo ($size == '20') ? 'selected' : '';?>>20</option>
+										<option value="40" <?php echo ($size == '40') ? 'selected' : '';?>>40</option>
+										<option value="60" <?php echo ($size == '60') ? 'selected' : '';?>>60</option>
+										<option value="80" <?php echo ($size == '80') ? 'selected' : '';?>>80</option>
+										<option value="100" <?php echo ($size == '100') ? 'selected' : '';?>>100</option>
 									</select>
 									<span>registros</span>
 								</div>
@@ -135,7 +142,7 @@ $_SESSION["users"] 	= serialize($userIds);
 						<table border="0" cellspacing="0" cellpadding="0">
 							<thead>
 								<tr>
-									<th>Nombre del artista <a href="<?php echo APPLICATION_URL?>indice-artistas.panel/<?php echo $size?>/<?php echo 'user_name, user_surname'?>.html">▲</a> </th>
+									<th>Nombre del artista <a href="<?php echo APPLICATION_URL?>indice-artistas.panel/<?php echo $size?>/<?php echo 'TRIM(user_name), TRIM(user_surname)'?>.html">▲</a> </th>
 									<th>Contacto</th>
 									<th>Documento</th>
 									<th></th>
@@ -149,8 +156,8 @@ $_SESSION["users"] 	= serialize($userIds);
 								<tr>
 									<td><a href="<?php echo APPLICATION_URL?>perfil-artista.panel/<?php echo $user->__get('user_id')?>.html"><?php echo $user->__get('user_name')?> <?php echo $user->__get('user_surname')?></a></td>
 									<td><a href="mailto:<?php echo $user->__get('user_email')?>"><?php echo $user->__get('user_email')?></a></td>
-									<td><?php echo $user->__get('user_gallery_document')?></td>
-									<td><span class="label red"><?php echo ($user->__get('user_state') == 'A') ? 'activo' : 'inactivo'; ?></span></td>
+									<td><?php echo $user->__get('user_document_accept')?></td>
+									<td><span class="label <?php echo ($user->__get('user_state') == 'A') ? 'red' : 'gray'; ?>"><?php echo ($user->__get('user_state') == 'A') ? 'activo' : 'inactivo'; ?></span></td>
 									<td><a href="<?php echo APPLICATION_URL?>perfil-artista.panel/<?php echo $user->__get('user_id')?>.html"><img src="<?php echo APPLICATION_URL?>images/view.png" alt="" width="24" height="24" /></a></td>
 								</tr>								
 								<?php
@@ -167,10 +174,10 @@ $_SESSION["users"] 	= serialize($userIds);
 			<div class="inner-footer change">
 						<div class="container">
 							<div class="row">
-								<div class="six columns centered">
+								<div class="eight columns centered">
 									<div class="pag">
 										<ul class="pagination">
-										  <?php $pager->display(); ?>
+										  <?php $pager->display(3); ?>
 										</ul>
 									</div>
 								</div>
