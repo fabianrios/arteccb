@@ -252,7 +252,7 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 								</li>
 								<li>
 									<h6>IDENTIFICACIÓN</h6>
-									<span><?php echo $user->__get('user_gallery_document')?></span>
+									<span><?php echo $user->__get('user_document_accept')?></span>
 								</li>
 								<li>
 									<h6>TELÉFONO</h6>

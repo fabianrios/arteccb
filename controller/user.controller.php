@@ -402,7 +402,7 @@ switch ($action):
 		$finish = true;
 		foreach ($_POST as $key => $value)
 			$user->__set($key, $value);	
-		if (($user->__get('user_document') == '') || ($user->__get('user_gallery_document') == '') || ($user->__get('user_document_type') == ''))
+		if (($user->__get('user_document') == '') || ($user->__get('user_document_accept') == '') || ($user->__get('user_name_accept') == ''))
 			$finish	= false;
 		if ($finish)
 		{
