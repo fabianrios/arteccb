@@ -44,6 +44,8 @@
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
+  max-width: 980px;
+  max-height: 780px;
 }
 /* line 38, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .lb-outerContainer:after {

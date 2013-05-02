@@ -319,12 +319,13 @@ ul.main-menu li a span img {
 .specific h3 {
   color: #fff;
   margin: 0 0 10px 0;
+  text-transform: capitalize;
 }
-/* line 294, ../sass/phase.scss */
+/* line 295, ../sass/phase.scss */
 .specific ul {
   margin: 0;
 }
-/* line 296, ../sass/phase.scss */
+/* line 297, ../sass/phase.scss */
 .specific ul li {
   list-style-type: none;
   display: inline-block;
@@ -332,26 +333,26 @@ ul.main-menu li a span img {
   width: 25%;
   margin-bottom: 15px;
 }
-/* line 302, ../sass/phase.scss */
+/* line 303, ../sass/phase.scss */
 .specific ul li h6 {
   color: #777777;
   margin: 0;
   font-size: 11px;
   min-width: 133px;
 }
-/* line 308, ../sass/phase.scss */
+/* line 309, ../sass/phase.scss */
 .specific ul li span {
   color: #fff;
   font-size: 13px;
   font-weight: bold;
 }
 
-/* line 319, ../sass/phase.scss */
+/* line 320, ../sass/phase.scss */
 .lt-ie9 .exhibitandfairs .exhibits {
   float: none;
 }
 
-/* line 322, ../sass/phase.scss */
+/* line 323, ../sass/phase.scss */
 .exhibitandfairs {
   display: block;
   position: relative;
@@ -363,7 +364,7 @@ ul.main-menu li a span img {
   display: table;
   clear: both;
 }
-/* line 327, ../sass/phase.scss */
+/* line 328, ../sass/phase.scss */
 .exhibitandfairs h6 {
   font-weight: normal;
   color: #fff;
@@ -371,7 +372,7 @@ ul.main-menu li a span img {
   margin: 0;
   font-size: 11px;
 }
-/* line 334, ../sass/phase.scss */
+/* line 335, ../sass/phase.scss */
 .exhibitandfairs .exhibits {
   width: 50%;
   display: inline-block;
@@ -399,23 +400,23 @@ ul.main-menu li a span img {
   border-color: #f1f1f1 #f1f1f1 #aaabad #aaabad;
   /*right*/
 }
-/* line 342, ../sass/phase.scss */
+/* line 343, ../sass/phase.scss */
 .exhibitandfairs .exhibits h3 {
   font-size: 30px;
   margin: 0;
 }
-/* line 345, ../sass/phase.scss */
+/* line 346, ../sass/phase.scss */
 .exhibitandfairs .exhibits h3.mainh3 {
   letter-spacing: -1px;
   color: #333333;
 }
-/* line 351, ../sass/phase.scss */
+/* line 352, ../sass/phase.scss */
 .exhibitandfairs .exhibits .real-expos ul {
   margin-top: 25px;
   overflow: auto;
   height: 225px;
 }
-/* line 355, ../sass/phase.scss */
+/* line 356, ../sass/phase.scss */
 .exhibitandfairs .exhibits .real-expos ul li {
   list-style-type: none;
   display: block;
@@ -428,20 +429,20 @@ ul.main-menu li a span img {
   display: table;
   clear: both;
 }
-/* line 361, ../sass/phase.scss */
+/* line 362, ../sass/phase.scss */
 .exhibitandfairs .exhibits .real-expos ul li:first-child {
   margin-bottom: 5px;
 }
-/* line 364, ../sass/phase.scss */
+/* line 365, ../sass/phase.scss */
 .exhibitandfairs .exhibits .real-expos ul li span {
   color: #393939;
 }
-/* line 367, ../sass/phase.scss */
+/* line 368, ../sass/phase.scss */
 .exhibitandfairs .exhibits .real-expos ul li h5 {
   color: #333333;
   margin: 0;
 }
-/* line 375, ../sass/phase.scss */
+/* line 376, ../sass/phase.scss */
 .exhibitandfairs .fairs {
   width: 50%;
   display: inline-block;
@@ -475,29 +476,29 @@ ul.main-menu li a span img {
   display: table;
   clear: both;
 }
-/* line 384, ../sass/phase.scss */
+/* line 385, ../sass/phase.scss */
 .exhibitandfairs .fairs h3 {
   color: #fff;
   letter-spacing: -1px;
   font-size: 30px;
   margin: 0;
 }
-/* line 391, ../sass/phase.scss */
+/* line 392, ../sass/phase.scss */
 .exhibitandfairs .fairs .real-fairs ul {
   margin-top: 25px;
   overflow: auto;
   height: 225px;
 }
-/* line 395, ../sass/phase.scss */
+/* line 396, ../sass/phase.scss */
 .exhibitandfairs .fairs .real-fairs ul li {
   list-style-type: none;
   margin-bottom: 20px;
 }
-/* line 398, ../sass/phase.scss */
+/* line 399, ../sass/phase.scss */
 .exhibitandfairs .fairs .real-fairs ul li:first-child {
   margin-bottom: 5px;
 }
-/* line 401, ../sass/phase.scss */
+/* line 402, ../sass/phase.scss */
 .exhibitandfairs .fairs .real-fairs ul li h5 {
   color: #fff;
   letter-spacing: 0;
@@ -505,7 +506,7 @@ ul.main-menu li a span img {
   font-size: 20px;
   display: inline-block;
 }
-/* line 408, ../sass/phase.scss */
+/* line 409, ../sass/phase.scss */
 .exhibitandfairs .fairs .real-fairs ul li span {
   font-size: 14px;
   margin-left: 6px;
@@ -513,7 +514,7 @@ ul.main-menu li a span img {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 420, ../sass/phase.scss */
+/* line 421, ../sass/phase.scss */
 .proposal-artist {
   background-color: #BB0C35;
   color: #fff;
@@ -535,67 +536,67 @@ ul.main-menu li a span img {
   border-color: #f1f1f1 #f1f1f1 #4b0615 #4b0615;
   /*right*/
 }
-/* line 425, ../sass/phase.scss */
+/* line 426, ../sass/phase.scss */
 .proposal-artist .theproposal h3 {
   letter-spacing: -1px;
 }
-/* line 428, ../sass/phase.scss */
+/* line 429, ../sass/phase.scss */
 .proposal-artist .theproposal .this {
   height: 268px;
   padding-right: 10px;
   overflow: auto;
 }
-/* line 435, ../sass/phase.scss */
+/* line 436, ../sass/phase.scss */
 .proposal-artist .theartists .thiso {
   height: 250px;
   overflow: auto;
 }
-/* line 439, ../sass/phase.scss */
+/* line 440, ../sass/phase.scss */
 .proposal-artist .theartists h3 {
   letter-spacing: -1px;
 }
-/* line 442, ../sass/phase.scss */
+/* line 443, ../sass/phase.scss */
 .proposal-artist .theartists h6 {
   color: #D87084;
   font-size: 12px;
 }
-/* line 446, ../sass/phase.scss */
+/* line 447, ../sass/phase.scss */
 .proposal-artist .theartists .another {
   margin-top: 40px;
 }
-/* line 449, ../sass/phase.scss */
+/* line 450, ../sass/phase.scss */
 .proposal-artist .theartists strong {
   line-height: 2;
 }
-/* line 452, ../sass/phase.scss */
+/* line 453, ../sass/phase.scss */
 .proposal-artist .theartists span {
   color: #D87084;
   margin-left: 10px;
 }
-/* line 456, ../sass/phase.scss */
+/* line 457, ../sass/phase.scss */
 .proposal-artist .theartists a {
   color: #fff;
   margin-left: 5px;
 }
-/* line 460, ../sass/phase.scss */
+/* line 461, ../sass/phase.scss */
 .proposal-artist .theartists p {
   color: #fff;
 }
 
-/* line 466, ../sass/phase.scss */
+/* line 467, ../sass/phase.scss */
 .activar {
   background-color: #333;
 }
-/* line 468, ../sass/phase.scss */
+/* line 469, ../sass/phase.scss */
 .activar .gallery-name {
   float: right;
 }
-/* line 471, ../sass/phase.scss */
+/* line 472, ../sass/phase.scss */
 .activar span {
   color: #fff;
   font-size: 16px;
 }
-/* line 475, ../sass/phase.scss */
+/* line 476, ../sass/phase.scss */
 .activar a {
   background-color: #B2B2B2;
   margin-left: 30px;
@@ -612,34 +613,34 @@ ul.main-menu li a span img {
   width: 140px;
   color: #fff;
 }
-/* line 486, ../sass/phase.scss */
+/* line 487, ../sass/phase.scss */
 .activar a:hover {
   background-color: #111;
 }
-/* line 489, ../sass/phase.scss */
+/* line 490, ../sass/phase.scss */
 .activar a span {
   color: #fff;
   margin-right: 10px;
   line-height: 1.6;
 }
-/* line 493, ../sass/phase.scss */
+/* line 494, ../sass/phase.scss */
 .activar a span img {
   position: relative;
   top: 3px;
 }
 
-/* line 502, ../sass/phase.scss */
+/* line 503, ../sass/phase.scss */
 .footer-menu {
   min-height: 60px;
 }
-/* line 504, ../sass/phase.scss */
+/* line 505, ../sass/phase.scss */
 .footer-menu a {
   color: #000;
   font-size: 16px;
   display: block;
   font-weight: bold;
 }
-/* line 510, ../sass/phase.scss */
+/* line 511, ../sass/phase.scss */
 .footer-menu span {
   display: block;
   margin-top: 5px;
@@ -647,14 +648,18 @@ ul.main-menu li a span img {
   font-size: 12px;
 }
 
-/* line 518, ../sass/phase.scss */
+/* line 519, ../sass/phase.scss */
 .galleryfic {
   position: relative;
+  width: 60%;
+  float: left;
+  height: 450px;
+  overflow: hidden;
 }
-/* line 520, ../sass/phase.scss */
+/* line 525, ../sass/phase.scss */
 .galleryfic .resume {
   position: absolute;
-  bottom: 2px;
+  bottom: 0;
   background: #000;
   background: rgba(0, 0, 0, 0.74);
   width: 100%;
@@ -665,53 +670,54 @@ ul.main-menu li a span img {
   padding-left: 10px;
   font-size: 13px;
 }
-/* line 533, ../sass/phase.scss */
+/* line 538, ../sass/phase.scss */
 .galleryfic img {
   width: 100%;
+  float: none;
 }
-/* line 536, ../sass/phase.scss */
+/* line 542, ../sass/phase.scss */
 .galleryfic .handlers {
   width: 100%;
   position: absolute;
   top: 45%;
 }
-/* line 540, ../sass/phase.scss */
+/* line 546, ../sass/phase.scss */
 .galleryfic .handlers img {
   width: auto;
 }
 
-/* line 547, ../sass/phase.scss */
+/* line 553, ../sass/phase.scss */
 .bigclose {
   position: absolute;
   right: 10px;
   top: 10px;
 }
 
-/* line 554, ../sass/phase.scss */
+/* line 560, ../sass/phase.scss */
 .middle img {
   position: relative;
   top: 2px;
   margin-right: 5px;
 }
 
-/* line 562, ../sass/phase.scss */
+/* line 568, ../sass/phase.scss */
 .perfil.second {
   padding-right: 0;
   min-width: 300px;
 }
-/* line 565, ../sass/phase.scss */
+/* line 571, ../sass/phase.scss */
 .perfil.second img {
   float: right;
   width: 40px;
   height: 40px;
 }
 
-/* line 573, ../sass/phase.scss */
+/* line 579, ../sass/phase.scss */
 .panel.mtop20 {
   margin-top: 20px;
 }
 
-/* line 579, ../sass/phase.scss */
+/* line 585, ../sass/phase.scss */
 .reveal-modal.artistr {
   background: #fff;
   display: block;
@@ -720,27 +726,27 @@ ul.main-menu li a span img {
   margin-left: auto;
   padding: 10px;
 }
-/* line 586, ../sass/phase.scss */
+/* line 592, ../sass/phase.scss */
 .reveal-modal.artistr .close-reveal-modal {
   top: 12px;
 }
-/* line 589, ../sass/phase.scss */
+/* line 595, ../sass/phase.scss */
 .reveal-modal.artistr h6 {
   color: #9A9A9A;
   font-size: 12px;
   margin-bottom: 0;
   margin-top: 20px;
 }
-/* line 595, ../sass/phase.scss */
+/* line 601, ../sass/phase.scss */
 .reveal-modal.artistr h3 {
   font-weight: normal;
 }
-/* line 598, ../sass/phase.scss */
+/* line 604, ../sass/phase.scss */
 .reveal-modal.artistr h5 {
   color: #676767;
   font-size: 15px;
 }
-/* line 602, ../sass/phase.scss */
+/* line 608, ../sass/phase.scss */
 .reveal-modal.artistr p {
   height: 200px;
   overflow: auto;
@@ -748,7 +754,7 @@ ul.main-menu li a span img {
   font-size: 14px;
 }
 
-/* line 610, ../sass/phase.scss */
+/* line 616, ../sass/phase.scss */
 .folio {
   width: 100%;
   background-color: #E5E5E5;
@@ -759,7 +765,7 @@ ul.main-menu li a span img {
   display: table;
   clear: both;
 }
-/* line 614, ../sass/phase.scss */
+/* line 620, ../sass/phase.scss */
 .folio .project {
   display: inline-block;
   float: left;
@@ -786,43 +792,43 @@ ul.main-menu li a span img {
   border-color: #e5e5e5 #e5e5e5 #707070 #707070;
   /*right*/
 }
-/* line 621, ../sass/phase.scss */
+/* line 627, ../sass/phase.scss */
 .folio .project.lastspecs {
   background-color: #F2F2F2;
 }
-/* line 623, ../sass/phase.scss */
+/* line 629, ../sass/phase.scss */
 .folio .project.lastspecs h4 {
   margin-top: 0;
 }
-/* line 626, ../sass/phase.scss */
+/* line 632, ../sass/phase.scss */
 .folio .project.lastspecs .container {
   margin-top: 0;
 }
-/* line 629, ../sass/phase.scss */
+/* line 635, ../sass/phase.scss */
 .folio .project.lastspecs .specs {
   width: 100%;
   float: none;
   padding-left: 0;
 }
-/* line 633, ../sass/phase.scss */
+/* line 639, ../sass/phase.scss */
 .folio .project.lastspecs .specs ul {
   border-bottom: 1px dashed white;
   margin: 20px 0;
 }
-/* line 639, ../sass/phase.scss */
+/* line 645, ../sass/phase.scss */
 .folio .project h3 {
   color: #4D4D4D;
   margin-top: 0;
 }
-/* line 644, ../sass/phase.scss */
+/* line 650, ../sass/phase.scss */
 .folio .project:first-child .container {
   margin-top: 0;
 }
-/* line 648, ../sass/phase.scss */
+/* line 654, ../sass/phase.scss */
 .folio .project .container {
   margin-top: 40px;
 }
-/* line 651, ../sass/phase.scss */
+/* line 657, ../sass/phase.scss */
 .folio .project .project-pic {
   display: inline-block;
   float: left;
@@ -838,11 +844,11 @@ ul.main-menu li a span img {
   display: table;
   clear: both;
 }
-/* line 658, ../sass/phase.scss */
+/* line 664, ../sass/phase.scss */
 .folio .project .project-pic img {
   max-height: 170px;
 }
-/* line 663, ../sass/phase.scss */
+/* line 669, ../sass/phase.scss */
 .folio .specs {
   display: inline-block;
   float: right;
@@ -860,7 +866,7 @@ ul.main-menu li a span img {
   display: table;
   clear: both;
 }
-/* line 672, ../sass/phase.scss */
+/* line 678, ../sass/phase.scss */
 .folio .specs ul {
   list-style-type: none;
 }
@@ -870,29 +876,29 @@ ul.main-menu li a span img {
   display: table;
   clear: both;
 }
-/* line 675, ../sass/phase.scss */
+/* line 681, ../sass/phase.scss */
 .folio .specs ul li {
   margin-bottom: 10px;
 }
-/* line 677, ../sass/phase.scss */
+/* line 683, ../sass/phase.scss */
 .folio .specs ul li.city, .folio .specs ul li.country {
   float: left;
   width: 50%;
   display: inline-block;
 }
-/* line 682, ../sass/phase.scss */
+/* line 688, ../sass/phase.scss */
 .folio .specs ul li h6 {
   text-transform: uppercase;
   color: #868686;
   margin: 0;
   font-size: 11px;
 }
-/* line 688, ../sass/phase.scss */
+/* line 694, ../sass/phase.scss */
 .folio .specs ul li span {
   color: #343434;
   font-weight: bold;
 }
-/* line 691, ../sass/phase.scss */
+/* line 697, ../sass/phase.scss */
 .folio .specs ul li span a {
   color: #343434;
   font-weight: bold;
