@@ -85,45 +85,52 @@ lightbox = new Lightbox options
     Lightbox.prototype.build = function() {
       var $lightbox,
         _this = this;
-      $("<div>", {
-        id: 'lightboxOverlay'
-      }).after($('<div/>', {
-        id: 'lightbox'
-      }).append($('<div/>', {
-        "class": 'lb-outerContainer'
-      }).append($('<div/>', {
-        "class": 'lb-container'
-      }).append($('<img/>', {
-        "class": 'lb-image'
-      }), $('<div/>', {
-        "class": 'lb-nav'
-      }).append($('<a/>', {
-        "class": 'lb-prev'
-      }), $('<a/>', {
-        "class": 'lb-next'
-      })), $('<div/>', {
-        "class": 'lb-loader'
-      }).append($('<a/>', {
-        "class": 'lb-cancel'
-      }).append($('<img/>', {
-        src: this.options.fileLoadingImage
-      }))))), $('<div/>', {
-        "class": 'lb-dataContainer'
-      }).append($('<div/>', {
-        "class": 'lb-data'
-      }).append($('<div/>', {
-        "class": 'lb-details'
-      }).append($('<span/>', {
-        "class": 'lb-caption'
-      }), $('<span/>', {
-        "class": 'lb-number'
-      })), $('<div/>', {
-        "class": 'lb-closeContainer'
-      }).append($('<a/>', {
-        "class": 'lb-close'
-      }).append($('<img/>', {
-        src: this.options.fileCloseImage
-      }))))))).appendTo($('body'));
+      $("<div>", {id: 'lightboxOverlay'}).after
+    (
+          $('<div/>', {id: 'lightbox'}
+          ).append(
+
+          $('<div/>', {
+            "class": 'lb-dataContainer'
+          }).append($('<div/>', {
+            "class": 'lb-data'
+          }).append($('<div/>', {
+            "class": 'lb-details'
+          }).append($('<span/>', {
+            "class": 'lb-caption'
+          }), $('<span/>', {
+            "class": 'lb-number'
+          })), $('<div/>', {
+            "class": 'lb-closeContainer'
+          }).append($('<a/>', {
+            "class": 'lb-close'
+          }).append($('<img/>', {
+            src: this.options.fileCloseImage
+        })))
+ )),
+
+          $('<div/>', {"class": 'lb-outerContainer'}).append
+          ( $('<div/>', {
+                "class": 'lb-container'
+              }).append($('<img/>', {
+                "class": 'lb-image'
+              }), $('<div/>', {
+                "class": 'lb-nav'
+              }).append($('<a/>', {
+                "class": 'lb-prev'
+              }), $('<a/>', {
+                "class": 'lb-next'
+              })), $('<div/>', {
+                "class": 'lb-loader'
+              }).append($('<a/>', {
+                "class": 'lb-cancel'
+              }).append($('<img/>', {
+                src: this.options.fileLoadingImage
+              }))))
+          )
+
+)
+    ).appendTo($('body'));
       $('#lightboxOverlay').hide().on('click', function(e) {
         _this.end();
         return false;

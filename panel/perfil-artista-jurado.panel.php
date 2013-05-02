@@ -133,7 +133,7 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 			<div class="perfil-data">
 				<div class="perfil second left">
 					<p class="left"><strong><?php echo $userP->__get('user_name') ?></strong>
-					<a href="<?php echo APPLICATION_URL;?>panel.controller/startSession/<?php echo $user->__get('user_id');?>.html" title="Clic aquí para editar información del artista">Editar perfil</a> | <a href="<?php echo APPLICATION_URL ?>login.panel.html" title="Salir">Salir</a> </p>
+					<a href="<?php echo APPLICATION_URL ?>login.panel.html" title="Salir">Salir</a> </p>
                 </div>
 			</div>
 		</div>
@@ -143,22 +143,6 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 </div>	
 	
 <!-- 2. Navigation -->
-<div class="row breadcrumb">
-	<div class="six columns">
-		<a href="<?php echo APPLICATION_URL?>indice-artistas.panel.html" class="getback"><span><img src="<?php echo APPLICATION_URL?>images/smallarrow.png" alt="" width="17" height="16" /></span>INDICE DE ARTISTAS</a>
-	</div>
-	<div class="six columns">
-		<ul class="main-menu no-bullet">
-			<li><a href="#" class="show-section" rel="documents-info"><span><img src="<?php echo APPLICATION_URL?>images/smalldoc.png" alt="" width="12" height="18" /></span>DOCUMENTOS</a></li>
-			<li><a href="<?php echo APPLICATION_URL?>generatepdf.control/<?php echo $user->__get('user_id')?>.html" target="_blank"><span><img src="<?php echo APPLICATION_URL?>images/smallfolder.png" alt="" width="17" height="16" /></span>DESCARGAR</a></li>
-			<li><a href="<?php echo APPLICATION_URL;?>panel.controller/startSession/<?php echo $user->__get('user_id');?>.html" target="_blank"><span><img src="<?php echo APPLICATION_URL?>images/smalledit.png" alt="" width="17" height="19" /></span>EDITAR</a></li>
-			<li><a href="<?php echo APPLICATION_URL?>user.controller/activate/<?php echo $user->__get('user_id')?>.html" class="activate"><span><img src="<?php echo APPLICATION_URL?>images/smallcheck.png" alt="" width="18" height="17" /></span><?php echo ($user->__get('user_state') == 'A') ? 'DESACTIVAR' : 'ACTIVAR'; ?></a></li>
-		</ul>
-	</div>
-</div>
-<br />
-
-
 <!-- 2. End menu -->
 
 	<div class="row main-row">	
@@ -478,8 +462,13 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 				<div class="row">
 					<div class="twelve columns">
 						<div class="gallery-name">
-							<span>Desea activar a: <strong><?php echo $user->__get('user_name') . ' ' . $user->__get('user_surname') ?></strong></span>
-							<a href="<?php echo APPLICATION_URL?>user.controller/activate/<?php echo $user->__get('user_id')?>.html"><span><img src="<?php echo APPLICATION_URL?>images/smallcheck.png" alt="" width="18" height="17" /></span><?php echo ($user->__get('user_state') == 'A') ? 'DESACTIVAR' : 'ACTIVAR'; ?></a>
+							<span>Desea seleccionar a: <strong><?php echo $user->__get('user_name') . ' ' . $user->__get('user_surname') ?></strong></span>
+							<?php
+								$select	= SelectHelper::selectSelects(" AND user_id = ".$user->__get('user_id')." AND jury_id = ".escape($_SESSION['panel_id']));
+								$selected	= ($select['num_rows'] == 0) ? 'Seleccionar' : 'Quitar selecci&oacute;n';
+								$action		= ($select['num_rows'] == 0) ? 'select' : 'deselect';								
+							?>
+							<a href="<?php echo APPLICATION_URL?>user.controller/<?php echo $action;?>/<?php echo $user->__get('user_id')?>.html"><span><img src="<?php echo APPLICATION_URL?>images/smallcheck.png" alt="" width="18" height="17" /></span><?php echo $selected; ?></a>
 						</div>
 					</div>
 				</div>
@@ -495,7 +484,7 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 						if($pastUser->__get('user_id') != '')
 						{
 							?>
-							<a href="<?php echo APPLICATION_URL?>perfil-artista.panel/<?php echo $pastUser->__get('user_id'); ?>.html"> < <?php echo $pastUser->__get('user_name')?> <?php echo $pastUser->__get('user_surname')?></a>
+							<a href="<?php echo APPLICATION_URL?>perfil-artista-jurado.panel/<?php echo $pastUser->__get('user_id'); ?>.html"> < <?php echo $pastUser->__get('user_name')?> <?php echo $pastUser->__get('user_surname')?></a>
 							<span class="right">ANTERIOR</span>
 							<?php
 						}
@@ -505,7 +494,7 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 				</div>
 				<div class="four columns">
 					<div class="middle text-center"> 
-						<a href="<?php echo APPLICATION_URL?>indice-artistas.panel.html"><img src="<?php echo APPLICATION_URL?>images/smallmenu.png" alt="menu" width="15" height="14" />volver al indice</a>
+						<a href="<?php echo APPLICATION_URL?>indice-artistas-jurados.panel.html"><img src="<?php echo APPLICATION_URL?>images/smallmenu.png" alt="menu" width="15" height="14" />volver al indice</a>
 					</div>
 				</div>
 				<div class="four columns">
@@ -514,7 +503,7 @@ $prizes			= PrizeHelper::retrievePrizes(" AND user_id = ". $user->__get('user_id
 						if($nextUser->__get('user_id') != '')
 						{
 							?>						
-							<a href="<?php echo APPLICATION_URL?>perfil-artista.panel/<?php echo $nextUser->__get('user_id'); ?>.html"><?php echo $nextUser->__get('user_name')?> <?php echo $nextUser->__get('user_surname')?> ></a>
+							<a href="<?php echo APPLICATION_URL?>perfil-artista-jurado.panel/<?php echo $nextUser->__get('user_id'); ?>.html"><?php echo $nextUser->__get('user_name')?> <?php echo $nextUser->__get('user_surname')?> ></a>
 							<span>SIGUIENTE</span>
 							<?php
 						}

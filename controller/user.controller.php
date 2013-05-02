@@ -549,6 +549,25 @@ switch ($action):
 		$user->updateField('user_state', $state);
 		redirectUrl(APPLICATION_URL . 'indice-artistas.panel.html');
 	break;
+	
+	case 'select':
+		$select	= new Select();
+		$select->__set('user_id', $_GET[1]);
+		$select->__set('jury_id', $_SESSION['panel_id']);
+		$select->__set('select_datetime', date('Y-m-d H:i:s'));		
+		$select->save();
+		redirectUrl(APPLICATION_URL . 'indice-artistas-jurados.panel.html');
+	break;	
+
+	case 'deselect':
+		$select	= SelectHelper::retrieveSelects(' AND user_id = '.escape($_GET[1]).' AND jury_id = '.escape($_SESSION['panel_id']));
+		if (count($select) > 0)
+		{			
+			$select	= $select[0];
+			$select->delete();
+			redirectUrl(APPLICATION_URL . 'indice-artistas-jurados.panel.html');
+		}
+	break;	
 		
 endswitch;
 ?>

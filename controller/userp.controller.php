@@ -7,7 +7,11 @@ switch ($action):
 		if(count($user) > 0)
 		{
 			$_SESSION['panel_id']	= $user[0]->__get('user_id');
-			redirectUrl(APPLICATION_URL.'indice-artistas.panel.html');
+			if ($user[0]->__get('user_type') == 1)
+				redirectUrl(APPLICATION_URL.'indice-artistas.panel.html');
+			else
+				redirectUrl(APPLICATION_URL.'indice-artistas-jurados.panel.html');
+			
 		}
 		else
 		{

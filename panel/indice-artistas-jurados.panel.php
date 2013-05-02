@@ -12,12 +12,12 @@ $page				= isset($_GET[3]) ? $_GET[3] : 1;
 $filter 			= '';
 if($search != 'null')
 {
-	$filter = "AND (user_name LIKE '%" . $search . "%' OR user_surname LIKE '%" . $search . "%' OR user_gallery_document LIKE '%" . $search . "%' OR user_document_accept LIKE '%" . $search . "%' OR user_city LIKE '%" . $search . "%' OR user_proyect_name LIKE '%" . $search . "%')"; 
+	$filter = "AND (user_name LIKE '%" . $search . "%' OR user_surname LIKE '%" . $search . "%' OR user_gallery_document LIKE '%" . $search . "%' OR user_document_accept LIKE '%" . $search . "%' OR user_city LIKE '%" . $search . "%'  OR user_proyect_name LIKE '%" . $search . "%')"; 
 }
-$userResult 		= UserHelper::selectUsers($filter . " AND user_finalizado = 1 ORDER by " . $order);
-$pager  			= new PanelPager($size . '/' . $order . '/' . $search, '', '', APPLICATION_URL . 'indice-artistas.panel', $size, $userResult["num_rows"], $page);
+$userResult 		= UserHelper::selectUsers($filter . " AND user_finalizado = 1 AND user_state = 'A' ORDER by " . $order);
+$pager  			= new PanelPager($size . '/' . $order . '/' . $search, '', '', APPLICATION_URL . 'indice-artistas-jurados.panel', $size, $userResult["num_rows"], $page);
 $limit 				= ' LIMIT ' . $pager->arrayStartNumber . ',' . $pager->resultSize; 
-$users 				= UserHelper::retrieveUsers($filter . " AND user_finalizado = 1 ORDER by " . $order . " " . $limit);
+$users 				= UserHelper::retrieveUsers($filter . " AND user_finalizado = 1 AND user_state = 'A' ORDER by " . $order . " " . $limit);
 $userIds			= array();
 while($row = mysql_fetch_assoc($userResult["query"]))
 	$userIds[] = $row["user_id"];
@@ -115,7 +115,7 @@ $_SESSION["users"] 	= serialize($userIds);
 				
 					<div class="row">
 						<div class="six columns">
-							<form action="<?php echo APPLICATION_URL?>indice-artistas.panel.html" method="post" accept-charset="utf-8">
+							<form action="<?php echo APPLICATION_URL?>indice-artistas-jurados.panel.html" method="post" accept-charset="utf-8">
 								<input type="text" name="search_criteria" value="" id="search" placeholder="Buscar"/>
 							</form>
 						</div>
@@ -123,7 +123,7 @@ $_SESSION["users"] 	= serialize($userIds);
 							<form action="indice-galerias_serch" method="post" accept-charset="utf-8">
 								<div class="whomany">
 									<span>Mostrar</span>
-									<select name="registers" id="" onChange="window.location.href = '<?php echo APPLICATION_URL?>indice-artistas.panel/' + this.value + '.html';">
+									<select name="registers" id="" onChange="window.location.href = '<?php echo APPLICATION_URL?>indice-artistas-jurados/' + this.value + '.html';">
 										<option value="20" <?php echo ($size == '20') ? 'selected' : '';?>>20</option>
 										<option value="40" <?php echo ($size == '40') ? 'selected' : '';?>>40</option>
 										<option value="60" <?php echo ($size == '60') ? 'selected' : '';?>>60</option>
@@ -163,8 +163,8 @@ $_SESSION["users"] 	= serialize($userIds);
 										$var	= 'user_city DESC';
 										$icon	= '▲';
 									}										
-									?>    									
-                                    <th>Ciudad <a href="<?php echo APPLICATION_URL?>indice-artistas.panel/<?php echo $size?>/<?php echo $var?>.html"><?php echo $icon ?></a></th>
+									?>  
+                                    <th>Ciudad <a href="<?php echo APPLICATION_URL?>indice-artistas.panel/<?php echo $size?>/<?php echo 'city_name'?>.html"><?php echo $icon ?></a></th>
                                     <th>A&ntilde;o Nac.</th>
 									<th></th>
 									<th></th>
@@ -174,15 +174,19 @@ $_SESSION["users"] 	= serialize($userIds);
 							$i = $pager->arrayStartNumber + 1;
 							foreach($users as $user)
 							{
+								$select	= SelectHelper::selectSelects(" AND user_id = ".$user->__get('user_id')." AND jury_id = ".escape($_SESSION['panel_id']));
+								$selected	= ($select['num_rows'] > 0) ? 'Seleccionado' : 'No';
+								$class		= ($select['num_rows'] > 0) ? 'red' : 'gray';
 								?>
 								<tr>
 									<td><?php echo $i?></td>
-									<td><a href="<?php echo APPLICATION_URL?>perfil-artista.panel/<?php echo $user->__get('user_id')?>.html"><?php echo $user->__get('user_name')?> <?php echo $user->__get('user_surname')?></a></td>
+									<td><?php echo $user->__get('user_document_accept')?></td>
+									<td><a href="<?php echo APPLICATION_URL?>perfil-artista-jurado.panel/<?php echo $user->__get('user_id')?>.html"><?php echo $user->__get('user_name')?> <?php echo $user->__get('user_surname')?></a></td>
 									<td><a href="mailto:<?php echo $user->__get('user_email')?>"><?php echo $user->__get('user_email')?></a></td>
 									<td><?php echo $user->__get('user_document_accept')?></td>
 									<td><?php echo $user->__get('user_city');?></td>
                                     <td><?php echo formatDate('%Y', $user->__get('user_birthday'));?></td>
-                                    <td><span class="label <?php echo ($user->__get('user_state') == 'A') ? 'red' : 'gray'; ?>"><?php echo ($user->__get('user_state') == 'A') ? 'activo' : 'inactivo'; ?></span></td>
+                                    <td><span class="label <?php echo $class; ?>"><?php echo $selected; ?></span></td>
 									<td><a href="<?php echo APPLICATION_URL?>perfil-artista.panel/<?php echo $user->__get('user_id')?>.html"><img src="<?php echo APPLICATION_URL?>images/view.png" alt="" width="24" height="24" /></a></td>
 								</tr>								
 								<?php
